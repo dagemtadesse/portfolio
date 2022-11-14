@@ -1,18 +1,24 @@
-import Head from 'next/head'
-import { useState } from 'react'
-import EmailIcon from '../components/EmailIcon'
-import Hero from '../components/Hero'
-import LinkedInIcon from '../components/LinkedIn'
-import MenuIcon from '../components/MenuIcon'
-import TwitterIcon from '../components/TwitterIcon'
+import { useEffect, useState } from 'react'
+import EmailIcon from '../components/icons/EmailIcon'
+import Hero from '../components/icons/Hero'
+import LinkedInIcon from '../components/icons/LinkedIn'
+import TwitterIcon from '../components/icons/TwitterIcon'
+import Skills from '../components/skill/Skills'
+import SkillsButton from '../components/skill/SkillsButton'
+
 export default function Home() {
   const [isShown, setIsShown] = useState(false)
+  const [yPostion, setYPosition] = useState(0)
+
+  useEffect(() => {
+    setYPosition(document.querySelector('#skills_contianer')?.clientHeight || 0)
+  })
 
   return (
     <div className="font-Montserrat">
       <div
         className="absolute h-screen top-0 left-0 right-0 bg-white z-10 transition-all duration-300 shadow-xl"
-        style={{ top: isShown ? '-120px' : 0 }}
+        style={{ top: isShown ? `-${yPostion}px` : 0 }}
       >
         <div className="overflow-hidden w-screen h-screen relative z-10">
           <div className="w-[824px] h-[824px] radial-gradient backdrop-blur-3xl rounded-full -ml-[434px] -mt-[434px]"></div>
@@ -48,11 +54,11 @@ export default function Home() {
             <LinkedInIcon />
             <TwitterIcon />
           </div>
-          <div className="flex h-[100%]">
+          <div className="flex min-h-[calc(100%-28px)] items-center">
             <div className="basis-[50%] flex flex-col justify-center">
-              <p className="font-semibold text-2xl leading-6">Hi there,</p>
-              <p className="font-bold uppercase text-4xl">I'm dagem tadesse</p>
-              <p className="font-light text-sm mt-3">
+              <p className="font-semibold text-xl leading-6">Hi there,</p>
+              <p className="font-bold uppercase text-3xl">I'm dagem tadesse</p>
+              <p className="font-light text-sm mt-3 max-w-[460px]">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non,
                 dolorem? Similique laboriosam molestias veniam doloribus
                 voluptas aperiam fugiat.
@@ -64,18 +70,11 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute bottom-3 flex justify-center w-screen z-30">
-          <button
-            className="rounded-full bg-darkBlue text-white flex px-1.5 py-1.5 items-center"
-            onClick={() => setIsShown((value) => !value)}
-          >
-            <span className="ml-3">My Skills</span>
-            <span className="bg-white rounded-full p-2 ml-12">
-              <MenuIcon />
-            </span>
-          </button>
+          <SkillsButton isShown={isShown} setIsShown={setIsShown} />
         </div>
       </div>
-      <div className="bg-darkBlue absolute bottom-0 h-[120px] left-0 right-0 z-0"></div>
+
+      <Skills />
     </div>
   )
 }
