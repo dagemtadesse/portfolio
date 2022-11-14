@@ -1,8 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.js'],
+  content: ['./pages/**/*.tsx', './components/**/*.tsx'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        darkBlue: '#212529',
+      },
+      fontFamily: {
+        Montserrat: 'Montserrat',
+      },
+    },
   },
   plugins: [],
 }

@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-styles/styles.css
+styles/golbal.css
 # testing
 /coverage
 
