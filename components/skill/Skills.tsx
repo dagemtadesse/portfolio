@@ -5,6 +5,7 @@ import SkillChip from './SkillsChips'
 const SKILLS = [
   { title: 'React.js', icon: <ReactIcon /> },
   { title: 'Node.js', icon: <NodeIcon /> },
+  { title: 'UI / UX', icon: <NodeIcon /> },
 ]
 
 const Skills = () => {
