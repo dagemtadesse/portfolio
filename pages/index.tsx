@@ -19,7 +19,7 @@ export default function Home({
         <LinkedInIcon />
         <TwitterIcon />
       </div>
-      <div className="flex min-h-screen -mt-[84px] items-center">
+      <div className="flex min-h-[calc(100vh-84px)] items-center px-10 ">
         <div className="basis-[50%] flex flex-col justify-center">
           <p className="font-semibold text-xl leading-6">Hi there,</p>
           <p className="font-bold uppercase text-3xl">I'm dagem tadesse</p>
