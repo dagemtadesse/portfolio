@@ -1,3 +1,4 @@
+import FigmaIcon from '../icons/FigmaIcon'
 import NodeIcon from '../icons/Node'
 import ReactIcon from '../icons/React'
 import SkillChip from './SkillsChips'
@@ -5,7 +6,7 @@ import SkillChip from './SkillsChips'
 const SKILLS = [
   { title: 'React.js', icon: <ReactIcon /> },
   { title: 'Node.js', icon: <NodeIcon /> },
-  { title: 'UI / UX', icon: <NodeIcon /> },
+  { title: 'UI / UX', icon: <FigmaIcon /> },
 ]
 
 const Skills = () => {

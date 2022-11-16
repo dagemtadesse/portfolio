@@ -10,7 +10,7 @@ const About = ({
   useEffect(() => setCurrentPage('About'))
   
   return (
-    <div className="flex items-center min-h-[calc(100vh-84px)] px-10">
+    <div className="flex  items-center px-10 mt-[12vh]">
       <div className="basis-[33.333%] flex justify-center">
         <AvatarIcon />
       </div>

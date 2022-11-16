@@ -14,11 +14,6 @@ export default function Home({
   return (
     <>
       {/* social */}
-      <div className="right-[40px] top-[50%] -translate-y-[50%] absolute flex flex-col gap-9">
-        <EmailIcon />
-        <LinkedInIcon />
-        <TwitterIcon />
-      </div>
       <div className="flex min-h-[calc(100vh-84px)] items-center px-10 ">
         <div className="basis-[50%] flex flex-col justify-center">
           <p className="font-semibold text-xl leading-6">Hi there,</p>

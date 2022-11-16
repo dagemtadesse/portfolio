@@ -8,6 +8,10 @@ import Skills from '../components/skill/Skills'
 import SkillsButton from '../components/skill/SkillsButton'
 import Nav from '../components/header/Nav'
 import SideBar from '../components/header/SideBar'
+import EmailIcon from '../components/icons/EmailIcon'
+import LinkedInIcon from '../components/icons/LinkedIn'
+import TwitterIcon from '../components/icons/TwitterIcon'
+import Socials from '../components/portfolio/Socials'
 
 export type Pages = 'Home' | 'About' | 'Portfolio'
 
@@ -28,28 +32,31 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className="font-Montserrat">
       <animated.div
-        className="absolute h-screen top-0 left-0 right-0 bg-white z-10 shadow-xl"
+        className="absolute h-screen top-0 left-0 right-0 bg-white z-10 shadow-xl overflow-hidden"
         style={props}
       >
         <div className="overflow-hidden w-screen h-screen relative z-10">
           {/* <div className="w-[824px] h-[824px] radial-gradient backdrop-blur-3xl rounded-full -ml-[434px] -mt-[434px]"></div> */}
           {/* <div className="w-[824px] h-[824px] radial-gradient backdrop-blur-3xl rounded-full absolute -right-[434px] -bottom-[434px] bg-gradient"></div> */}
-          {/* <div className="w-screen h-screen backdrop-blur-3xl absolute top-0 bottom-0 left-o right-0"></div> */}
+          {/* <div className="w-screen h-falsescreen backdrop-blur-3xl absolute top-0 bottom-0 left-o right-0"></div> */}
         </div>
 
         {/* body */}
-        <div className="z-20 w-screen h-screen absolute left-0 top-0  overflow-auto">
-          {currentPage === 'Portfolio' && <SideBar key={currentPage + '#2'} />}
+        {currentPage === 'Portfolio' && <SideBar key={currentPage + '#2'} />}
 
+        <div className="z-20 w-screen h-screen absolute left-0 top-0  overflow-auto">
           <nav className="flex justify-between items-center py-7">
             <Link href="/" className="font-bold text-lg ml-10">
               Dagem.
             </Link>
-
             <Nav currentPage={currentPage} key={currentPage} />
           </nav>
 
           <Component {...pageProps} setCurrentPage={setCurrentPage} />
+
+          {/* socials  */}
+          <Socials contrast={currentPage}/>
+
         </div>
         {/* skill */}
         {currentPage !== 'Portfolio' && (
