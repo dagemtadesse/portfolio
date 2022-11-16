@@ -1,28 +1,33 @@
 import { useEffect, useState } from 'react'
-import { animated, useSpring } from 'react-spring'
+import { animated, useSpring, useTrail } from 'react-spring'
 import { Pages } from '../../pages/_app'
 import EmailIcon from '../icons/EmailIcon'
 import LinkedInIcon from '../icons/LinkedIn'
 import TwitterIcon from '../icons/TwitterIcon'
 
+const SOCIALS = [
+  { icon: <EmailIcon />, link: 'dagem.seyfu@gmail.com' },
+  { icon: <LinkedInIcon />, link: '@dagem_tad' },
+  { icon: <TwitterIcon />, link: '@dagem_tad' },
+]
+
 const Socials = ({ contrast }: { contrast: Pages }) => {
-  const animation = useSpring({
-    from: { color: '#212529' },
-    to: { color: !contrast ? '#212529' : '#fff' },
+  const trail = useTrail(SOCIALS.length, {
+    config: { mass: 5, tension: 2000, friction: 200 },
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 1200,
   })
 
   return (
-    <animated.div
-      className="fixed right-[40px] top-[50%] -translate-y-[50%] flex flex-col gap-8 text-darkBlue"
-      style={animation}
-    >
-      <Social
-        icon={<EmailIcon />}
-        link="dagem.seyfu@gmail.com"
-        contrast={contrast}
-      />
-      <Social icon={<LinkedInIcon />} link="@dagem_tad" contrast={contrast} />
-      <Social icon={<TwitterIcon />} link="@dagem_tad" contrast={contrast} />
+    <animated.div className="fixed right-[40px] top-[50%] -translate-y-[50%] flex flex-col gap-8 text-darkBlue">
+      {trail.map((animation, index) => {
+        return (
+          <animated.div style={animation}>
+            <Social {...SOCIALS[index]} contrast={contrast} />
+          </animated.div>
+        )
+      })}
     </animated.div>
   )
 }
@@ -46,7 +51,8 @@ const Social = ({
     from: { color: '#212529', backgroundColor: '#ffffff00' },
     to: {
       color: isActive ? '#fff' : '#212529',
-      backgroundColor: isActive && contrast !== 'Portfolio' ? '#212529' : '#ffffff00',
+      backgroundColor:
+        isActive && contrast !== 'Portfolio' ? '#212529' : '#ffffff00',
     },
   })
 

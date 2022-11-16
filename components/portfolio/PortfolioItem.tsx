@@ -25,7 +25,7 @@ const PortfolioItem = ({
         {icon}
         <span className="ml-2">{title}</span>
       </p>
-      <ul>
+      <ul className="flex flex-col gap-2">
         {items.map((item) => (
           <li className="text-sm ml-[28px] mt-2">
             <section>

@@ -8,9 +8,6 @@ import Skills from '../components/skill/Skills'
 import SkillsButton from '../components/skill/SkillsButton'
 import Nav from '../components/header/Nav'
 import SideBar from '../components/header/SideBar'
-import EmailIcon from '../components/icons/EmailIcon'
-import LinkedInIcon from '../components/icons/LinkedIn'
-import TwitterIcon from '../components/icons/TwitterIcon'
 import Socials from '../components/portfolio/Socials'
 
 export type Pages = 'Home' | 'About' | 'Portfolio'
@@ -35,10 +32,8 @@ export default function App({ Component, pageProps }: AppProps) {
         className="absolute h-screen top-0 left-0 right-0 bg-white z-10 shadow-xl overflow-hidden"
         style={props}
       >
-        <div className="overflow-hidden w-screen h-screen relative z-10">
-          {/* <div className="w-[824px] h-[824px] radial-gradient backdrop-blur-3xl rounded-full -ml-[434px] -mt-[434px]"></div> */}
-          {/* <div className="w-[824px] h-[824px] radial-gradient backdrop-blur-3xl rounded-full absolute -right-[434px] -bottom-[434px] bg-gradient"></div> */}
-          {/* <div className="w-screen h-falsescreen backdrop-blur-3xl absolute top-0 bottom-0 left-o right-0"></div> */}
+        <div className="overflow-hidden w-screen h-screen relative z-10 bg-blur">
+          
         </div>
 
         {/* body */}

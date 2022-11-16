@@ -5,7 +5,6 @@ import ProjectIcon from '../components/icons/ProjectIcon'
 import WorkIcon from '../components/icons/WorkIcon'
 import DownloadButton from '../components/portfolio/DownloadButton'
 import PortfolioItem from '../components/portfolio/PortfolioItem'
-import StackChip from '../components/portfolio/StackChip'
 import { Pages } from './_app'
 
 const Portfolio = ({
@@ -18,7 +17,7 @@ const Portfolio = ({
   })
   return (
     <div className="grid grid-cols-12 px-10 my-5">
-      <div className="col-span-8 flex flex-col gap-6">
+      <div className="col-span-8 flex flex-col gap-7">
         <PortfolioItem
           icon={<BookIcon />}
           title="education"
