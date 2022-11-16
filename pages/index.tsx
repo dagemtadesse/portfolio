@@ -1,25 +1,32 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
-import { animated, useSpring } from 'react-spring'
+import { animated, useChain, useSpring, useSpringRef } from 'react-spring'
 import Hero from '../components/icons/Hero'
 import { Pages } from './_app'
 
 export default function Home({
   setCurrentPage,
+  animationRefs
 }: {
   setCurrentPage: Dispatch<SetStateAction<Pages>>
+  animationRefs: any[]
 }) {
   useEffect(() => setCurrentPage('Home'))
+  const textAnimRef = useSpringRef()
+  const imageAnimRef = useSpringRef()
 
   const textAnimation = useSpring({
     from: { opacity: 0,  x: -48},
     to: { opacity: 1, x: 0 },
+    ref: textAnimRef
   })
 
   const imageAnimation = useSpring({
-    from: { opacity: 0, scale: 0.45 },
+    from: { opacity: 0, scale: 0.85 },
     to: { opacity: 1, scale: 1 },
-    delay: 300,
+    ref: imageAnimRef
   })
+
+  useChain([textAnimRef, imageAnimRef, ...animationRefs])
 
   return (
     <>

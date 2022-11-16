@@ -6,15 +6,17 @@ import MenuIcon from '../icons/MenuIcon'
 const SkillsButton = ({
   isShown,
   setIsShown,
+  animationRef
 }: {
   isShown: boolean
   setIsShown: Dispatch<SetStateAction<boolean>>
+  animationRef: any
 }) => {
   const animation = useSpring({
     config: {bounce: 1},
     scale: 1,
     from: { scale: 0 },
-    delay: 600
+    ref: animationRef
   })
   return (
     <animated.button

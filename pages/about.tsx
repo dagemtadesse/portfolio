@@ -1,25 +1,33 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
-import { animated, useSpring } from 'react-spring'
+import { animated, useChain, useSpring, useSpringRef } from 'react-spring'
 import AvatarIcon from '../components/icons/AvatarIcon'
 import { Pages } from './_app'
 
 const About = ({
   setCurrentPage,
+  animationRefs,
 }: {
   setCurrentPage: Dispatch<SetStateAction<Pages>>
+  animationRefs: any[]
 }) => {
   useEffect(() => setCurrentPage('About'))
+
+  const textAnimRef = useSpringRef()
+  const imageAnimRef = useSpringRef()
 
   const textAnimation = useSpring({
     from: { opacity: 0, scale: 0.75 },
     to: { opacity: 1, scale: 1 },
-    delay: 300,
+    ref: textAnimRef,
   })
 
   const imageAnimation = useSpring({
     from: { opacity: 0, x: -25 },
     to: { opacity: 1, x: 0 },
+    ref: imageAnimRef,
   })
+
+  useChain([imageAnimRef, textAnimRef, ...animationRefs])
 
   return (
     <div className="flex  items-center px-10 mt-[12vh]">

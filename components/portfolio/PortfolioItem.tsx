@@ -45,7 +45,7 @@ const PortfolioItem = ({
             <p className="italic whitespace-nowrap text-xs mt-1.">
               {item.date}
             </p>
-            <div className="flex gap-4 justify-start">
+            <div className="flex gap-3 justify-start">
               {item.tags?.map((tag) => (
                 <StackChip label={tag} key={tag} />
               ))}

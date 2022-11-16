@@ -11,12 +11,12 @@ const SOCIALS = [
   { icon: <TwitterIcon />, link: '@dagem_tad' },
 ]
 
-const Socials = ({ contrast }: { contrast: Pages }) => {
+const Socials = ({ contrast , animationRef}: { contrast: Pages, animationRef: any }) => {
   const trail = useTrail(SOCIALS.length, {
     config: { mass: 5, tension: 2000, friction: 200 },
     from: { opacity: 0 },
     to: { opacity: 1 },
-    delay: 1200,
+    ref: animationRef
   })
 
   return (

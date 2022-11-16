@@ -2,7 +2,7 @@ import '../styles/global.css'
 import Link from 'next/link'
 import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
-import { animated, useSpring } from 'react-spring'
+import { animated, useSpring, useSpringRef } from 'react-spring'
 
 import Skills from '../components/skill/Skills'
 import SkillsButton from '../components/skill/SkillsButton'
@@ -17,7 +17,11 @@ export default function App({ Component, pageProps }: AppProps) {
   const [currentPage, setCurrentPage] = useState<Pages>('Home')
   const [yPostion, setYPosition] = useState(0)
 
+  const skillsBtnAnimRef = useSpringRef()
+  const socialsAnimRef = useSpringRef()
+
   const props = useSpring({
+    config: {tension: 200},
     from: { y: 0 },
     to: { y: isShown ? -yPostion : 0 },
   })
@@ -32,9 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
         className="absolute h-screen top-0 left-0 right-0 bg-white z-10 shadow-xl overflow-hidden"
         style={props}
       >
-        <div className="overflow-hidden w-screen h-screen relative z-10 bg-blur">
-          
-        </div>
+        <div className="overflow-hidden w-screen h-screen relative z-10 bg-blur"></div>
 
         {/* body */}
         {currentPage === 'Portfolio' && <SideBar key={currentPage + '#2'} />}
@@ -47,16 +49,23 @@ export default function App({ Component, pageProps }: AppProps) {
             <Nav currentPage={currentPage} key={currentPage} />
           </nav>
 
-          <Component {...pageProps} setCurrentPage={setCurrentPage} />
+          <Component
+            {...pageProps}
+            setCurrentPage={setCurrentPage}
+            animationRefs={[socialsAnimRef, skillsBtnAnimRef]}
+          />
 
           {/* socials  */}
-          <Socials contrast={currentPage}/>
-
+          <Socials contrast={currentPage} animationRef={socialsAnimRef} />
         </div>
         {/* skill */}
         {currentPage !== 'Portfolio' && (
           <div className="absolute bottom-3 flex justify-center w-screen z-30">
-            <SkillsButton isShown={isShown} setIsShown={setIsShown} />
+            <SkillsButton
+              isShown={isShown}
+              setIsShown={setIsShown}
+              animationRef={skillsBtnAnimRef}
+            />
           </div>
         )}
       </animated.div>
