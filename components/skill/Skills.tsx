@@ -12,7 +12,7 @@ const SKILLS = [
 const Skills = () => {
   return (
     <div
-      className="bg-darkBlue absolute bottom-0 left-0 right-0 z-0 py-5 px-[40px] flex gap-4 justify-center"
+      className="bg-darkBlue absolute bottom-0 left-0 right-0 z-0 py-5 px-[40px] flex gap-4 justify-center flex-wrap"
       id="skills_contianer"
     >
       {SKILLS.map((skill) => (

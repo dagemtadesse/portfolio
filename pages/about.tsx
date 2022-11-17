@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { animated, useChain, useSpring, useSpringRef } from 'react-spring'
 import AvatarIcon from '../components/icons/AvatarIcon'
@@ -30,7 +31,11 @@ const About = ({
   useChain([imageAnimRef, textAnimRef, ...animationRefs])
 
   return (
-    <div className="flex  items-center px-10 mt-[12vh]">
+    <div className="flex  flex-col md:flex-row  items-center md:px-10 px-5 md:mt-[12vh] mb-12 md:mb-0">
+      <Head>
+        <title>About Me | Dagem Tadesse</title>
+      </Head>
+
       <animated.div
         className="basis-[33.333%] flex justify-center"
         style={imageAnimation}
@@ -38,9 +43,12 @@ const About = ({
         <AvatarIcon />
       </animated.div>
 
-      <animated.div className="basis-[66.666%] ml-4" style={textAnimation}>
+      <animated.div
+        className="basis-[66.666%] md:ml-4 py-8"
+        style={textAnimation}
+      >
         <h1 className="text-3xl font-bold">About.</h1>
-        <p className="mt-4 leading-6 text-sm max-w-[658px]">
+        <p className="mt-4 leading-6 text-sm max-w-[658px] ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           tincidunt placerat tortor. In sed augue lobortis, commodo massa et,
           interdum est. Donec a mi risus. Maecenas tristique, neque quis varius

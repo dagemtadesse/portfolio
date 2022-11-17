@@ -20,7 +20,7 @@ const PortfolioItem = ({
   items: Portfolio[]
 }) => {
   return (
-    <div>
+    <>
       <p className="uppercase font-medium flex items-center">
         {icon}
         <span className="ml-2">{title}</span>
@@ -53,7 +53,7 @@ const PortfolioItem = ({
           </li>
         ))}
       </ul>
-    </div>
+    </>
   )
 }
 

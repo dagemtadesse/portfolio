@@ -8,7 +8,7 @@ const SideBar = () => {
 
   return (
     <animated.div
-      className=" bg-darkBlue h-screen absolute right-0 top-0 z-20 w-[33.333%]"
+      className=" bg-darkBlue h-screen absolute right-0 top-0 z-20 w-[33.333%] hidden md:block"
       style={slideLeft}
     ></animated.div>
   )

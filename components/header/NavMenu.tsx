@@ -10,7 +10,7 @@ const NavMenu = ({
   contrast?: boolean
 }) => {
   return (
-    <ul className={classNames({ 'flex gap-8 ': true, 'text-white': contrast })}>
+    <ul className={classNames({ 'flex gap-8 justify-between md:justify-end w-full px-5': true, 'text-white': contrast })}>
       <li>
         <Link
           href="/"

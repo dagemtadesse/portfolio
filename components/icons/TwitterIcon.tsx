@@ -6,6 +6,7 @@ const TwitterIcon = () => {
       width="20"
       height="17"
       viewBox="0 0 20 17"
+      className="h-[20px]"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

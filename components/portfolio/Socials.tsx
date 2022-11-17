@@ -5,22 +5,28 @@ import EmailIcon from '../icons/EmailIcon'
 import LinkedInIcon from '../icons/LinkedIn'
 import TwitterIcon from '../icons/TwitterIcon'
 
-const SOCIALS = [
+export const SOCIALS = [
   { icon: <EmailIcon />, link: 'dagem.seyfu@gmail.com' },
   { icon: <LinkedInIcon />, link: '@dagem_tad' },
   { icon: <TwitterIcon />, link: '@dagem_tad' },
 ]
 
-const Socials = ({ contrast , animationRef}: { contrast: Pages, animationRef: any }) => {
+const Socials = ({
+  contrast,
+  animationRef,
+}: {
+  contrast: Pages
+  animationRef: any
+}) => {
   const trail = useTrail(SOCIALS.length, {
     config: { mass: 5, tension: 2000, friction: 200 },
     from: { opacity: 0 },
     to: { opacity: 1 },
-    ref: animationRef
+    ref: animationRef,
   })
 
   return (
-    <animated.div className="fixed right-[40px] top-[50%] -translate-y-[50%] flex flex-col gap-8 text-darkBlue">
+    <div className="fixed right-5 hidden md:right-[40px] top-[50%] -translate-y-[50%] md:flex flex-col gap-8 text-darkBlue">
       {trail.map((animation, index) => {
         return (
           <animated.div style={animation}>
@@ -28,7 +34,7 @@ const Socials = ({ contrast , animationRef}: { contrast: Pages, animationRef: an
           </animated.div>
         )
       })}
-    </animated.div>
+    </div>
   )
 }
 

@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { animated, useChain, useSpring, useSpringRef } from 'react-spring'
 import Hero from '../components/icons/Hero'
@@ -30,8 +31,11 @@ export default function Home({
 
   return (
     <>
+    <Head>
+      <title>Dagem Tadesse</title>
+    </Head>
       {/* social */}
-      <div className="flex min-h-[calc(100vh-84px)] items-center px-10 ">
+      <div className="flex flex-col md:flex-row md:min-h-[calc(100vh-84px)] justify-start md:items-center md:px-10 px-5 gap-12 md:gap-4">
         <animated.div
           className="basis-[40%] flex flex-col justify-center"
           style={textAnimation}
@@ -44,7 +48,7 @@ export default function Home({
             aperiam fugiat.
           </p>
         </animated.div>
-        <animated.div className="basis-[60%] overflow-hidden grid place-content-center" style={imageAnimation}>
+        <animated.div className="md:basis-[60%] grid place-content-center" style={imageAnimation}>
           <Hero />
         </animated.div>
       </div>

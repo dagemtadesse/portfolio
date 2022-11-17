@@ -9,7 +9,7 @@ import SkillsButton from '../components/skill/SkillsButton'
 import Nav from '../components/header/Nav'
 import SideBar from '../components/header/SideBar'
 import Socials from '../components/portfolio/Socials'
-
+import SocialsMobile from '../components/portfolio/SocialsMobile'
 export type Pages = 'Home' | 'About' | 'Portfolio'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const socialsAnimRef = useSpringRef()
 
   const props = useSpring({
-    config: {tension: 200},
+    config: { tension: 200 },
     from: { y: 0 },
     to: { y: isShown ? -yPostion : 0 },
   })
@@ -36,16 +36,21 @@ export default function App({ Component, pageProps }: AppProps) {
         className="absolute h-screen top-0 left-0 right-0 bg-white z-10 shadow-xl overflow-hidden"
         style={props}
       >
-        <div className="overflow-hidden w-screen h-screen relative z-10 bg-blur"></div>
+        <div className="overflow-hidden w-screen h-screen relative z-10 bg-blur bg-no-repeat"></div>
 
         {/* body */}
         {currentPage === 'Portfolio' && <SideBar key={currentPage + '#2'} />}
 
         <div className="z-20 w-screen h-screen absolute left-0 top-0  overflow-auto">
-          <nav className="flex justify-between items-center py-7">
-            <Link href="/" className="font-bold text-lg ml-10">
-              Dagem.
-            </Link>
+          <nav className="md:flex justify-between items-center py-7">
+            <div className="flex justify-between px-5 md:px-10">
+              <Link href="/" className="font-bold text-lg">
+                Dagem.
+              </Link>
+
+              <SocialsMobile />
+            </div>
+
             <Nav currentPage={currentPage} key={currentPage} />
           </nav>
 
@@ -73,5 +78,4 @@ export default function App({ Component, pageProps }: AppProps) {
       <Skills />
     </div>
   )
-  // return <Component {...pageProps} />
 }

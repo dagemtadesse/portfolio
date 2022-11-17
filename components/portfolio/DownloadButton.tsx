@@ -1,13 +1,21 @@
-import DownloadIcon from "../icons/DownloadIcon"
+import { animated, useSpring } from 'react-spring'
+import DownloadIcon from '../icons/DownloadIcon'
 
 const DownloadButton = () => {
+  const animation = useSpring({
+    from: { scale: 0 },
+    scale: 1,
+  })
   return (
-    <button className="border-2 border-white bg-white/10 rounded-lg px-6 py-2 flex items-center text-white" >
+    <animated.button
+      className="text-balck border-2 border-black md:border-white bg-white/10 rounded-lg px-6 py-2 flex items-center md:text-white"
+      style={animation}
+    >
       <span>Download</span>
       <span className="ml-2">
         <DownloadIcon />
       </span>
-    </button>
+    </animated.button>
   )
 }
 
