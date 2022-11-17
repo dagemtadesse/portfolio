@@ -6,7 +6,7 @@ import { Pages } from './_app'
 
 export default function Home({
   setCurrentPage,
-  animationRefs
+  animationRefs,
 }: {
   setCurrentPage: Dispatch<SetStateAction<Pages>>
   animationRefs: any[]
@@ -16,39 +16,44 @@ export default function Home({
   const imageAnimRef = useSpringRef()
 
   const textAnimation = useSpring({
-    from: { opacity: 0,  x: -48},
+    from: { opacity: 0, x: -48 },
     to: { opacity: 1, x: 0 },
-    ref: textAnimRef
+    ref: textAnimRef,
   })
 
   const imageAnimation = useSpring({
     from: { opacity: 0, scale: 0.85 },
     to: { opacity: 1, scale: 1 },
-    ref: imageAnimRef
+    ref: imageAnimRef,
   })
 
   useChain([textAnimRef, imageAnimRef, ...animationRefs])
 
   return (
     <>
-    <Head>
-      <title>Dagem Tadesse</title>
-    </Head>
+      <Head>
+        <title>Dagem Tadesse</title>
+      </Head>
       {/* social */}
       <div className="flex flex-col md:flex-row md:min-h-[calc(100vh-84px)] justify-start md:items-center md:px-10 px-5 gap-12 md:gap-4">
         <animated.div
-          className="basis-[40%] flex flex-col justify-center"
+          className="basis-[40%] flex flex-col justify-center items-center"
           style={textAnimation}
         >
-          <p className="font-semibold text-xl leading-6">Hi there,</p>
-          <p className="font-bold uppercase text-3xl">I'm dagem tadesse</p>
-          <p className="font-light text-sm mt-3 max-w-[460px]">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non,
-            dolorem? Similique laboriosam molestias veniam doloribus voluptas
-            aperiam fugiat.
-          </p>
+          <div className="max-w-[460px]">
+            <p className="font-semibold text-xl leading-6">Hi there,</p>
+            <p className="font-bold uppercase text-3xl">I'm dagem tadesse</p>
+            <p className="font-light text-sm mt-3">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non,
+              dolorem? Similique laboriosam molestias veniam doloribus voluptas
+              aperiam fugiat.
+            </p>
+          </div>
         </animated.div>
-        <animated.div className="md:basis-[60%] grid place-content-center" style={imageAnimation}>
+        <animated.div
+          className="md:basis-[60%] grid place-content-center"
+          style={imageAnimation}
+        >
           <Hero />
         </animated.div>
       </div>
