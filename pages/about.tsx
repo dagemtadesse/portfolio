@@ -31,7 +31,7 @@ const About = ({
   useChain([imageAnimRef, textAnimRef, ...animationRefs])
 
   return (
-    <div className="flex  flex-col md:flex-row  items-center md:px-10 px-5 md:mt-[12vh] mb-12 md:mb-0 pb-72">
+    <div className="flex  flex-col md:flex-row  items-center md:px-10 px-5 md:mt-[12vh] mb-12 md:mb-0 pb-[80px]">
       <Head>
         <title>About Me | Dagem Tadesse</title>
       </Head>
