@@ -613,6 +613,18 @@ video {
   margin-left: 3rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -897,16 +909,12 @@ video {
   padding-bottom: 0px;
 }
 
-.pr-10 {
-  padding-right: 2.5rem;
-}
-
-.pb-72 {
-  padding-bottom: 18rem;
-}
-
 .pb-\[80px\] {
   padding-bottom: 80px;
+}
+
+.pr-10 {
+  padding-right: 2.5rem;
 }
 
 .font-Montserrat {
@@ -964,6 +972,14 @@ video {
 
 .leading-6 {
   line-height: 1.5rem;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
 }
 
 .text-white {
@@ -1042,6 +1058,10 @@ video {
 
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:mt-3 {
+    margin-top: 0.75rem;
   }
 
   .md\:block {

@@ -40,10 +40,10 @@ export default function Home({
           className="basis-[40%] flex flex-col justify-center items-center"
           style={textAnimation}
         >
-          <div className="max-w-[460px]">
-            <p className="font-semibold text-xl leading-6">Hi there,</p>
+          <div className="max-w-[460px] mt-6 md:mt-0">
+            <p className="font-semibold text-xl leading-6 tracking-wider">Hi there</p>
             <p className="font-bold uppercase text-3xl">I'm dagem tadesse</p>
-            <p className="font-light text-sm mt-3">
+            <p className="text-sm md:mt-3 mt-2">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non,
               dolorem? Similique laboriosam molestias veniam doloribus voluptas
               aperiam fugiat.

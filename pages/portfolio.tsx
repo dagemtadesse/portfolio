@@ -33,7 +33,7 @@ const Portfolio = ({
         <title>portfolio | Dagem Tadesse</title>
       </Head>
 
-      <div className="col-span-8 flex flex-col gap-7">
+      <div className="col-span-8 flex flex-col gap-7 pb-[80px]">
         {trail.map((animation, index) => (
           <animated.div style={animation} key={PortfolioData[index].title}>
             <PortfolioItem {...PortfolioData[index]} />
