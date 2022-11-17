@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <SideBar key={currentPage + '#2'} animationRef={sideBarAnimRef} />
         )}
 
-        <div className="z-20 w-screen h-screen absolute left-0 top-0  overflow-auto">
+        <div className="z-20 w-screen bottom-0 absolute left-0 top-0  overflow-auto">
           <nav className="md:flex justify-between items-center py-7">
             <div className="flex justify-between px-5 md:px-10">
               <Link href="/" className="font-bold text-lg">
