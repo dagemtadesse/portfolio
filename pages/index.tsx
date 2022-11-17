@@ -35,7 +35,7 @@ export default function Home({
         <title>Dagem Tadesse</title>
       </Head>
       {/* social */}
-      <div className="flex flex-col md:flex-row md:min-h-[calc(100vh-84px)] justify-start md:items-center md:px-10 px-5 gap-12 md:gap-4">
+      <div className="flex flex-col md:flex-row md:min-h-[calc(100vh-84px)] justify-start md:items-center md:px-10 px-5 pb-72 gap-12 md:gap-4">
         <animated.div
           className="basis-[40%] flex flex-col justify-center items-center"
           style={textAnimation}

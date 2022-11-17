@@ -901,6 +901,10 @@ video {
   padding-right: 2.5rem;
 }
 
+.pb-72 {
+  padding-bottom: 18rem;
+}
+
 .font-Montserrat {
   font-family: Montserrat;
 }
