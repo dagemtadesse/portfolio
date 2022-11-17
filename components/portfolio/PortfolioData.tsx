@@ -43,7 +43,7 @@ const PortfolioData = [
       },
       {
         date: 'October 2019 - July 2024',
-        title: 'Lorem ipsum dolor sit',
+        title: 'In dapibus justo',
         tags: ['Kotlin', 'React.js', 'TailwindCSS'],
         link: 'gitrepo',
         description:
@@ -51,7 +51,7 @@ const PortfolioData = [
       },
       {
         date: 'October 2019 - July 2024',
-        title: 'Lorem ipsum dolor sit',
+        title: 'Phasellus consectetur convallis',
         tags: ['Kotlin', 'Golang'],
         link: 'gitrepo',
         description:

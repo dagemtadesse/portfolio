@@ -9,8 +9,8 @@ const SocialsMobile = () => {
   return (
     <ul className="flex flex-row-reverse gap-6 items-center md:hidden overflow-hidden">
       {trail.map(({ opacity }, index) => (
-        <animated.li key={SOCIALS[index].link} style={{ opacity }}>
-          {SOCIALS[index].icon}
+        <animated.li key={SOCIALS[index].handle} style={{ opacity }}>
+          <a href={SOCIALS[index].href}></a>{SOCIALS[index].icon}
         </animated.li>
       ))}
     </ul>

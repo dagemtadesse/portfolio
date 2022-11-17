@@ -1,10 +1,11 @@
 import { animated, useSpring } from 'react-spring'
 import DownloadIcon from '../icons/DownloadIcon'
 
-const DownloadButton = () => {
+const DownloadButton = ({ animationRef }: { animationRef: any }) => {
   const animation = useSpring({
     from: { scale: 0 },
     scale: 1,
+    ref: animationRef
   })
   return (
     <animated.button

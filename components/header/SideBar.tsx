@@ -1,9 +1,10 @@
 import { animated, useSpring } from 'react-spring'
 
-const SideBar = () => {
+const SideBar = ({ animationRef }: { animationRef: any }) => {
   const slideLeft = useSpring({
     from: { x: '100%' },
     to: { x: '0%' },
+    ref: animationRef
   })
 
   return (

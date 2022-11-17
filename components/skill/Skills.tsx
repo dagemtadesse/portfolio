@@ -16,7 +16,7 @@ const Skills = () => {
       id="skills_contianer"
     >
       {SKILLS.map((skill) => (
-        <SkillChip {...skill} />
+        <SkillChip {...skill} key={skill.title}/>
       ))}
     </div>
   )

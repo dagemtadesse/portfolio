@@ -6,9 +6,21 @@ import LinkedInIcon from '../icons/LinkedIn'
 import TwitterIcon from '../icons/TwitterIcon'
 
 export const SOCIALS = [
-  { icon: <EmailIcon />, link: 'dagem.seyfu@gmail.com' },
-  { icon: <LinkedInIcon />, link: '@dagem_tad' },
-  { icon: <TwitterIcon />, link: '@dagem_tad' },
+  {
+    icon: <EmailIcon />,
+    handle: 'dagem.seyfu@gmail.com',
+    href: 'mailto:dagem.seyfu@gmail.com',
+  },
+  {
+    icon: <LinkedInIcon />,
+    handle: '@dagem-tadesse-s',
+    href: 'https://www.linkedin.com/in/dagem-tadesse-s/',
+  },
+  {
+    icon: <TwitterIcon />,
+    handle: '@dagemstadesse',
+    href: 'https://twitter.com/dagemstadesse',
+  },
 ]
 
 const Socials = ({
@@ -29,7 +41,7 @@ const Socials = ({
     <div className="fixed right-5 hidden md:right-[40px] top-[50%] -translate-y-[50%] md:flex flex-col gap-8 text-darkBlue">
       {trail.map((animation, index) => {
         return (
-          <animated.div style={animation}>
+          <animated.div style={animation} key={SOCIALS[index].handle}>
             <Social {...SOCIALS[index]} contrast={contrast} />
           </animated.div>
         )
@@ -40,11 +52,13 @@ const Socials = ({
 
 const Social = ({
   icon,
-  link,
+  handle,
+  href,
   contrast,
 }: {
   icon: JSX.Element
-  link: string
+  handle: string
+  href: string
   contrast: Pages
 }) => {
   const [isActive, setIsActive] = useState(false)
@@ -74,12 +88,14 @@ const Social = ({
         {icon}
       </animated.span>
       {isActive && (
-        <animated.span
+        <animated.a
+          href={href}
           className="rounded-full px-3 py-1 hover:underline text-sm"
           style={props}
+          target="_blank"
         >
-          {link}
-        </animated.span>
+          {handle}
+        </animated.a>
       )}
     </section>
   )

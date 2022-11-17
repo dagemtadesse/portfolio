@@ -19,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const skillsBtnAnimRef = useSpringRef()
   const socialsAnimRef = useSpringRef()
+  const sideBarAnimRef = useSpringRef()
 
   const props = useSpring({
     config: { tension: 200 },
@@ -39,7 +40,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <div className="overflow-hidden w-screen h-screen relative z-10 bg-blur bg-no-repeat"></div>
 
         {/* body */}
-        {currentPage === 'Portfolio' && <SideBar key={currentPage + '#2'} />}
+        {currentPage === 'Portfolio' && (
+          <SideBar key={currentPage + '#2'} animationRef={sideBarAnimRef} />
+        )}
 
         <div className="z-20 w-screen h-screen absolute left-0 top-0  overflow-auto">
           <nav className="md:flex justify-between items-center py-7">
@@ -57,7 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component
             {...pageProps}
             setCurrentPage={setCurrentPage}
-            animationRefs={[socialsAnimRef, skillsBtnAnimRef]}
+            animationRefs={[socialsAnimRef, skillsBtnAnimRef, sideBarAnimRef]}
           />
 
           {/* socials  */}

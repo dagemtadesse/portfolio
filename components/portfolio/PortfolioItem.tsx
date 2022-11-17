@@ -25,9 +25,9 @@ const PortfolioItem = ({
         {icon}
         <span className="ml-2">{title}</span>
       </p>
-      <ul className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-4 mt-3">
         {items.map((item) => (
-          <li className="text-sm ml-[28px] mt-2">
+          <li className="text-sm ml-[28px]" key={item.title}>
             <section>
               {!!item.link && (
                 <a href={item.link} className="font-medium inline-flex item-center hover:underline">
@@ -42,10 +42,10 @@ const PortfolioItem = ({
                 <span className="italic whitespace-nowrap">{item.extra}</span>
               )}
             </section>
-            <p className="italic whitespace-nowrap text-xs mt-1.">
+            <p className="italic whitespace-nowrap text-xs mt-1">
               {item.date}
             </p>
-            <div className="flex gap-3 justify-start">
+            <div className="flex gap-3 justify-start mt-1.5">
               {item.tags?.map((tag) => (
                 <StackChip label={tag} key={tag} />
               ))}

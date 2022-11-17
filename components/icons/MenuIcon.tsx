@@ -13,8 +13,8 @@ const MenuIcon = () => {
       <path
         d="M4.28307 15L17 15M16.9996 8L1 8M17 1L9.97186 1"
         stroke="#3F3D56"
-        stroke-width="1.5"
-        stroke-linecap="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
       />
     </svg>
   )
