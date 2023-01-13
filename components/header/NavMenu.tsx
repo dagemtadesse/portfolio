@@ -10,12 +10,13 @@ const NavMenu = ({
   contrast?: boolean
 }) => {
   return (
-    <ul className={classNames({ 'flex gap-8 justify-between md:justify-end w-full px-5': true, 'text-white': contrast })}>
+    <ul className={classNames({ 'flex gap-12 justify-between md:justify-end w-full px-5': true, 'text-white': contrast })}>
       <li>
         <Link
           href="/"
           className={classNames({
             'font-semibold': currentPage === 'Home',
+            'font-light': currentPage !== 'Home',
           })}
         >
           Home
@@ -26,6 +27,7 @@ const NavMenu = ({
           href="about"
           className={classNames({
             'font-semibold': currentPage === 'About',
+            'font-light': currentPage !== 'About',
           })}
         >
           About me
@@ -36,6 +38,7 @@ const NavMenu = ({
           href="portfolio"
           className={classNames({
             'font-semibold': currentPage === 'Portfolio',
+            'font-light': currentPage !== 'Portfolio',
           })}
         >
           Portfolio

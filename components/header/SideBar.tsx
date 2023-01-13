@@ -9,7 +9,7 @@ const SideBar = ({ animationRef }: { animationRef: any }) => {
 
   return (
     <animated.div
-      className=" bg-darkBlue h-screen absolute right-0 top-0 z-20 w-[33.333%] hidden md:block"
+      className=" bg-darkBlue h-screen absolute right-0 opacity-70 backdrop-blur-3xl top-0 z-20 w-[33.333%] hidden md:block"
       style={slideLeft}
     ></animated.div>
   )

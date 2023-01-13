@@ -32,12 +32,15 @@ export default function App({ Component, pageProps }: AppProps) {
   })
 
   return (
-    <div className="font-Montserrat">
+    <div className="font-OpenSans">
       <animated.div
         className="absolute bottom-0 top-0 left-0 right-0 bg-white z-10 shadow-xl overflow-hidden"
         style={props}
       >
-        <div className="overflow-hidden w-screen h-screen relative z-10 bg-blur bg-no-repeat  bg-cover"></div>
+        {/* background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);*/}
+        <div className="overflow-hidden w-screen h-screen relative z-10 bg-gradient">
+          <div className="w-full h-full backdrop-blur-lg bg-white/70"></div>
+        </div>
 
         {/* body */}
         {currentPage === 'Portfolio' && (

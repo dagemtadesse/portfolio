@@ -38,7 +38,7 @@ const Socials = ({
   })
 
   return (
-    <div className="fixed right-5 hidden md:right-[40px] top-[50%] -translate-y-[50%] md:flex flex-col gap-8 text-darkBlue">
+    <div className="fixed right-5 hidden md:right-[2.5rem] top-[50%] -translate-y-[50%] md:flex flex-col gap-8 text-darkBlue">
       {trail.map((animation, index) => {
         return (
           <animated.div style={animation} key={SOCIALS[index].handle}>
