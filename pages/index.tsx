@@ -43,7 +43,7 @@ export default function Home({
           <div className="max-w-[460px] mt-6 md:mt-0">
             <p className="font-normal text-2xl leading-6 tracking-wider">Hi there,</p>
             <p className="font-bold uppercase text-3xl mt-2 tracking-widest">I'm dagem tadesse</p>
-            <p className="text-lg font-light md:mt-3 mt-2">
+            <p className="text-lg font-light md:mt-3 mt-1">
               Passionate frontend engineer and a student. Responsive design + React + TailwindCSS expert
             </p>
           </div>

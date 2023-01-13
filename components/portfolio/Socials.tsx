@@ -4,6 +4,7 @@ import { Pages } from '../../pages/_app'
 import EmailIcon from '../icons/EmailIcon'
 import LinkedInIcon from '../icons/LinkedIn'
 import TwitterIcon from '../icons/TwitterIcon'
+import DownloadButton from './DownloadButton'
 
 export const SOCIALS = [
   {
@@ -26,9 +27,11 @@ export const SOCIALS = [
 const Socials = ({
   contrast,
   animationRef,
+  showDownload,
 }: {
   contrast: Pages
   animationRef: any
+  showDownload: boolean;
 }) => {
   const trail = useTrail(SOCIALS.length, {
     config: { mass: 5, tension: 2000, friction: 200 },
@@ -46,6 +49,7 @@ const Socials = ({
           </animated.div>
         )
       })}
+     {showDownload && <DownloadButton animationRef={animationRef} />}
     </div>
   )
 }

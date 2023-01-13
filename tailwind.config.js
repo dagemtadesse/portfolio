@@ -12,7 +12,7 @@ module.exports = {
       },
       backgroundImage: {
         blur: 'url(/background.svg)',
-        gradient: 'linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%)',
+        gradient: 'linear-gradient(-225deg, #5D9FFF 0%, #fff 50%, #6BBBFF 100%)',
         blob: 'url(/blob.svg)'
       }
     },

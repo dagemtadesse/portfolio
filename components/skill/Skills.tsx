@@ -7,6 +7,9 @@ const SKILLS = [
   { title: 'React.js', icon: <ReactIcon /> },
   { title: 'Node.js', icon: <NodeIcon /> },
   { title: 'UI / UX', icon: <FigmaIcon /> },
+  { title: 'TypeScript', icon: <FigmaIcon /> },
+  { title: 'TailwindCSS', icon: <FigmaIcon /> },
+  { title: 'Next.js', icon: <FigmaIcon /> },
 ]
 
 const Skills = () => {

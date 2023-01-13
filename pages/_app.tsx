@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         {/* background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);*/}
         <div className="overflow-hidden w-screen h-screen relative z-10 bg-gradient">
-          <div className="w-full h-full backdrop-blur-lg bg-white/70"></div>
+          <div className="w-full h-full backdrop-blur-3xl bg-white/60"></div>
         </div>
 
         {/* body */}
@@ -67,7 +67,7 @@ export default function App({ Component, pageProps }: AppProps) {
           />
 
           {/* socials  */}
-          <Socials contrast={currentPage} animationRef={socialsAnimRef} />
+          <Socials contrast={currentPage} animationRef={socialsAnimRef} showDownload={currentPage == 'Portfolio'}/>
         </div>
         {/* skill */}
         {currentPage !== 'Portfolio' && (

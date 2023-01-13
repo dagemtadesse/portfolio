@@ -43,8 +43,8 @@ const Portfolio = ({
         </div>
       </div>
 
-      <div className="md:w-[33.333%] flex  items-center md:items-end justify-center top-0 bottom-0 right-0 md:fixed md:py-6 px-4">
-        <DownloadButton animationRef={bttnAnimationRef} />
+      <div className="md:w-[33.333%] flex  items-center md:items-end justify-end top-0 bottom-0 right-0 md:fixed md:py-12 px-4">
+        {/* <DownloadButton animationRef={bttnAnimationRef} /> */}
       </div>
     </div>
   );

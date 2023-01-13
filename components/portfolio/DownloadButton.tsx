@@ -9,7 +9,7 @@ const DownloadButton = ({ animationRef }: { animationRef: any }) => {
   })
   return (
     <animated.button
-      className="text-balck border-2 border-black md:border-white bg-white/10 rounded-lg px-6 py-2 flex items-center md:text-white"
+      className="text-balck border-2 border-black md:border-white bg-white/10 rounded-lg px-6 py-2 flex justify-center self-end mt-14 items-center md:text-white"
       style={animation}
     >
       <span>Download</span>
