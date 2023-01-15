@@ -22,10 +22,10 @@ const PortfolioData = [
     title: "work experience",
     items: [
       {
-        date: "October 2019 - now",
-        title: "Addis Ababa University",
+        date: "July 2022 to Present",
+        title: "Junior front-end engineer at kemer Habesha",
         description:
-          "Bachelorof Science in Software Engineering and Computing Technology",
+          "Partake in static landing pages and reactive dashboard using react, next.js, tailwindcss, material UI, and TypeScript.",
       },
     ],
   },
@@ -47,12 +47,12 @@ const PortfolioData = [
         tags: ["TailwindCSS", "React.js", "TypeScript"],
         link: "gitrepo",
         description:
-          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,",
+          "A clone of world medical card web app, which stores medical information to be available any where in any language.",
       },
       {
         date: "December 2022 to Present",
         title: "Customer Reviews app",
-        tags: ["TypeScript", "PostgresSQL", "Flutter"],
+        tags: ["TypeScript", "PostgresSQL", "Flutter", "Express.js"],
         link: "gitrepo",
         description:
           "Utilized TypeScript, Express.js, and PostgreSQL to create a restful API. Flutter is used to create the cross-platform mobile app.",

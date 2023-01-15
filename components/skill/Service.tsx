@@ -8,7 +8,7 @@ const ServiceCard = ({
   image: string;
 }) => {
   return (
-    <div className="basis-[33.33%] py-12 px-8">
+    <div className="py-12 px-8">
       <div className="inline-block mt-5 mb-8">
         <img src={image} width="64" />
       </div>

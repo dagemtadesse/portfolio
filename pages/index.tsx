@@ -1,9 +1,18 @@
 import Head from "next/head";
-import { Dispatch, SetStateAction, useEffect } from "react";
-import { animated, useChain, useSpring, useSpringRef } from "react-spring";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import {
+  animated,
+  useChain,
+  useSpring,
+  useSpringRef,
+  useTrail,
+} from "react-spring";
+import { Waypoint } from "react-waypoint";
 import Hero from "../components/icons/Hero";
 import MemoLeft from "../components/icons/Left";
 import MemoRight from "../components/icons/Right";
+import CaseStudies from "../components/portfolio/CaseStudies";
+import services from "../components/portfolio/services";
 import ServiceCard from "../components/skill/Service";
 import { Pages } from "./_app";
 
@@ -18,6 +27,8 @@ export default function Home({
   const textAnimRef = useSpringRef();
   const imageAnimRef = useSpringRef();
 
+  const [isCardsInview, setIsCardsInview] = useState(false);
+
   const textAnimation = useSpring({
     from: { opacity: 0, x: -48 },
     to: { opacity: 1, x: 0 },
@@ -28,6 +39,13 @@ export default function Home({
     from: { opacity: 0, scale: 0.85 },
     to: { opacity: 1, scale: 1 },
     ref: imageAnimRef,
+  });
+
+  const cardTrail = useTrail(services.length, {
+    from: { opacity: 0, y: 50 },
+    opacity: isCardsInview ? 1 : 0,
+    y: isCardsInview ? 0 : 50,
+    delay: 100,
   });
 
   useChain([textAnimRef, imageAnimRef, ...animationRefs]);
@@ -43,14 +61,14 @@ export default function Home({
           className="basis-[40%] flex flex-col"
           style={textAnimation}
         >
-          <div className="max-w-[460px] mt-6 md:mt-0">
+          <div className="max-w-[460px] mt-6 md:mt-0 md:pl-8">
             <p className="font-normal text-2xl leading-6 tracking-wider">
               Hi there,
             </p>
-            <p className="font-bold uppercase text-3xl mt-2 tracking-widest">
+            <p className="font-bold uppercase text-2xl md:text-3xl mt-2 tracking-widest">
               I'm dagem tadesse
             </p>
-            <p className="text-lg font-light md:mt-3 mt-1">
+            <p className="text-lg font-light md:mt-3 mt-2">
               Passionate frontend engineer and a student. Responsive design +
               React + TailwindCSS expert
             </p>
@@ -63,67 +81,36 @@ export default function Home({
           <Hero />
         </animated.div>
       </div>
+
       <div className="w-full snap-start min-h-screen md:px-10 px-5 py-10 flex items-center">
-        <div className="w-full ">
-          <h1 className="text-2xl px-8">Expert In</h1>
-          <div className="flex gap-6 mt-16">
-            <ServiceCard
-              title="Responsive Web Design"
-              description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda cupiditate similique tenetur repellendus labore,"
-              image="/responsive.svg"
-            />
-
-            <ServiceCard
-              title="UI/UX Design"
-              description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda cupiditate similique tenetur repellendus labore,"
-              image="/design.svg"
-            />
-
-            <ServiceCard
-              title="Reactive Web sites"
-              description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda cupiditate similique tenetur repellendus labore,"
-              image="/react.svg"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="w-full snap-start min-h-screen md:px-10 px-5 py-10 flex items-center">
-        <div className="flex px-8 gap-2">
-          <div className="">
-            <h1 className="text-2xl">Case studies</h1>
-
-            <div className="flex gap-8 mt-16">
-              <div className="bg-red-500 basis-[50%] h-[400px]"></div>
-              <div className="basis-[40%]">
-                <h2 className="uppercase text-xl font-medium text-gray-500">
-                  mobile app design
-                </h2>
-
-                <div className="flex items-center mt-2">
-                  <h1 className="text-3xl">Lore ipsum dolor</h1>
-                  <button className="flex items-center ml-12 mr-3">
-                    <MemoLeft className="text-3xl text-gray-500 hover:text-gray-700" />
-                  </button>
-
-                  <button className="flex items-center">
-                    <MemoRight className="text-3xl text-gray-500 hover:text-gray-700" />
-                  </button>
-                </div>
-                
-                <div className="border-b-4 border-gray-500 my-8 w-20 rounded-full"></div>
-                <p className="text-lg font-light">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Nemo, ut. Voluptate reiciendis laboriosam iure at, praesentium
-                  quo tempora unde repudiandae nemo ratione, odit fugit sint
-                  consectetur eius, est dolores. Eum?
-                </p>
-                <button className="mt-12 text-blue-500 font-medium">See the details</button>
-              </div>
+        <Waypoint
+          onEnter={() => setIsCardsInview(true)}
+          onLeave={() => setIsCardsInview(false)}
+        >
+          <div className="w-full ">
+            <h1 className="text-2xl px-8">Expert In</h1>
+            <div className="flex flex-col md:flex-row gap-6 md:mt-16">
+              {cardTrail.map((animation, index) => (
+                <animated.div
+                  key={index}
+                  style={animation}
+                  className="basis-[33.33%]"
+                >
+                  <ServiceCard
+                    title={services[index].title}
+                    description={services[index].description}
+                    image={services[index].image}
+                  />
+                </animated.div>
+              ))}
             </div>
           </div>
+        </Waypoint>
+      </div>
+
+      <div className="w-full snap-start min-h-screen md:px-10 px-5 py-10 flex items-center">
+        <div className="flex px-8 gap-2">
+          <CaseStudies />
         </div>
       </div>
     </>
