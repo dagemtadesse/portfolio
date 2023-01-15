@@ -31,15 +31,17 @@ const CaseStudies = () => {
       <h1 className="text-2xl">Case studies</h1>
 
       <div className="flex flex-col md:flex-row gap-8 mt-16">
-        <div className="basis-[50%] h-[400px] overflow-hidden">
+        <div className="basis-[50%] overflow-hidden">
           <Waypoint
             onEnter={() => setIsInView(true)}
             onLeave={() => setIsInView(false)}
           >
             <animated.div
-              className="bg-[radial-gradient(red,_yellow)] w-full h-full rounded-xl"
+              className=" w-full h-full rounded-xl"
               style={imageAnimation}
-            ></animated.div>
+            >
+              <img src="/showcase_1.png" />
+            </animated.div>
           </Waypoint>
         </div>
         <div className="basis-[40%]">
