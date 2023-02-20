@@ -14,15 +14,6 @@ const Nav = ({ currentPage }: { currentPage: Pages }) => {
       <div className="w-full absolute right-0 bottom-0 flex md:justify-end md:pr-10">
         <NavMenu currentPage={currentPage} />
       </div>
-
-      {currentPage === 'Portfolio' && (
-        <animated.div
-          className="absolute right-0 w-full bottom-0 md:flex justify-end pr-10 hidden"
-          style={{ clipPath: x.to((x) => `inset(0 0 0 ${x}%)`) }}
-        >
-          <NavMenu currentPage={currentPage} contrast />
-        </animated.div>
-      )}
     </div>
   )
 }

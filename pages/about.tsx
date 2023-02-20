@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { animated, useChain, useSpring, useSpringRef } from "react-spring";
 import AvatarIcon from "../components/icons/AvatarIcon";
+import Container from "../components/layout/container";
 import { Pages } from "./_app";
 
 const About = ({
@@ -31,30 +32,32 @@ const About = ({
   useChain([imageAnimRef, textAnimRef, ...animationRefs]);
 
   return (
-    <div className="flex  flex-col md:flex-row  items-center md:px-10 px-5 md:mt-[12vh] mb-12 md:mb-0 pb-[80px]">
+    <div className="">
       <Head>
         <title>About Me | Dagem Tadesse</title>
       </Head>
 
-      <animated.div
-        className="basis-[33.333%] flex justify-center"
-        style={imageAnimation}
-      >
-        <AvatarIcon />
-      </animated.div>
+      <Container navHeight={84}>
+        <animated.div
+          className="basis-[33.333%] flex justify-center"
+          style={imageAnimation}
+        >
+          <AvatarIcon />
+        </animated.div>
 
-      <animated.div
-        className="basis-[66.666%] md:ml-4 py-8"
-        style={textAnimation}
-      >
-        <h1 className="text-3xl font-bold">About.</h1>
-        <p className="mt-4 leading-7 text-normal font-light max-w-[658px] ">
-          I am a creative and enthusiastic software engineer, fascinated with
-          front-end development and the web in general. I am well-versed in
-          agile development and responsive design. I love trying new
-          technologies and try new stuff.
-        </p>
-      </animated.div>
+        <animated.div
+          className="basis-[66.666%]"
+          style={textAnimation}
+        >
+          <h1 className="text-3xl font-bold">About.</h1>
+          <p className="mt-4 leading-7 text-normal font-light max-w-[658px] ">
+            I am a creative and enthusiastic software engineer, fascinated with
+            front-end development and the web in general. I am well-versed in
+            agile development and responsive design. I love trying new
+            technologies and try new stuff.
+          </p>
+        </animated.div>
+      </Container>
     </div>
   );
 };

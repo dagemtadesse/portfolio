@@ -11,8 +11,10 @@ import { Waypoint } from "react-waypoint";
 import Hero from "../components/icons/Hero";
 import MemoLeft from "../components/icons/Left";
 import MemoRight from "../components/icons/Right";
+import Container from "../components/layout/container";
 import CaseStudies from "../components/portfolio/CaseStudies";
 import services from "../components/portfolio/services";
+import Socials from "../components/portfolio/Socials";
 import ServiceCard from "../components/skill/Service";
 import { Pages } from "./_app";
 
@@ -56,12 +58,13 @@ export default function Home({
         <title>Dagem Tadesse</title>
       </Head>
       {/* social */}
-      <div className="snap-end flex flex-col md:flex-row md:min-h-[calc(100vh-84px)] justify-start md:items-center md:px-10 px-5 pb-[80px] gap-12 md:gap-4">
+      <Container navHeight={84}>
+        {/* <div className="snap-end flex flex-col md:flex-row md:min-h-[calc(100vh-84px)] justify-start md:items-center md:px-10 px-5 pb-[80px] gap-12 md:gap-4"> */}
         <animated.div
           className="basis-[40%] flex flex-col"
           style={textAnimation}
         >
-          <div className="max-w-[460px] mt-6 md:mt-0 md:pl-8">
+          <div className="max-w-[460px] mt-6 md:mt-0">
             <p className="font-normal text-2xl leading-6 tracking-wider">
               Hi there,
             </p>
@@ -72,24 +75,34 @@ export default function Home({
               Passionate frontend engineer and a student. Responsive design +
               React + TailwindCSS expert
             </p>
+            <Socials />
+
+            <a
+              href="_blank"
+              className="bg-white rounded-sm color text-darkBlue py-3 px-6 mt-4 inline-block"
+            >
+              Download CV
+            </a>
           </div>
         </animated.div>
+
         <animated.div
           className="md:basis-[60%] grid place-content-center"
           style={imageAnimation}
         >
           <Hero />
         </animated.div>
-      </div>
+      </Container>
+      {/* </div> */}
 
-      <div className="w-full snap-start min-h-screen md:px-10 px-5 py-10 flex items-center">
+      <Container>
         <Waypoint
           onEnter={() => setIsCardsInview(true)}
           onLeave={() => setIsCardsInview(false)}
         >
           <div className="w-full ">
-            <h1 className="text-2xl px-8">Expert In</h1>
-            <div className="flex flex-col md:flex-row gap-6 md:mt-16">
+            <h1 className="text-2xl">Expert In</h1>
+            <div className="flex flex-col md:flex-row gap-12 md:mt-16">
               {cardTrail.map((animation, index) => (
                 <animated.div
                   key={index}
@@ -106,13 +119,13 @@ export default function Home({
             </div>
           </div>
         </Waypoint>
-      </div>
+      </Container>
 
-      <div className="w-full snap-start min-h-screen md:px-10 px-5 py-10 flex items-center">
-        <div className="flex px-8 gap-2">
+      <Container>
+        <div className="w-full h-full ">
           <CaseStudies />
         </div>
-      </div>
+      </Container>
     </>
   );
 }

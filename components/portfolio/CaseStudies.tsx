@@ -27,47 +27,45 @@ const CaseStudies = () => {
   });
 
   return (
-    <div className="">
-      <h1 className="text-2xl">Case studies</h1>
+    <>
+      <header className="py-7 flex justify-between items-center">
+        <h1 className="text-2xl">Case studies</h1>
 
-      <div className="flex flex-col md:flex-row gap-8 mt-16">
-        <div className="basis-[50%] overflow-hidden">
-          <Waypoint
-            onEnter={() => setIsInView(true)}
-            onLeave={() => setIsInView(false)}
-          >
-            <animated.div
-              className=" w-full h-full rounded-xl"
-              style={imageAnimation}
-            >
-              <img src="/showcase_1.png" />
-            </animated.div>
-          </Waypoint>
+        <div className="flex items-center mt-2 gap-5">
+          <button className="flex items-center">
+            <MemoLeft className="text-3xl text-gray-500 hover:text-gray-700" />
+          </button>
+
+          <span className="text-xl font-light">1 / 3</span>
+
+          <button className="flex items-center">
+            <MemoRight className="text-3xl text-gray-500 hover:text-gray-700" />
+          </button>
         </div>
-        <div className="basis-[40%]">
-          <h2 className="uppercase text-lg font-medium text-gray-500">
-            {current.category}
-          </h2>
+      </header>
 
-          <div className="flex items-center mt-2">
-            <h1 className="text-3xl">{current.projectTitle}</h1>
-            <button className="flex items-center ml-12 mr-3">
-              <MemoLeft className="text-3xl text-gray-500 hover:text-gray-700" />
-            </button>
+      <div className="">
+        <div className="max-w-[50%]">
+          <h1 className="text-3xl">{current.projectTitle}</h1>
 
-            <button className="flex items-center">
-              <MemoRight className="text-3xl text-gray-500 hover:text-gray-700" />
-            </button>
-          </div>
+          <div className="border-b-4 border-white my-5 w-20 rounded-full"></div>
 
-          <div className="border-b-4 border-gray-500 my-8 w-20 rounded-full"></div>
           <p className="text-lg font-light">{current.description}</p>
-          <button className="mt-12 text-blue-500 font-medium">
+          <button className="my-8 text-blue-500 font-medium">
             See the details
           </button>
         </div>
+
+        <Waypoint
+          onEnter={() => setIsInView(true)}
+          onLeave={() => setIsInView(false)}
+        >
+          <animated.div  style={imageAnimation}>
+            <img src="/showcase_1.png" className="block mx-auto"/>
+          </animated.div>
+        </Waypoint>
       </div>
-    </div>
+    </>
   );
 };
 
