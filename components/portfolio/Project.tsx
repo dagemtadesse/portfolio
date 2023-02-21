@@ -1,6 +1,9 @@
+import { motion } from "framer-motion";
+import { slideToLeft } from "../animations";
+
 const Project = () => {
   return (
-    <div className="bg-white min-w-[335px] max-w-[335px] px-6 py-5">
+    <motion.div className="bg-white min-w-[335px] max-w-[335px] px-6 py-5" variants={slideToLeft}>
       <h1 className="text-[128px] text-darkBlue text-center">1</h1>
       <h2 className="text-xl text-black mt-5">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
@@ -19,7 +22,7 @@ const Project = () => {
           <object data="/icons/git.svg"></object>
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

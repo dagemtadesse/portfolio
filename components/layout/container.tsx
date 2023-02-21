@@ -14,8 +14,9 @@ const Container = ({
   sm?: boolean;
   padding?: number;
 }) => {
+  
   const containerStyle = classNames(
-    "flex items-center mx-auto px-[40px] max-w-[1360px] mx-auto",
+    "flex items-center mx-auto px-[40px] max-w-[1360px] mx-auto relative flex-wrap",
     {
       "min-h-screen": !sm,
       "py-10": !padding,

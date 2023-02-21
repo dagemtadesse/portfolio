@@ -1,15 +1,14 @@
+import { motion } from "framer-motion";
 import Head from "next/head";
 import { Dispatch, SetStateAction, useEffect } from "react";
-import { useChain, useSpringRef, useTrail } from "react-spring";
+import { container, item, slideToRight } from "../components/animations";
 import Container from "../components/layout/container";
-import PortfolioData from "../components/portfolio/PortfolioData";
 import Project from "../components/portfolio/Project";
 import SkillsSlider from "../components/skill/SkillsSlider";
 import { Pages } from "./_app";
 
 const Portfolio = ({
   setCurrentPage,
-  animationRefs,
 }: {
   setCurrentPage: Dispatch<SetStateAction<Pages>>;
   animationRefs: any[];
@@ -18,25 +17,20 @@ const Portfolio = ({
     setCurrentPage("Portfolio");
   });
 
-  const bttnAnimationRef = useSpringRef();
-
-  useChain([...animationRefs, bttnAnimationRef]);
-
-  const trail = useTrail(PortfolioData.length, {
-    from: { opacity: 0, x: 50 },
-    opacity: 1,
-    x: 0,
-  });
-
   return (
-    <>
+    <motion.div>
       <Head>
         <title>portfolio | Dagem Tadesse</title>
       </Head>
 
       <Container navHeight={84} className="bg-green" sm>
-        <div className="flex gap-6 w-full justify-between">
-          <div className="">
+        <motion.div
+          className="flex gap-6 w-full justify-between"
+          variants={container}
+          whileInView="visible"
+          initial="hidden"
+        >
+          <motion.div className="" variants={slideToRight}>
             <object data="/icons/education.svg" height="32px" />
             <div className="bg-white rounded-full  h-[2px] mb-5 mt-2 max-w-[4rem]" />
             <h2 className="font-medium text-base">Education</h2>
@@ -48,9 +42,9 @@ const Portfolio = ({
             <p className="italic font-light text-sm mt-2">
               October 2019 - July 2024
             </p>
-          </div>
+          </motion.div>
 
-          <div className="">
+          <motion.div className="" variants={slideToRight}>
             <object data="/icons/work.svg" height="32px" />
             <div className="bg-white rounded-full h-[2px] mb-5 mt-2 max-w-[4rem]" />
             <h2 className="font-medium text-base">Experience</h2>
@@ -64,9 +58,9 @@ const Portfolio = ({
             <p className="italic font-light text-sm mt-1">
               July 2022 to Present
             </p>
-          </div>
+          </motion.div>
 
-          <div className="">
+          <motion.div className="" variants={slideToRight}>
             <object data="/icons/awards.svg" height="32px" />
             <div className="bg-white rounded-full h-[2px] mb-5 mt-2 max-w-[4rem]" />
             <h2 className="font-medium text-base">Awards & Certifications</h2>
@@ -76,12 +70,17 @@ const Portfolio = ({
               TechnologySoftware Engineering Stream
             </p>
             <p className="italic font-light text-sm mt-2">time</p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
 
       <Container sm className="">
-        <div className="w-full">
+        <motion.div
+          className="w-full"
+          variants={container}
+          whileInView="visible"
+          initial="hidden"
+        >
           <object data="/icons/skills.svg" height="32px" />
           <div className="bg-white rounded-full h-[2px] mb-5 mt-2 max-w-[4rem]" />
           <h2 className="font-medium text-base">My skills</h2>
@@ -119,11 +118,16 @@ const Portfolio = ({
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
 
       <Container className="bg-white bg-opacity-10" sm>
-        <div className="flex items-center gap-8 flex-nowrap overflow-x-auto">
+        <motion.div
+          className="flex items-center gap-8 flex-nowrap overflow-x-auto"
+          variants={container}
+          whileInView="visible"
+          initial="hidden"
+        >
           <div className="w-1/2 flex flex-col ">
             <h1 className="text-4xl">Featured Projects</h1>
             <p className="font-light mt-6">
@@ -134,9 +138,9 @@ const Portfolio = ({
 
           <Project />
           <Project />
-        </div>
+        </motion.div>
       </Container>
-    </>
+    </motion.div>
   );
 };
 export default Portfolio;
