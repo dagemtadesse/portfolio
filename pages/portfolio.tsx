@@ -1,11 +1,28 @@
 import { motion } from "framer-motion";
+import { wrap } from "module";
 import Head from "next/head";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { container, item, slideToRight } from "../components/animations";
 import Container from "../components/layout/container";
 import Project from "../components/portfolio/Project";
 import SkillsSlider from "../components/skill/SkillsSlider";
 import { Pages } from "./_app";
+
+const projects = [
+  {
+    title:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, laborum.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, laborum.",
+  },
+
+  {
+    title:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, laborum.",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, laborum.",
+  },
+];
 
 const Portfolio = ({
   setCurrentPage,
@@ -13,9 +30,23 @@ const Portfolio = ({
   setCurrentPage: Dispatch<SetStateAction<Pages>>;
   animationRefs: any[];
 }) => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [currentProject, setCurrentProject] = useState<number>(0);
+
   useEffect(() => {
     setCurrentPage("Portfolio");
   });
+
+  const handleScrollTo = () => {
+    if (wrapperRef.current) {
+      console.log(currentProject);
+      const container = wrapperRef.current;
+      const nextProject = container.querySelector(`#project_${currentProject}`);
+      console.log(nextProject);
+      if (nextProject) nextProject.scrollIntoView();
+      setCurrentProject((cur) => (cur + 1) % projects.length);
+    }
+  };
 
   return (
     <motion.div>
@@ -25,7 +56,7 @@ const Portfolio = ({
 
       <Container navHeight={84} className="bg-green" sm>
         <motion.div
-          className="flex gap-6 w-full justify-between flex-wrap"
+          className="flex gap-6 w-full justify-between flex-wrap md:flex-nowrap"
           variants={container}
           whileInView="visible"
           initial="hidden"
@@ -85,7 +116,7 @@ const Portfolio = ({
           <div className="bg-white rounded-full h-[2px] mb-5 mt-2 max-w-[4rem]" />
           <h2 className="font-medium text-base">My skills</h2>
 
-          <div className="flex w-full mt-8 md:gap-12 gap:3 flex-wrap">
+          <div className="flex w-full mt-8 md:gap-12 gap:3 flex-wrap md:flex-nowrap">
             <div className="w-full md:w-1/2 flex flex-col gap-3">
               <SkillsSlider
                 title="Dart and Flutter"
@@ -123,10 +154,11 @@ const Portfolio = ({
 
       <Container className="bg-white bg-opacity-10" sm>
         <motion.div
-          className="flex items-center gap-8 flex-nowrap overflow-x-auto"
+          className="w-full flex items-center gap-8 flex-nowrap overflow-scroll scroll-smooth relative"
           variants={container}
           whileInView="visible"
           initial="hidden"
+          ref={wrapperRef}
         >
           <div className="w-full grow-1 shrink-0 md:w-1/2 flex flex-col ">
             <h1 className="text-4xl">Featured Projects</h1>
@@ -135,10 +167,21 @@ const Portfolio = ({
               Repudiandae, sequi!
             </p>
           </div>
-
-          <Project />
-          <Project />
+          {projects.map((project, index) => (
+            <Project
+              key={"project" + index}
+              index={index}
+              title={project.title}
+              description={project.description}
+            />
+          ))}
         </motion.div>
+        <button
+          className="absolute right-0 bg-darkBlue rounded-full mx-4 shadow-md p-2 bg-opacity-30 z-10 hover:bg-opacity-80"
+          onClick={handleScrollTo}
+        >
+          <img src="/icons/right.svg" />
+        </button>
       </Container>
     </motion.div>
   );
