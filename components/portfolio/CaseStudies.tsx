@@ -1,24 +1,10 @@
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { projects } from "../../pages/portfolio";
 import { opacity, scaledDownOpacity } from "../animations";
 import MemoLeft from "../icons/Left";
 import MemoRight from "../icons/Right";
-
-const caseStudy = [
-  {
-    category: "mobile app design",
-    projectTitle: "mobile app design",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, ut.Voluptate reiciendis laboriosam iure at, praesentium quo tempora unde repudiandae nemo ratione, odit fugit sint consectetur eius, estdolores. Eum?",
-  },
-  {
-    category: "",
-    projectTitle: "Web app design",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, ut.Voluptate reiciendis laboriosam iure at, praesentium quo tempora unde repudiandae nemo ratione, odit fugit sint consectetur eius, estdolores. Eum?",
-  },
-];
 
 const CaseStudies = () => {
   const wrapper = useRef<HTMLDivElement>(null);
@@ -26,7 +12,7 @@ const CaseStudies = () => {
 
   const [isSticky, setIsSticky] = useState(false);
 
-  const current = caseStudy.at(index)!;
+  const current = projects.at(index)!;
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -41,10 +27,13 @@ const CaseStudies = () => {
     });
   }, [wrapper.current]);
 
-  const showNext = () => setIndex((index) => (index + 1) % caseStudy.length);
-  const showPrev = () => setIndex((index) => index != 0 ? (index - 1) % caseStudy.length : caseStudy.length - 1);
+  const showNext = () => setIndex((index) => (index + 1) % projects.length);
+  const showPrev = () =>
+    setIndex((index) =>
+      index != 0 ? (index - 1) % projects.length : projects.length - 1
+    );
 
-  useEffect(() => console.log(index))
+  useEffect(() => console.log(index));
   return (
     <div ref={wrapper}>
       <header
@@ -67,7 +56,7 @@ const CaseStudies = () => {
             </button>
 
             <span className="text-xl font-light">
-              {index + 1} / {caseStudy.length}
+              {index + 1} / {projects.length}
             </span>
 
             <button className="flex items-center" onClick={showNext}>
@@ -87,27 +76,47 @@ const CaseStudies = () => {
             variants={opacity}
             key={"caseStudy_text" + index}
           >
-            <h1 className="text-3xl">{current.projectTitle}</h1>
+            <h1 className="text-3xl">{current.title}</h1>
 
             <div className="border-b-4 border-white my-5 w-20 rounded-full"></div>
 
             <p className="text-lg font-light">{current.description}</p>
-            <button className="my-8 text-blue-500 font-medium">
+            <a
+              href={current.link}
+              target="_blank"
+              className="my-8  flex items-center font-medium"
+            >
               See the details
-            </button>
+            </a>
           </motion.div>
         </AnimatePresence>
 
         <AnimatePresence mode="wait">
-          <motion.img
-            key={"caseStudy_img" + index}
-            src="/showcase_1.png"
-            className="block mx-auto"
-            initial={"hidden"}
-            animate={"visible"}
-            exit={"hidden"}
-            variants={scaledDownOpacity}
-          />
+          <div className="flex gap-6 justify-center items-center flex-wrap">
+            {!current.showcases && (
+              <motion.img
+                key={"caseStudy_img" + index}
+                src="/showcase_1.png"
+                className="block mx-auto"
+                initial={"hidden"}
+                animate={"visible"}
+                exit={"hidden"}
+                variants={scaledDownOpacity}
+              />
+            )}
+            {current.showcases &&
+              current.showcases.map((item) => (
+                <motion.img
+                  key={item}
+                  src={item}
+                  className="block mx-auto basis-[100%] md:max-w-[30%]"
+                  initial={"hidden"}
+                  animate={"visible"}
+                  exit={"hidden"}
+                  variants={scaledDownOpacity}
+                />
+              ))}
+          </div>
         </AnimatePresence>
       </div>
     </div>
