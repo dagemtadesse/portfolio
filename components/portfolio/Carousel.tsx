@@ -13,7 +13,7 @@ const skills = [
 ];
 const Carousel = () => {
   return (
-    <div className="w-full self-end -mb-10 px-0 overflow-scroll basis-[100%] flex">
+    <div className="w-full self-end md:-mb-10 px-0 overflow-scroll basis-[100%] flex">
       {[1,2].map((item) => (
         <div
           className="flex py-6 gap-12 animate-marquee min-w-full w-auto basis-auto pr-12 shrink-0"

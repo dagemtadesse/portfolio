@@ -33,7 +33,7 @@ const About = ({
           <AvatarIcon />
         </motion.div>
 
-        <motion.div className="basis-[66.666%]" variants={slideToLeft}>
+        <motion.div className="md:basis-[66.666%]" variants={slideToLeft}>
           <h1 className="text-3xl font-bold">About.</h1>
           <p className="mt-4 leading-7 text-normal font-light max-w-[658px] ">
             I am a creative and enthusiastic software engineer, fascinated with

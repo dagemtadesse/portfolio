@@ -25,7 +25,7 @@ const Portfolio = ({
 
       <Container navHeight={84} className="bg-green" sm>
         <motion.div
-          className="flex gap-6 w-full justify-between"
+          className="flex gap-6 w-full justify-between flex-wrap"
           variants={container}
           whileInView="visible"
           initial="hidden"
@@ -85,8 +85,8 @@ const Portfolio = ({
           <div className="bg-white rounded-full h-[2px] mb-5 mt-2 max-w-[4rem]" />
           <h2 className="font-medium text-base">My skills</h2>
 
-          <div className="flex w-full mt-8 gap-12">
-            <div className="w-1/2 flex flex-col gap-3">
+          <div className="flex w-full mt-8 md:gap-12 gap:3 flex-wrap">
+            <div className="w-full md:w-1/2 flex flex-col gap-3">
               <SkillsSlider
                 title="Dart and Flutter"
                 amount={75}
@@ -104,7 +104,7 @@ const Portfolio = ({
               />
               <SkillsSlider title="Git" amount={75} text="Experience" />
             </div>
-            <div className="w-1/2 flex flex-col gap-3">
+            <div className="w-full md:w-1/2 flex flex-col gap-3">
               <SkillsSlider
                 title="HTML 5 / CSS 3"
                 amount={75}
@@ -128,7 +128,7 @@ const Portfolio = ({
           whileInView="visible"
           initial="hidden"
         >
-          <div className="w-1/2 flex flex-col ">
+          <div className="w-full grow-1 shrink-0 md:w-1/2 flex flex-col ">
             <h1 className="text-4xl">Featured Projects</h1>
             <p className="font-light mt-6">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.

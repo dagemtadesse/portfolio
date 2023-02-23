@@ -73,7 +73,7 @@ export default function Home({
           </motion.div>
 
           <motion.div
-            className="md:basis-[60%] grid place-content-center"
+            className="md:basis-[60%] place-content-center hidden md:block"
             variants={bounce}
           >
             <Hero />
@@ -88,7 +88,7 @@ export default function Home({
         <div className="w-full ">
           <h1 className="text-2xl">Expert In</h1>
           <motion.div
-            className="flex flex-col md:flex-row gap-12 md:mt-16"
+            className="flex flex-col md:flex-row gap-12 md:mt-16 mt-12"
             variants={container}
             whileInView="visible"
             initial="hidden"

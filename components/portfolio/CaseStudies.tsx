@@ -80,7 +80,7 @@ const CaseStudies = () => {
       <div className="">
         <AnimatePresence custom={""} mode="wait">
           <motion.div
-            className="max-w-[50%]"
+            className="md:max-w-[50%]"
             initial={"hidden"}
             animate={"visible"}
             exit={"hidden"}
