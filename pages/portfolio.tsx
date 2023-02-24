@@ -187,8 +187,7 @@ const Portfolio = ({
           <div className="w-full grow-1 shrink-0 md:w-[45%] flex flex-col ">
             <h1 className="text-4xl">Featured Projects</h1>
             <p className="font-light mt-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repudiandae, sequi!
+              These are some of personal projects I been working on.
             </p>
           </div>
           {projects.map((project, index) => (
