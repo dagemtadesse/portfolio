@@ -1,10 +1,6 @@
-import { useEffect, useState } from "react";
-import { animated, useSpring, useTrail } from "react-spring";
-import { Pages } from "../../pages/_app";
 import EmailIcon from "../icons/EmailIcon";
 import LinkedInIcon from "../icons/LinkedIn";
 import TwitterIcon from "../icons/TwitterIcon";
-import DownloadButton from "./DownloadButton";
 
 export const SOCIALS = [
   {

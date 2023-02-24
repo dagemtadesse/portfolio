@@ -1,7 +1,7 @@
 import "../styles/global.css";
 import Link from "next/link";
 import type { AppProps } from "next/app";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Nav from "../components/header/Nav";
 import Footer from "../components/layout/Footer";

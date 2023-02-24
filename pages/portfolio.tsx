@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { container, item, slideToRight } from "../components/animations";
+import { container, slideToRight } from "../components/animations";
 import Container from "../components/layout/container";
 import Project from "../components/portfolio/Project";
 import SkillsSlider from "../components/skill/SkillsSlider";
