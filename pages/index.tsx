@@ -64,7 +64,9 @@ export default function Home({
 
               <motion.a
                 variants={slideToLeft}
-                href="_blank"
+                target="_blank"
+                href="/files/Resume 2.0.pdf"
+                download
                 className="bg-white rounded-sm color text-darkBlue py-3 px-6 mt-4 inline-block"
               >
                 Download CV
