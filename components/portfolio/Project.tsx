@@ -23,12 +23,8 @@ const Project = ({
       <h1 className="text-[128px] text-darkBlue text-center">{index + 1}</h1>
       <h2 className="text-xl text-black mt-5">{title}</h2>
       <p
-        className="text-darkBlue mt-4 text-sm overflow-hidden whitespace-pre-wrap"
-        style={{
-          display: "-webkit-box",
-          "-webkit-box-orient": "vertical",
-          "-webkit-line-clamp": "3",
-        }}
+        className="text-darkBlue mt-4 text-sm overflow-hidden whitespace-pre-wrap line-clamp-3"
+      
       >
         {description}
       </p>
