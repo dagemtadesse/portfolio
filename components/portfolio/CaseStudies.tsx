@@ -38,7 +38,7 @@ const CaseStudies = () => {
     <div ref={wrapper}>
       <header
         className={classNames("transition-all duration-300 ease-in-out", {
-          "fixed top-0 w-full left-0 right-0 bg-darkBlue bg-opacity-80 backdrop-blur-lg":
+          "fixed top-0 w-full left-0 right-0 bg-darkBlue bg-opacity-90":
             isSticky,
         })}
       >
@@ -81,13 +81,23 @@ const CaseStudies = () => {
             <div className="border-b-4 border-white my-5 w-20 rounded-full"></div>
 
             <p className="text-lg font-light">{current.description}</p>
-            <a
-              href={current.link}
-              target="_blank"
-              className="my-8  flex items-center font-medium"
-            >
-              See the details
-            </a>
+            <div className="mt-4 mb-2 flex gap-8">
+              <a
+                href={current.link}
+                target="_blank"
+                className="font-medium bg-white bg-opacity-5 hover:bg-opacity-10 py-1 px-4 rounded-sm"
+              >
+                See the details
+              </a>
+
+              <a
+                href={current.link}
+                target="_blank"
+                className="font-medium bg-white bg-opacity-5 hover:bg-opacity-10 py-1 px-4 rounded-sm"
+              >
+                Visit
+              </a>
+            </div>
           </motion.div>
         </AnimatePresence>
 
@@ -109,7 +119,7 @@ const CaseStudies = () => {
                 <motion.img
                   key={item}
                   src={item}
-                  className="block mx-auto basis-[100%] md:max-w-[30%]"
+                  className="block mx-auto basis-[100%]"
                   initial={"hidden"}
                   animate={"visible"}
                   exit={"hidden"}

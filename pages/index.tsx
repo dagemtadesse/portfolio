@@ -34,7 +34,7 @@ export default function Home({
           initial="hidden"
           variants={container}
         >
-          <motion.div className="md:basis-[40%] flex flex-col justify-center">
+          <motion.div className="md:basis-[40%] flex flex-col justify-center shrink-0">
             <div className="max-w-[460px] mt-6 md:mt-0">
               <motion.p
                 variants={slideToLeft}
@@ -58,7 +58,7 @@ export default function Home({
                 React + TailwindCSS expert
               </motion.p>
 
-              <motion.div variants={slideToLeft}>
+              <motion.div variants={slideToLeft} className="my-6">
                 <Socials />
               </motion.div>
 

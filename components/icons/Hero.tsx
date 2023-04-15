@@ -1,10 +1,9 @@
 import React from "react";
 
-const TwitterIcon = () => {
+const TwitterIcon = ({ className }: { className?: string }) => {
   return (
     <svg
-      width="663"
-      height="339"
+      className={className}
       viewBox="0 0 663 339"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

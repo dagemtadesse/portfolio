@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/**/*.tsx", "./components/**/*.tsx"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.tsx",
+    "./*.html",
+  ],
   theme: {
     extend: {
       colors: {
@@ -9,7 +13,7 @@ module.exports = {
       },
       fontFamily: {
         Montserrat: "Montserrat",
-        OpenSans: "Open+Sans",
+        OpenSans: "'Open Sans', sans-serif",
       },
       backgroundImage: {
         blur: "url(/background.svg)",
@@ -20,7 +24,7 @@ module.exports = {
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(0%)" },
-          "100%":{ transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
       animation: {
@@ -28,7 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

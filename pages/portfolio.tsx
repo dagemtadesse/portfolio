@@ -9,29 +9,27 @@ import { Pages } from "./_app";
 
 export const projects = [
   {
-    title: "Food Ordering App",
+    title: "Landing page",
     description:
       "As part of the Google UI/UX certificate program, I conducted interviews, created empathy maps and user personas, created Wireframes, conducted usability studies and developed HI-FI prototype.",
     link: "https://www.figma.com/proto/vevHkSD8nctgb9LLRJYp8V/Untitled?node-id=68%3A7&scaling=scale-down&page-id=65%3A2&starting-point-node-id=68%3A7",
-    showcases: [
-      "/showcases/Mobile-dark (1).png",
-      "/showcases/Mobile-dark (2).png",
-      "/showcases/Mobile-dark.png",
-    ],
+    showcases: ["/showcases/manage-landing.png"],
   },
 
   {
-    title: "World Medical Card Clone",
+    title: "Interactive comment",
     description:
       "A clone of world medical card web app, which stores medical information to be available any where in any language.",
     link: "https://github.com/dagemtadesse/alpaca",
+    showcases: ["/showcases/interactive-comments.png"],
   },
 
   {
-    title: "Customer Reviews app",
+    title: "Checkout process for a gaming service",
     description:
       "Utilized TypeScript, Express.js, and PostgreSQL to create a restful API. Flutter is used to create the cross-platform mobile app.",
     link: "https://github.com/dagemtadesse/alpaca",
+    showcases: ["/showcases/checkout-process.png"],
   },
 ];
 

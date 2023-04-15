@@ -29,7 +29,7 @@ const Socials = ({}: {}) => {
   // });
 
   return (
-    <div className="flex items-center gap-12 my-6">
+    <div className="flex items-center gap-12">
       {SOCIALS.map((social, index) => (
         <Social {...social} key={index} />
       ))}
