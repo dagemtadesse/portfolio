@@ -34,7 +34,7 @@ export default function Home({
           initial="hidden"
           variants={container}
         >
-          <motion.div className="md:basis-[40%] flex flex-col justify-center shrink-0">
+          <motion.div className="md:basis-[40%] flex flex-col justify-center md:shrink-0 items-center">
             <div className="max-w-[460px] mt-6 md:mt-0">
               <motion.p
                 variants={slideToLeft}

@@ -69,7 +69,7 @@ const CaseStudies = () => {
       <div className="">
         <AnimatePresence custom={""} mode="wait">
           <motion.div
-            className="md:max-w-[50%]"
+            className="lg:max-w-[50%]"
             initial={"hidden"}
             animate={"visible"}
             exit={"hidden"}
@@ -81,7 +81,7 @@ const CaseStudies = () => {
             <div className="border-b-4 border-white my-5 w-20 rounded-full"></div>
 
             <p className="text-lg font-light">{current.description}</p>
-            <div className="mt-4 mb-2 flex gap-8">
+            <div className="mt-6 mb-4 flex gap-8">
               <a
                 href={current.link}
                 target="_blank"
