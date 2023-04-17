@@ -11,24 +11,27 @@ export const projects = [
   {
     title: "Landing page",
     description:
-      "As part of the Google UI/UX certificate program, I conducted interviews, created empathy maps and user personas, created Wireframes, conducted usability studies and developed HI-FI prototype.",
-    link: "https://www.figma.com/proto/vevHkSD8nctgb9LLRJYp8V/Untitled?node-id=68%3A7&scaling=scale-down&page-id=65%3A2&starting-point-node-id=68%3A7",
+      "This landing page is a pixel-perfect implementation for a fictional company, Manage. It is frontend mentor's design implemented with react and MUI.",
+    link: "https://manage-landing-page-ra9lr5rez-dagemtadesse.vercel.app/",
+    repoLink: "https://github.com/dagemtadesse/manage-landing-page",
     showcases: ["/showcases/manage-landing.png"],
   },
 
   {
     title: "Interactive comment",
     description:
-      "A clone of world medical card web app, which stores medical information to be available any where in any language.",
-    link: "https://github.com/dagemtadesse/alpaca",
+      "This is an interactive comment section for social websites made using the react and material UI(MUI).",
+    link: "https://interactive-comments-silk.vercel.app/",
+    repoLink: "https://github.com/dagemtadesse/interactive-comments",
     showcases: ["/showcases/interactive-comments.png"],
   },
 
   {
     title: "Checkout process for a gaming service",
     description:
-      "Utilized TypeScript, Express.js, and PostgreSQL to create a restful API. Flutter is used to create the cross-platform mobile app.",
-    link: "https://github.com/dagemtadesse/alpaca",
+      "This app is a multi-step web form designed to emulate the checkout process of a gaming service provider.",
+    link: "https://react-multi-step-form-mu.vercel.app/",
+    repoLink: "https://github.com/dagemtadesse/react-multi-step-form",
     showcases: ["/showcases/checkout-process.png"],
   },
 ];

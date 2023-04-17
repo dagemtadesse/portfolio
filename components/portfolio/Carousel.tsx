@@ -19,8 +19,8 @@ const Carousel = () => {
           className="flex py-6 gap-12 animate-marquee min-w-full w-auto basis-auto pr-12 shrink-0"
           key={"wrapper" + item}
         >
-          {skills.map((skill) => (
-            <div className="flex gap-6 items-center text-[#ADB5BD] hover:text-white">
+          {skills.map((skill, index) => (
+            <div className="flex gap-6 items-center text-[#ADB5BD] hover:text-white" key={`skill${index}`}>
               <object data={skill.icon} />{" "}
               <span className="font-light text-lg ">
                 <span>{skill.title}</span>

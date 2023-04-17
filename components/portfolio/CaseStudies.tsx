@@ -6,6 +6,8 @@ import { opacity, scaledDownOpacity } from "../animations";
 import MemoLeft from "../icons/Left";
 import MemoRight from "../icons/Right";
 
+import { Git, Globe2 } from "react-bootstrap-icons";
+
 const CaseStudies = () => {
   const wrapper = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
@@ -80,22 +82,25 @@ const CaseStudies = () => {
 
             <div className="border-b-4 border-white my-5 w-20 rounded-full"></div>
 
-            <p className="text-lg font-light">{current.description}</p>
-            <div className="mt-6 mb-4 flex gap-8">
+            <p className="font-light">{current.description}</p>
+            <div className="mt-6 mb-4 flex gap-4 font-light">
               <a
-                href={current.link}
+                href={current.repoLink}
                 target="_blank"
-                className="font-medium bg-white bg-opacity-5 hover:bg-opacity-10 py-1 px-4 rounded-sm"
+                className=" bg-white bg-opacity-5 hover:bg-opacity-10 py-1 px-4 rounded-sm flex gap-4 items-center"
               >
-                See the details
+                Code
+                <span>
+                  <Git size={16}/>
+                </span>
               </a>
 
               <a
                 href={current.link}
                 target="_blank"
-                className="font-medium bg-white bg-opacity-5 hover:bg-opacity-10 py-1 px-4 rounded-sm"
+                className=" bg-white bg-opacity-5 hover:bg-opacity-10  py-1 px-4 rounded-sm flex gap-4 items-center"
               >
-                Visit
+                Visit Demo <span><Globe2/></span>
               </a>
             </div>
           </motion.div>
@@ -103,17 +108,6 @@ const CaseStudies = () => {
 
         <AnimatePresence mode="wait">
           <div className="flex gap-6 justify-center items-center flex-wrap">
-            {!current.showcases && (
-              <motion.img
-                key={"caseStudy_img" + index}
-                src="/showcase_1.png"
-                className="block mx-auto"
-                initial={"hidden"}
-                animate={"visible"}
-                exit={"hidden"}
-                variants={scaledDownOpacity}
-              />
-            )}
             {current.showcases &&
               current.showcases.map((item) => (
                 <motion.img
