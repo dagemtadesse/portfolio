@@ -3,8 +3,8 @@ import Link from "next/link";
 import type { AppProps } from "next/app";
 import { useState } from "react";
 
-import Nav from "../components/header/Nav";
-import Footer from "../components/layout/Footer";
+import Nav from "../_components/header/Nav";
+import Footer from "../_components/layout/Footer";
 
 export type Pages = "Home" | "About" | "Portfolio";
 

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import Link from 'next/link'
-import { Pages } from '../../pages/_app'
+import { Pages } from '../../_pages/_app'
 
 const NavMenu = ({
   currentPage,

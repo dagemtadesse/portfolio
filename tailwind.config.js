@@ -2,7 +2,9 @@
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.tsx",
+    "./sections/**/*.tsx",
     "./*.html",
   ],
   theme: {
@@ -10,10 +12,16 @@ module.exports = {
       colors: {
         darkBlue: "#212529",
         green: "rgba(106, 153,78,.6)",
+        ligthestGrey: "#f5f5f5",
+        lighterGrey: "#eee",
+        lightGrey: "#BDBDBD",
+        darkerGrey: "#616161",
+        customBlack: "#383838"
       },
       fontFamily: {
-        Montserrat: "Montserrat",
-        OpenSans: "'Open Sans', sans-serif",
+        Montserrat: "Montserrat", // not needed
+        OpenSans: "'Open Sans', sans-serif", // not needed
+        "ibmplex": "'IBM Plex Sans', sans-serif"
       },
       backgroundImage: {
         blur: "url(/background.svg)",

@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { container, slideToRight } from "../components/animations";
-import Container from "../components/layout/container";
-import Project from "../components/portfolio/Project";
-import SkillsSlider from "../components/skill/SkillsSlider";
+import { container, slideToRight } from "../_components/animations";
+import Container from "../_components/layout/container";
+import Project from "../_components/portfolio/Project";
+import SkillsSlider from "../_components/skill/SkillsSlider";
 import { Pages } from "./_app";
 
 export const projects = [

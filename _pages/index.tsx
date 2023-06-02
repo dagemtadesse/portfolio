@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { Dispatch, SetStateAction, useEffect } from "react";
-import { bounce, container, item, slideToLeft } from "../components/animations";
+import { bounce, container, item, slideToLeft } from "../_components/animations";
 
-import Hero from "../components/icons/Hero";
-import Container from "../components/layout/container";
-import Carousel from "../components/portfolio/Carousel";
-import CaseStudies from "../components/portfolio/CaseStudies";
-import services from "../components/portfolio/services";
-import Socials from "../components/portfolio/Socials";
-import ServiceCard from "../components/skill/Service";
+import Hero from "../_components/icons/Hero";
+import Container from "../_components/layout/container";
+import Carousel from "../_components/portfolio/Carousel";
+import CaseStudies from "../_components/portfolio/CaseStudies";
+import services from "../_components/portfolio/services";
+import Socials from "../_components/portfolio/Socials";
+import ServiceCard from "../_components/skill/Service";
 
 import { Pages } from "./_app";
 

@@ -1,4 +1,4 @@
-import { Pages } from '../../pages/_app'
+import { Pages } from '../../_pages/_app'
 import NavMenu from './NavMenu'
 
 const Nav = ({ currentPage }: { currentPage: Pages }) => {

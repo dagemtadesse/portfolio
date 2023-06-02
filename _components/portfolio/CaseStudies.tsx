@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { projects } from "../../pages/portfolio";
+import { projects } from "../../_pages/portfolio";
 import { opacity, scaledDownOpacity } from "../animations";
 import MemoLeft from "../icons/Left";
 import MemoRight from "../icons/Right";

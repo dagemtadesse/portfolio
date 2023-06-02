@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { Dispatch, SetStateAction, useEffect } from "react";
-import { container, slideToLeft, slideToRight } from "../components/animations";
-import AvatarIcon from "../components/icons/AvatarIcon";
-import Container from "../components/layout/container";
+import { container, slideToLeft, slideToRight } from "../_components/animations";
+import AvatarIcon from "../_components/icons/AvatarIcon";
+import Container from "../_components/layout/container";
 import { Pages } from "./_app";
 
 const About = ({
