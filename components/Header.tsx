@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -12,10 +13,10 @@ export const Header = () => {
     <>
       <nav className="py-[15px] border-b border-lighterGrey fixed w-full bg-white z-40">
         <Container className="flex justify-between items-center">
-          <div className="flex items-center text-lg gap-6">
+          <Link href="/" className="flex items-center text-lg gap-6">
             <Image src="/v3/logo.png" width={34} height={34} alt="Logo" />
             <section className="font-medium">Dagem</section>
-          </div>
+          </Link>
 
           <ul className="gap-6 hidden lg:flex">
             <NavMenu href="/about">about</NavMenu>

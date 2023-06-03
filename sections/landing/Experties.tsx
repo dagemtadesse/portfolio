@@ -1,5 +1,5 @@
 import { Container } from "../../components/Container";
-import { ExpertiesCard } from "../../components/ExpertiesCard";
+import { ExpertiesCard } from "../../components/cards/ExpertiesCard";
 import { Heading } from "../../components/Heading";
 
 export const Experties = () => {

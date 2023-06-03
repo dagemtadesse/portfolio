@@ -1,8 +1,4 @@
-import { Container } from "../components/Container";
-import { FooterSocialIcon } from "../components/FooterSocialIcon";
-import { Button } from "../components/Button";
-import Image from "next/image";
-import { FAB } from "../components/FAB";
+"use client";
 
 import { Bio } from "../sections/landing/Bio";
 import { Experties } from "../sections/landing/Experties";
