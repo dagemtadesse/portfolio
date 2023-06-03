@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import classNames from "classnames";
+
 import { WorkCard } from "../../components/cards/WorkCard";
+import { Heading } from "../../components/Heading";
 
 export const SelectedProjectsSection = ({ id }: { id: number }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -13,6 +15,9 @@ export const SelectedProjectsSection = ({ id }: { id: number }) => {
       className="scroll-mt-24 scroll-target"
       id="projects"
     >
+      <div className="mb-4 lg:hidden">
+        <Heading>Selected Projects</Heading>
+      </div>
       <WorkCard />
       <div className="mt-4">
         <Paginator

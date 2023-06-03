@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { Heading } from "../../components/Heading";
 import { Tag } from "../../components/button/Tag";
 
 const experiences = [
@@ -33,6 +33,9 @@ const experiences = [
 export const ExperienceSection = ({ id }: { id: number }) => {
   return (
     <div data-section-id={id} className="scroll-mt-24 scroll-target" id="experience">
+      <div className="mb-4 lg:hidden">
+        <Heading>Work History</Heading>
+      </div>
       <ul>
         {experiences.map((exp) => (
           <ExperienceTimeLine {...exp} />

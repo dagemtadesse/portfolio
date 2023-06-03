@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Image from "next/image";
 import { Tag } from "../button/Tag";
+import { Globe, GitHub } from "react-feather";
 
 export const WorkCard = () => {
   return (
@@ -29,8 +30,8 @@ export const WorkCard = () => {
         </div>
 
         <div className="flex gap-6 mt-6">
-          <CardButton icon="/v3/icons/git.svg">View Code</CardButton>
-          <CardButton icon="/v3/icons/globe.svg">View Demo</CardButton>
+          <CardButton icon={<GitHub className="stroke-1"/>}>View Code</CardButton>
+          <CardButton icon={<Globe className="stroke-1"/>}>View Demo</CardButton>
         </div>
       </div>
     </div>
@@ -42,12 +43,12 @@ const CardButton = ({
   icon,
 }: {
   children: ReactNode;
-  icon: string;
+  icon: ReactNode;
 }) => {
   return (
     <button className="underline flex gap-2 items-center text-base py-1">
       <span>{children}</span>
-      <Image src={icon} alt="." height={18} width={18} />
+      {icon}
     </button>
   );
 };

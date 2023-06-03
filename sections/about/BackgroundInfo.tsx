@@ -1,9 +1,17 @@
 import { forwardRef } from "react";
 import { InfoCard } from "../../components/cards/InfoCards";
+import { Heading } from "../../components/Heading";
 
 export const BackgroundInfoSection = ({ id }: { id: number }) => {
   return (
-    <div data-section-id={id} className="scroll-mt-24 scroll-target" id="background">
+    <div
+      data-section-id={id}
+      className="scroll-mt-24 scroll-target"
+      id="background"
+    >
+      <div className="mb-4 lg:hidden">
+        <Heading>Education and Background</Heading>
+      </div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
         condimentum semper commodo. Fusce massa justo, consectetur eget nisi et,

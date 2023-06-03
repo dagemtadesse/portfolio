@@ -9,6 +9,7 @@ import { BackgroundInfoSection } from "../../sections/about/BackgroundInfo";
 import { SkillsSection } from "../../sections/about/Skills";
 import { ExperienceSection } from "../../sections/about/Experience";
 import { SelectedProjectsSection } from "../../sections/about/SelectedProject";
+import { Socials } from "../../components/Socials";
 
 export default function Page() {
   const [visiblityRatio, setVisibilityRatio] = useState({});
@@ -75,10 +76,7 @@ export default function Page() {
           </ul>
 
           <div className="hidden lg:flex gap-6">
-            <GitHub  className="text-darkerGrey stroke-2" />
-            <Mail className="text-darkerGrey stroke-2" />
-            <Twitter className="text-darkerGrey stroke-2" />
-            <Linkedin  className="text-darkerGrey stroke-2"/>
+            <Socials variant="lg"/>
           </div>
         </div>
       </div>

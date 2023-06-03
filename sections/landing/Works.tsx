@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowDown } from "react-feather";
 
 import { WorkCard } from "../../components/cards/WorkCard";
 import { Container } from "../../components/Container";
@@ -40,9 +41,9 @@ export const Works = () => {
 
 const RowHeader = ({ children }: { children: string }) => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 items-center">
       <h3 className="text-lg uppercase">{children}</h3>
-      <Image src="/v3/icons/arrow-right.svg" alt="." width={16} height={16} />
+      <ArrowDown size={16} className="stroke-1"/>
     </div>
   );
 };

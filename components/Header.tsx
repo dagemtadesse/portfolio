@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { Menu} from "react-feather"
 import { Container } from "./Container";
 import { NavMenu } from "./NavMenu";
 
@@ -20,12 +20,12 @@ export const Header = () => {
 
           <ul className="gap-6 hidden lg:flex">
             <NavMenu href="/about">about</NavMenu>
-            <NavMenu href="/work">work</NavMenu>
+            <NavMenu href="/works">work</NavMenu>
             <NavMenu href="/case-study">case studies</NavMenu>
           </ul>
 
           <button onClick={() => setIsOpen(true)} className="lg:hidden">
-            <Image src="/v3/icons/menu.svg" width={24} height={24} alt="" />
+            <Menu className="stroke-1 text-2xl"/>
           </button>
         </Container>
       </nav>

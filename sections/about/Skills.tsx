@@ -1,8 +1,11 @@
-import { forwardRef } from "react";
+import { Heading } from "../../components/Heading";
 
 export const SkillsSection = ({ id }: { id: number }) => {
   return (
     <div data-section-id={id} className="scroll-mt-24 scroll-target" id="skills">
+      <div className="mb-4 lg:hidden">
+        <Heading>Skills and Proficiency</Heading>
+      </div>
       <ul className="py-8 gap-8 flex flex-col">
         <Skill name="JavaScript" level="expert" />
         <Skill name="TypeScript" level="expert" />

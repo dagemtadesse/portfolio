@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { MessageSquare, Download } from "react-feather";
 
 import { Container } from "../../components/Container";
-import { FooterSocialIcon } from "../../components/FooterSocialIcon";
+import { Socials } from "../../components/Socials";
 import { Button } from "../../components/Button";
 import { FAB } from "../../components/FAB";
 
@@ -18,42 +19,17 @@ export const HeroSection = () => {
             your friendly neighborhood UX designer extraordinaire! 🎉
           </h1>
 
-          <ul className="flex gap-4 shrink-0 flex-row lg:flex-col">
-            <FooterSocialIcon src="/v3/icons/gmail.svg" alt="gmail account" />
-            <FooterSocialIcon
-              src="/v3/icons/linkedin.svg"
-              alt="LinkedIn profile"
-            />
-            <FooterSocialIcon
-              src="/v3/icons/twitter.svg"
-              alt="Twitter profile"
-            />
-          </ul>
+          <Socials variant="sm" layoutStyle="lg:flex-col flex-row" />
         </div>
 
         <div className="lg:mt-6 flex gap-6 flex-col lg:flex-row mt-16">
-          <Button
-            variant="outlined"
-            startIcon={
-              <Image
-                src="/v3/icons/chat.svg"
-                height={18}
-                width={18}
-                alt="Chat Icon"
-              />
-            }
-          >
+          <Button variant="outlined" startIcon={<MessageSquare size={18} />}>
             Chat with me
           </Button>
           <Button
             variant="filled"
             startIcon={
-              <Image
-                src="/v3/icons/download.svg"
-                height={18}
-                width={18}
-                alt="Chat Icon"
-              />
+              <Download size={18} />
             }
           >
             Download Resume

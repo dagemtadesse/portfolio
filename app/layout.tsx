@@ -1,8 +1,9 @@
 "use client";
 
 import { ReactNode } from "react";
+import { Twitter, GitHub, Mail, Linkedin } from "react-feather";
 
-import { FooterSocialIcon } from "../components/FooterSocialIcon";
+import { Socials } from "../components/Socials";
 import { Container } from "../components/Container";
 
 import "../styles/index.css";
@@ -31,20 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <footer className="border-t border-lightGrey">
             <Container className="flex justify-between items-center py-2">
               <p className="font-light text-base">Copyright © 2023 </p>
-              <ul className="flex items-center gap-6">
-                <FooterSocialIcon
-                  src="/v3/icons/gmail.svg"
-                  alt="gmail account"
-                />
-                <FooterSocialIcon
-                  src="/v3/icons/linkedin.svg"
-                  alt="LinkedIn profile"
-                />
-                <FooterSocialIcon
-                  src="/v3/icons/twitter.svg"
-                  alt="Twitter profile"
-                />
-              </ul>
+              <Socials variant="sm" />
             </Container>
           </footer>
         </div>
