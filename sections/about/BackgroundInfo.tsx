@@ -1,3 +1,5 @@
+"use client"
+
 import { InfoCard } from "../../components/cards/InfoCards";
 import { Heading } from "../../components/Heading";
 import { motion } from "framer-motion";

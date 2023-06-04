@@ -14,7 +14,7 @@ export const SkillsSection = ({ id }: { id: number }) => {
       variants={container}
       initial={"hidden"}
       whileInView={"show"}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.25 }}
     >
       <div className="mb-4 lg:hidden">
         <Heading>Skills and Proficiency</Heading>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -28,22 +28,25 @@ export const Socials = ({
       viewport={{ once: true }}
     >
       <motion.li variants={fadeIn}>
-        <Link href="">
+        <a href="mailto:dagem.seyfu@gmail.com">
           <Mail className={iconStyle} />
-        </Link>
+        </a>
       </motion.li>
       <motion.li variants={fadeIn}>
-        <Link href="">
+        <Link
+          href="https://www.linkedin.com/in/dagem-tadesse-s/"
+          target="_blank"
+        >
           <Linkedin className={iconStyle} />
         </Link>
       </motion.li>
       <motion.li variants={fadeIn}>
-        <Link href="">
+        <Link href="https://twitter.com/dagemstadesse" target="_blank">
           <Twitter className={iconStyle} />
         </Link>
       </motion.li>
       <motion.li variants={fadeIn}>
-        <Link href="">
+        <Link href="https://github.com/dagemtadesse" target="_blank">
           <GitHub className={iconStyle} />
         </Link>
       </motion.li>
