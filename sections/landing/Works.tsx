@@ -39,7 +39,7 @@ export const Works = () => {
   );
 };
 
-const RowHeader = ({ children }: { children: string }) => {
+export const RowHeader = ({ children }: { children: string }) => {
   return (
     <div className="flex gap-4 items-center">
       <h3 className="text-lg uppercase">{children}</h3>

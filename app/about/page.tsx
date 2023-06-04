@@ -1,8 +1,7 @@
-"use client";
+"use client"
 
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-import { GitHub, Twitter, Mail, Linkedin } from "react-feather";
 
 import { Container } from "../../components/Container";
 import { BackgroundInfoSection } from "../../sections/about/BackgroundInfo";
@@ -10,6 +9,7 @@ import { SkillsSection } from "../../sections/about/Skills";
 import { ExperienceSection } from "../../sections/about/Experience";
 import { SelectedProjectsSection } from "../../sections/about/SelectedProject";
 import { Socials } from "../../components/Socials";
+import { Metadata } from "next";
 
 export default function Page() {
   const [visiblityRatio, setVisibilityRatio] = useState({});
@@ -123,3 +123,7 @@ const ContentMenu = ({
     </li>
   );
 };
+
+// export const metadata : Metadata = {
+//   title: "About | Dagem Tadesse"
+// }

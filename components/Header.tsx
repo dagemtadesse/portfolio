@@ -14,7 +14,7 @@ export const Header = () => {
       <nav className="py-[15px] border-b border-lighterGrey fixed w-full bg-white z-40">
         <Container className="flex justify-between items-center">
           <Link href="/" className="flex items-center text-lg gap-6">
-            <Image src="/v3/logo.png" width={34} height={34} alt="Logo" />
+            <Image src="/v3/logo.svg" width={34} height={34} alt="Logo" />
             <section className="font-medium">Dagem</section>
           </Link>
 
@@ -47,7 +47,7 @@ export const Header = () => {
               exit={{ y: -300 }}
             >
               <NavMenu href="/about">about</NavMenu>
-              <NavMenu href="/work">work</NavMenu>
+              <NavMenu href="/works">work</NavMenu>
               <NavMenu href="/case-study">case studies</NavMenu>
             </motion.ul>
           </motion.div>
