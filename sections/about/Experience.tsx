@@ -1,47 +1,31 @@
+"use client";
+import { motion } from "framer-motion";
+
 import { Heading } from "../../components/Heading";
 import { Tag } from "../../components/button/Tag";
-
-const experiences = [
-  {
-    title: "Full-stack engineer at Super consult PLC",
-    duration: "July 2022 to Present",
-    techs: [
-      "Angular",
-      ".Net",
-      "AngularMaterial",
-      "UI_Deisgn",
-      "TypeScript",
-      "JavaScript",
-      "Requirement_engineering",
-    ],
-  },
-  {
-    title: "Full-stack engineer at Super consult PLC",
-    duration: "July 2022 to Present",
-    techs: [
-      "React",
-      "Next.js",
-      "TailwindCSS",
-      "MUI",
-      "TypeScript",
-      "JavaScript",
-      "Redux",
-    ],
-  },
-];
+import { fadeIn, container} from "../../components/animations";
+import { EXPERIENCES } from "../../components/data";
 
 export const ExperienceSection = ({ id }: { id: number }) => {
   return (
-    <div data-section-id={id} className="scroll-mt-24 scroll-target" id="experience">
+    <motion.div
+      data-section-id={id}
+      className="scroll-mt-24 scroll-target"
+      id="experience"
+      variants={container}
+      initial={"hidden"}
+      whileInView={"show"}
+      viewport={{ once: true }}
+    >
       <div className="mb-4 lg:hidden">
         <Heading>Work History</Heading>
       </div>
       <ul>
-        {experiences.map((exp) => (
+        {EXPERIENCES.map((exp) => (
           <ExperienceTimeLine {...exp} />
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
@@ -55,7 +39,7 @@ const ExperienceTimeLine = ({
   techs: string[];
 }) => {
   return (
-    <li className="flex gap-4">
+    <motion.li className="flex gap-4" variants={fadeIn}>
       <div className="relative  w-4">
         <div className="bg-customBlack w-4 h-4 mt-4"></div>
         <div className="w-1 h-full bg-customBlack absolute left-1/2 -translate-x-1/2 top-0"></div>
@@ -69,6 +53,6 @@ const ExperienceTimeLine = ({
           ))}
         </div>
       </div>
-    </li>
+    </motion.li>
   );
 };

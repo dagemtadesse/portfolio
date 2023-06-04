@@ -1,7 +1,11 @@
-import { ReactNode } from "react";
-import { Twitter, GitHub, Mail, Linkedin } from "react-feather";
+"use client"
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 import classNames from "classnames";
+import { Twitter, GitHub, Mail, Linkedin } from "react-feather";
+
+import { container, fadeIn } from "./animations";
 
 export const Socials = ({
   variant,
@@ -14,31 +18,35 @@ export const Socials = ({
     "stroke-1 text-base": variant == "sm",
   });
   return (
-    <ul
+    <motion.ul
       className={classNames("flex items-center gap-6 text-lg ", {
         [`${layoutStyle}`]: true,
       })}
+      variants={container}
+      initial={"hidden"}
+      whileInView={"show"}
+      viewport={{ once: true }}
     >
-      <li>
+      <motion.li variants={fadeIn}>
         <Link href="">
           <Mail className={iconStyle} />
         </Link>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li variants={fadeIn}>
         <Link href="">
           <Linkedin className={iconStyle} />
         </Link>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li variants={fadeIn}>
         <Link href="">
           <Twitter className={iconStyle} />
         </Link>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li variants={fadeIn}>
         <Link href="">
           <GitHub className={iconStyle} />
         </Link>
-      </li>
-    </ul>
+      </motion.li>
+    </motion.ul>
   );
 };

@@ -1,8 +1,21 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { Heading } from "../../components/Heading";
+import {  growHorizontal, container } from "../../components/animations";
 
 export const SkillsSection = ({ id }: { id: number }) => {
   return (
-    <div data-section-id={id} className="scroll-mt-24 scroll-target" id="skills">
+    <motion.div
+      data-section-id={id}
+      className="scroll-mt-24 scroll-target"
+      id="skills"
+      variants={container}
+      initial={"hidden"}
+      whileInView={"show"}
+      viewport={{ once: true }}
+    >
       <div className="mb-4 lg:hidden">
         <Heading>Skills and Proficiency</Heading>
       </div>
@@ -13,7 +26,7 @@ export const SkillsSection = ({ id }: { id: number }) => {
         <Skill name="Next.js" level="advanced" />
         <Skill name="Angular" level="competent" />
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
@@ -32,10 +45,12 @@ const Skill = ({ name, level }: { name: string; level: keyof SkillLevel }) => {
         <p className="uppercase font-light text-sm">{level}</p>
       </div>
       <div className="border border-customBlack mt-1">
-        <div
-          className="bg-customBlack h-2"
-          style={{ width: `${SkillLevels[level]}%` }}
-        ></div>
+        <motion.div variants={growHorizontal}>
+          <div
+            className="bg-customBlack h-2"
+            style={{ width: `${SkillLevels[level]}%` }}
+          ></div>
+        </motion.div>
       </div>
     </li>
   );

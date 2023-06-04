@@ -1,13 +1,18 @@
-import { forwardRef } from "react";
 import { InfoCard } from "../../components/cards/InfoCards";
 import { Heading } from "../../components/Heading";
+import { motion } from "framer-motion";
+import { container } from "../../components/animations";
 
 export const BackgroundInfoSection = ({ id }: { id: number }) => {
   return (
-    <div
+    <motion.div
       data-section-id={id}
       className="scroll-mt-24 scroll-target"
       id="background"
+      variants={container}
+      initial={"hidden"}
+      whileInView={"show"}
+      viewport={{ once: true }}
     >
       <div className="mb-4 lg:hidden">
         <Heading>Education and Background</Heading>
@@ -20,7 +25,9 @@ export const BackgroundInfoSection = ({ id }: { id: number }) => {
         tristique bibendum quam vulputate vestibulum.
       </p>
 
-      <ul className="mt-12 flex flex-col gap-4">
+      <ul
+        className="mt-12 flex flex-col gap-4"
+      >
         <InfoCard
           title="Addis Ababa University"
           description={`Bachelorof Science in Software Engineering and Computing
@@ -36,6 +43,6 @@ export const BackgroundInfoSection = ({ id }: { id: number }) => {
           icon="/v3/icons/cert.svg"
         />
       </ul>
-    </div>
+    </motion.div>
   );
 };

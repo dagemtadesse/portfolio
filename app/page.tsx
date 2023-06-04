@@ -10,11 +10,13 @@ export default function Page() {
       <HeroSection />
       <Bio />
       <Experties />
-      <Works />
+      <div className="my-24">
+        <Works maxItems={2} />
+      </div>
     </>
   );
 }
 
-export const metadata : Metadata = {
-  title: "Home | Dagem Tadesse"
-}
+export const metadata: Metadata = {
+  title: "Home | Dagem Tadesse",
+};

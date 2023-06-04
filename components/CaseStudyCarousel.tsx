@@ -5,8 +5,10 @@ import classNames from "classnames";
 import Image from "next/image";
 import { ArrowRight } from "react-feather";
 import Link from "next/link";
+import { CASE_STUDIES } from "./data";
 
 export const CaseStudyCarouselItem = ({
+  caseStudy,
   active,
   selector,
   id,
@@ -14,6 +16,12 @@ export const CaseStudyCarouselItem = ({
   active: number;
   id: number;
   selector: (id: number) => void;
+  caseStudy: {
+    title: string;
+    thumbnail: string;
+    description: string;
+    id: string;
+  };
 }) => {
   const isActive = active == id;
   const [isSm, setIsSm] = useState(false);
@@ -41,7 +49,7 @@ export const CaseStudyCarouselItem = ({
       onClick={() => selector(id)}
     >
       <Image
-        src="/v3/picture/web-dev-1.jpeg"
+        src={caseStudy.thumbnail}
         alt="picture"
         fill
         className="group-hover:scale-105 transition-all duration-200 ease-linear object-cover"
@@ -52,15 +60,13 @@ export const CaseStudyCarouselItem = ({
             "lg:hidden": !isActive,
           })}
         >
-          Lorem ipsum dolor sit amet
+          {caseStudy.title}
         </h4>
         <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
           <p className={classNames("text-sm mt-4", { "lg:hidden": !isActive })}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            augue lacus, bibendum eget bibendum sit amet, viverra nec lacus. Ut
-            faucibus lorem sed porta sodales.
+            {caseStudy.description}
           </p>
-          <Link href="/case-study/1">
+          <Link href={`/case-study/${caseStudy.id}`}>
             <button
               className={classNames(
                 "bg-white text-customBlack px-4 py-2 mt-6 whitespace-nowrap flex gap-4 items-center  transition-all duration-300 ease-in-out hover:pr-2 hover:gap-6 hover:bg-[#eee]",
@@ -87,21 +93,14 @@ export const CaseStudyCarousel = () => {
 
   return (
     <div className="flex gap-4 lg:h-[450px] flex-col lg:flex-row shrink-0 grow">
-      <CaseStudyCarouselItem
-        active={currentItem}
-        selector={setCurrentItem}
-        id={0}
-      />
-      <CaseStudyCarouselItem
-        active={currentItem}
-        selector={setCurrentItem}
-        id={1}
-      />
-      <CaseStudyCarouselItem
-        active={currentItem}
-        selector={setCurrentItem}
-        id={2}
-      />
+      {CASE_STUDIES.map((item, index) => (
+        <CaseStudyCarouselItem
+          active={currentItem}
+          selector={setCurrentItem}
+          id={index}
+          caseStudy={item}
+        />
+      ))}
     </div>
   );
 };

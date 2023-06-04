@@ -4,7 +4,7 @@ import { Heading } from "../../components/Heading";
 
 export const Bio = () => {
   return (
-    <div className="bg-ligthestGrey py-8">
+    <div className="bg-ligthestGrey py-12 scroll-mt-16" id="bio">
       <Container className="flex flex-col lg:flex-row items-center gap-8">
         <div className="w-40 h-40 relative shrink-0 before:bg-[#D9D9D9] before:w-full before:h-full before:-ml-3 before:block before:mt-3">
           <Image

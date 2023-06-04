@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import classNames from "classnames";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 import { Container } from "../../components/Container";
 import { BackgroundInfoSection } from "../../sections/about/BackgroundInfo";
@@ -9,7 +10,7 @@ import { SkillsSection } from "../../sections/about/Skills";
 import { ExperienceSection } from "../../sections/about/Experience";
 import { SelectedProjectsSection } from "../../sections/about/SelectedProject";
 import { Socials } from "../../components/Socials";
-import { Metadata } from "next";
+
 
 export default function Page() {
   const [visiblityRatio, setVisibilityRatio] = useState({});
@@ -76,16 +77,18 @@ export default function Page() {
           </ul>
 
           <div className="hidden lg:flex gap-6">
-            <Socials variant="lg"/>
+            <Socials variant="lg" />
           </div>
         </div>
       </div>
-      <div className="col-span-12 lg:col-span-6 text-darkerGrey text-base flex flex-col gap-12 py-8">
+      <motion.div
+        className="col-span-12 lg:col-span-6 text-darkerGrey text-base flex flex-col gap-24 py-8"
+      >
         <BackgroundInfoSection id={0} />
         <SkillsSection id={1} />
         <ExperienceSection id={2} />
         <SelectedProjectsSection id={3} />
-      </div>
+      </motion.div>
     </Container>
   );
 }
