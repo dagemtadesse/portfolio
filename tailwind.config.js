@@ -16,12 +16,12 @@ module.exports = {
         lighterGrey: "#eee",
         lightGrey: "#BDBDBD",
         darkerGrey: "#616161",
-        customBlack: "#383838"
+        customBlack: "#383838",
       },
       fontFamily: {
         Montserrat: "Montserrat", // not needed
         OpenSans: "'Open Sans', sans-serif", // not needed
-        "ibmplex": "'IBM Plex Sans', sans-serif"
+        ibmplex: "'IBM Plex Sans', sans-serif",
       },
       backgroundImage: {
         blur: "url(/background.svg)",
@@ -40,5 +40,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [],
 };

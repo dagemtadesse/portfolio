@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "style": "tailwindcss -i ./styles/styles.css -o ./styles/global.css --watch",
-    "build": "tailwindcss -i ./styles/styles.css -o ./styles/global.css && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -22,7 +21,6 @@
     "typescript": "4.8.4"
   },
   "devDependencies": {
-    "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.14",
     "eslint-config-next": "latest",
     "postcss": "^8.4.21",
