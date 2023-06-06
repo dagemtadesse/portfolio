@@ -12,7 +12,7 @@ export const ExpertiesCard = ({
   description,
 }: ExpertiesCardPops) => {
   return (
-    <div className="border border-customBlack">
+    <div className="border border-customBlack h-full">
       <div className="py-12 border-b border-customBlack px-6 bg-[url('/v3/icons/circuit-board.svg')]">
         <Image src={image} width={64} height={64} alt={title} />
       </div>

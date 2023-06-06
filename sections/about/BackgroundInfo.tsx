@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { InfoCard } from "../../components/cards/InfoCards";
 import { Heading } from "../../components/Heading";
@@ -20,16 +20,15 @@ export const BackgroundInfoSection = ({ id }: { id: number }) => {
         <Heading>Education and Background</Heading>
       </div>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-        condimentum semper commodo. Fusce massa justo, consectetur eget nisi et,
-        volutpat lacinia justo. Nullam faucibus, neque eget dictum venenatis,
-        neque libero venenatis ex, quis finibus leo neque vel orci. Nam
-        tristique bibendum quam vulputate vestibulum.
+        As a software engineer, I am driven by creativity and enthusiasm,
+        particularly when it comes to front-end development and the web in
+        general. I also dabble with mobile app development and find great joy in
+        exploring UI/UX design. I possess a genuine passion for exploring new
+        technologies, constantly seeking opportunities to expand my horizons and
+        embrace innovative approaches.
       </p>
 
-      <ul
-        className="mt-12 flex flex-col gap-4"
-      >
+      <ul className="mt-12 flex flex-col gap-4">
         <InfoCard
           title="Addis Ababa University"
           description={`Bachelorof Science in Software Engineering and Computing

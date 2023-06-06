@@ -19,11 +19,12 @@ export const Bio = () => {
             <Heading>About me</Heading>
           </div>
           <p className="text-base text-darkerGrey mt-8 text-center lg:text-start">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-            condimentum semper commodo. Fusce massa justo, consectetur eget nisi
-            et, volutpat lacinia justo. Nullam faucibus, neque eget dictum
-            venenatis, neque libero venenatis ex, quis finibus leo neque vel
-            orci.r
+            I am software engineer, driven by creativity and enthusiasm,
+            particularly when it comes to front-end development and the web in
+            general. I also dabble in mobile app development and find great
+            joy in exploring UI/UX design. I possess a genuine passion for
+            exploring new technologies, constantly seeking opportunities to
+            expand my horizons and embrace innovative approaches.
           </p>
         </div>
       </Container>

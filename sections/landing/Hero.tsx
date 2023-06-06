@@ -16,10 +16,10 @@ export const HeroSection = () => {
           Hi, I’m Dagem Tadesse
         </section>
 
-        <div className="flex items-center flex-col lg:flex-row gap-4 mt-4">
-          <h1 className="text-4xl lg:text-[56px] uppercase font-light grow leading-normal">
+        <div className="flex items-center flex-col lg:flex-row gap-8 mt">
+          <h1 className="text-4xl lg:text-[56px] uppercase font-medium grow leading-normal text-darkerGrey">
             your friendly neighborhood extraordinaire <AnimatedText /> <br />
-            Engineer 🎉
+            Engineer
           </h1>
 
           <Socials variant="sm" layoutStyle="lg:flex-col flex-row" />
