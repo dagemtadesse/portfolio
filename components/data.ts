@@ -44,10 +44,19 @@ export const WORKS: {
     items: [
       {
         id: "ui-1",
-        title: "Lorem ipsum dolor sit amet",
+        title: "A Landing webpage design For Kemer PLC",
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum semper commodo. Fusce massa justo, consectetur eget nisi et, volutpat lacinia justo.`,
         tags: ["React", "Node.js", "TailwindCSS"],
         thumbnail: "/v3/thumbnails/kemer-landing.png",
+        codeLink: "a",
+        demoLink: "a",
+      },
+      {
+        id: "ui-2",
+        title: "Food Ordering App",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum semper commodo. Fusce massa justo, consectetur eget nisi et, volutpat lacinia justo.`,
+        tags: ["React", "Node.js", "TailwindCSS"],
+        thumbnail: "/v3/thumbnails/food-ordering.png",
         codeLink: "a",
         demoLink: "a",
       },

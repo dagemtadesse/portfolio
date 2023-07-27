@@ -30,7 +30,7 @@ export const WorkCard = ({
           src={thumbnail}
           alt="picture"
           fill
-          className="hover:scale-105 transition-all duration-300 object-cover"
+          className="hover:scale-105 transition-all duration-300 object-cover object-top"
         />
       </div>
       <div className="px-4 pt-4 pb-6">
