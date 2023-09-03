@@ -19,7 +19,7 @@ export const Bio = () => {
             <Heading>About me</Heading>
           </div>
           <p className="text-base text-darkerGrey mt-8 text-center lg:text-start">
-            I am software engineer, driven by creativity and enthusiasm,
+            I am a software engineer, driven by creativity and enthusiasm,
             particularly when it comes to front-end development and the web in
             general. I also dabble in mobile app development and find great
             joy in exploring UI/UX design. I possess a genuine passion for
