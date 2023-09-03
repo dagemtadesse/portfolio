@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 export const HeroSection = () => {
   return (
-    <Container className="lg:pt-24 lg:pb-12 py-12  min-h-[calc(100vh-64px)] flex flex-col justify-between gap-6">
+    <Container className="lg:pt-24 lg:pb-12 py-12  min-h-[calc(100vh-64px)] flex flex-col justify-center gap-8">
       <div className="text-center lg:text-start mb-4">
         <section className="font-medium uppercase text-xl lg:text-2xl">
           Hi, I’m Dagem Tadesse

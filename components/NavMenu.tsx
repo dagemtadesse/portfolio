@@ -6,15 +6,17 @@ import classNames from "classnames";
 export const NavMenu = ({
   children,
   href,
+  handleClick
 }: {
   children: ReactNode;
+  handleClick: () => void;
   href: string;
 }) => {
   const path = usePathname();
   const active = path.startsWith(href);
 
   return (
-    <li className="group ">
+    <li className="group" onClick={handleClick}>
       <Link href={href} className="uppercase text-customBlack">
         {children}
       </Link>

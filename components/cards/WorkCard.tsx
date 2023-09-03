@@ -44,19 +44,19 @@ export const WorkCard = ({
 
         <div className="flex gap-6 mt-6">
           {codeLink && (
-            <CardButton href={codeLink} icon={<GitHub className="stroke-1" />}>
+            <CardButton href={codeLink} icon={<GitHub className="stroke-1" size={20} />}>
               View Code
             </CardButton>
           )}
           {demoLink && (
-            <CardButton href={demoLink} icon={<Globe className="stroke-1" />}>
+            <CardButton href={demoLink} icon={<Globe className="stroke-1" size={20}/>}>
               View Demo
             </CardButton>
           )}
           {caseStudyLink && (
             <CardButton
               href={caseStudyLink}
-              icon={<Globe className="stroke-1" />}
+              icon={<Globe className="stroke-1" size={20} />}
             >
               Case study
             </CardButton>
@@ -78,7 +78,7 @@ const CardButton = ({
 }) => {
   return (
     <Link href={href}>
-      <button className="underline flex gap-2 items-center text-base py-1">
+      <button className="flex gap-2 items-center py-1 border border-gray-500 p-3 text-sm">
         <span>{children}</span>
         {icon}
       </button>

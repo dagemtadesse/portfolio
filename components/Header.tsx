@@ -2,12 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu} from "react-feather"
+import { Menu } from "react-feather";
 import { Container } from "./Container";
 import { NavMenu } from "./NavMenu";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const menuItems = (
+    <>
+      <NavMenu href="/about" handleClick={() => setIsOpen(false)}>
+        about
+      </NavMenu>
+      <NavMenu href="/works" handleClick={() => setIsOpen(false)}>
+        work
+      </NavMenu>
+      <NavMenu href="/case-study" handleClick={() => setIsOpen(false)}>
+        case studies
+      </NavMenu>
+    </>
+  );
 
   return (
     <>
@@ -19,13 +33,11 @@ export const Header = () => {
           </Link>
 
           <ul className="gap-6 hidden lg:flex">
-            <NavMenu href="/about">about</NavMenu>
-            <NavMenu href="/works">work</NavMenu>
-            <NavMenu href="/case-study">case studies</NavMenu>
+            {menuItems}
           </ul>
 
           <button onClick={() => setIsOpen(true)} className="lg:hidden">
-            <Menu className="stroke-1 text-2xl"/>
+            <Menu className="stroke-1 text-2xl" />
           </button>
         </Container>
       </nav>
@@ -43,12 +55,10 @@ export const Header = () => {
               className="gap-8 py-8 px-4 bg-white flex flex-col"
               onClick={(e) => e.stopPropagation()}
               initial={{ y: -300 }}
-              animate={{ y: 0, }}
+              animate={{ y: 0 }}
               exit={{ y: -300 }}
             >
-              <NavMenu href="/about">about</NavMenu>
-              <NavMenu href="/works">work</NavMenu>
-              <NavMenu href="/case-study">case studies</NavMenu>
+              {menuItems}
             </motion.ul>
           </motion.div>
         )}

@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
           <footer className="border-t border-lightGrey">
             <Container className="flex justify-between items-center py-2">
-              <p className="font-light text-base">Copyright © 2023 </p>
+              <p className="font-light text-sm">Copyright © 2023 </p>
               <Socials variant="sm" />
             </Container>
           </footer>

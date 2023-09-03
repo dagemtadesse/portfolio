@@ -6,6 +6,7 @@ import classNames from "classnames";
 import { Twitter, GitHub, Mail, Linkedin } from "react-feather";
 
 import { container, fadeIn } from "./animations";
+import { IconButton } from "./button/IconButton";
 
 export const Socials = ({
   variant,
