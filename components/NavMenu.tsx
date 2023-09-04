@@ -16,8 +16,8 @@ export const NavMenu = ({
   const active = path.startsWith(href);
 
   return (
-    <li className="group" onClick={handleClick}>
-      <Link href={href} className="uppercase text-customBlack">
+    <li className="group">
+      <Link href={href} className="uppercase text-customBlack" onClick={handleClick}>
         {children}
       </Link>
       <span

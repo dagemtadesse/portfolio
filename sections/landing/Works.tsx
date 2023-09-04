@@ -16,8 +16,8 @@ export const Works = ({ maxItems }: { maxItems?: number }) => {
       <Heading>My Works</Heading>
 
       <div className="grid grid-cols-4 lg:grid-cols-12 gap-4 mt-8">
-        {WORKS.map((work) => (
-          <CardColumn title={work.group} items={work.items.slice(0, maxItems)} />
+        {WORKS.map((work, index) => (
+          <CardColumn title={work.group} items={work.items.slice(0, maxItems)} key={index}/>
         ))}
       </div>
 
