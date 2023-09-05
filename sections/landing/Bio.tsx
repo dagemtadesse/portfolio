@@ -8,7 +8,7 @@ export const Bio = () => {
       <Container className="flex flex-col lg:flex-row items-center gap-8">
         <div className="w-40 h-40 relative shrink-0 before:bg-[#D9D9D9] before:w-full before:h-full before:-ml-3 before:block before:mt-3">
           <Image
-            src="/v3/picture/portrait.jpeg"
+            src="/v3/dagem.png"
             fill
             alt="Dagem Tadesse's portrait"
             className="border-2 border-customBlack object-cover"
