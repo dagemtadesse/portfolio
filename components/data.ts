@@ -39,7 +39,8 @@ export const WORKS: {
         tags: ["React", "MUI", "Next.js", "Responsive"],
         thumbnail: "/v3/thumbnails/manage-landing.png",
         codeLink: "https://github.com/dagemtadesse/manage-landing-page",
-        demoLink: "https://manage-landing-page-ra9lr5rez-dagemtadesse.vercel.app/",
+        demoLink:
+          "https://manage-landing-page-ra9lr5rez-dagemtadesse.vercel.app/",
       },
       {
         id: "wa-4",
@@ -61,15 +62,24 @@ export const WORKS: {
         description: `A high-fidelity landing page prototype designed in Figma using auto layout and smart animations.`,
         tags: ["Figma", "Smart Animation", "Figma Components", "Auto Layout"],
         thumbnail: "/v3/thumbnails/kemer-landing.png",
-        demoLink: "https://www.figma.com/proto/lIrJTy96yVgqLzb1W53Lik/KEMER?type=design&node-id=1-2&t=IxU1tSGptLC8WtbT-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=41%3A104&mode=design",
+        demoLink:
+          "https://www.figma.com/proto/lIrJTy96yVgqLzb1W53Lik/KEMER?type=design&node-id=1-2&t=IxU1tSGptLC8WtbT-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=41%3A104&mode=design",
       },
       {
         id: "ui-2",
         title: "Food Ordering App",
         description: `Food Ordering App designed with Figma, starting from wireframes and progressing to the final prototype.`,
-        tags: ["Figma", "Smart Animation", "Figma Components", "Auto Layout", "Wireframe", "Hifi-Prototype"],
+        tags: [
+          "Figma",
+          "Smart Animation",
+          "Figma Components",
+          "Auto Layout",
+          "Wireframe",
+          "Hifi-Prototype",
+        ],
         thumbnail: "/v3/thumbnails/food-ordering.png",
-        demoLink: "https://www.figma.com/proto/vevHkSD8nctgb9LLRJYp8V/food-ordering?type=design&node-id=688-2160&t=YAOIhvEpPOoWbilh-1&scaling=min-zoom&page-id=65%3A2&starting-point-node-id=688%3A2160&show-proto-sidebar=1&mode=design",
+        demoLink:
+          "https://www.figma.com/proto/vevHkSD8nctgb9LLRJYp8V/food-ordering?type=design&node-id=688-2160&t=YAOIhvEpPOoWbilh-1&scaling=min-zoom&page-id=65%3A2&starting-point-node-id=688%3A2160&show-proto-sidebar=1&mode=design",
       },
     ],
   },
@@ -78,12 +88,11 @@ export const WORKS: {
     items: [
       {
         id: "ma-1",
-        title: "Lorem ipsum dolor sit amet",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum semper commodo. Fusce massa justo, consectetur eget nisi et, volutpat lacinia justo.`,
-        tags: ["React", "Node.js", "TailwindCSS"],
-        thumbnail: "/v3/thumbnails/kemer-landing.png",
-        codeLink: "a",
-        demoLink: "a",
+        title: "Service Experience Sharing App",
+        description: `Rune is a mobile app that offers an interactive platform for users to share comments and engage in discussions about their experiences with various service-providing companies.`,
+        tags: ["Flutter", "Bloc", "Clean Architecture"],
+        thumbnail: "/v3/thumbnails/rune.png",
+        codeLink: "https://github.com/dagemtadesse/rune-flutter-app",
       },
     ],
   },
@@ -101,7 +110,7 @@ export const EXPERIENCES = [
       "TypeScript",
       "JavaScript",
       "Requirement_engineering",
-      "RxJs"
+      "RxJs",
     ],
   },
   {
