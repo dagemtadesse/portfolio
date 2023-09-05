@@ -23,6 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" href="/favicon.png"></link>
       </head>
       <body className="font-ibmplex text-customBlack">
         <Header />
