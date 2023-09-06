@@ -32,14 +32,14 @@ export const BackgroundInfoSection = ({ id }: { id: number }) => {
         <InfoCard
           title="Addis Ababa University"
           description={`Bachelorof Science in Software Engineering and Computing
-               TechnologySoftware Engineering Strea`}
+               Technology Software Engineering Stream`}
           date="October 2019 - July 2024"
           icon="/v3/icons/cap.svg"
         />
         <InfoCard
           title="Addis Ababa University"
           description={`Bachelorof Science in Software Engineering and Computing
-               TechnologySoftware Engineering Strea`}
+               Technology Software Engineering Stream`}
           date="October 2019 - July 2024"
           icon="/v3/icons/cert.svg"
         />

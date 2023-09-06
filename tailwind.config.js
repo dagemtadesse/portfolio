@@ -34,9 +34,14 @@ module.exports = {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        "pulse-animation": {
+          "0%": { "box-shadow": "0 0 0 0px rgba(0, 0, 0, 0.2)" },
+          "100%": { "box-shadow": "0 0 0 16px rgba(0, 0, 0, 0)" },
+        },
       },
       animation: {
         marquee: "marquee 20s linear infinite",
+        "pulse-animation": "pulse-animation 1s"
       },
     },
   },

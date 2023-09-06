@@ -20,7 +20,7 @@ export const Socials = ({
   });
   return (
     <motion.ul
-      className={classNames("flex items-center gap-6 text-lg ", {
+      className={classNames("flex items-center gap-4 text-lg ", {
         [`${layoutStyle}`]: true,
       })}
       variants={container}
@@ -29,27 +29,24 @@ export const Socials = ({
       viewport={{ once: true }}
     >
       <motion.li variants={fadeIn}>
-        <a href="mailto:dagem.seyfu@gmail.com">
+        <IconButton link="mailto:dagem.seyfu@gmail.com">
           <Mail className={iconStyle} />
-        </a>
+        </IconButton>
       </motion.li>
       <motion.li variants={fadeIn}>
-        <Link
-          href="https://www.linkedin.com/in/dagem-tadesse-s/"
-          target="_blank"
-        >
+        <IconButton link="https://www.linkedin.com/in/dagem-tadesse-s/">
           <Linkedin className={iconStyle} />
-        </Link>
+        </IconButton>
       </motion.li>
       <motion.li variants={fadeIn}>
-        <Link href="https://twitter.com/dagemstadesse" target="_blank">
+        <IconButton link="https://twitter.com/dagemstadesse">
           <Twitter className={iconStyle} />
-        </Link>
+        </IconButton>
       </motion.li>
       <motion.li variants={fadeIn}>
-        <Link href="https://github.com/dagemtadesse" target="_blank">
+        <IconButton link="https://github.com/dagemtadesse">
           <GitHub className={iconStyle} />
-        </Link>
+        </IconButton>
       </motion.li>
     </motion.ul>
   );

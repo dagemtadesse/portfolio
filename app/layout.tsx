@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <div className="flex flex-col min-h-screen">
           <main className="grow mt-[64px]">{children}</main>
 
-          <footer className="border-t border-lightGrey">
+          <footer className="border-t border-gray-200">
             <Container className="flex justify-between items-center py-2">
               <p className="font-light text-sm">Copyright © 2023 </p>
               <Socials variant="sm" />

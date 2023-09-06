@@ -86,7 +86,7 @@ const CardButton = ({
     <a
       href={href}
       target="_blank"
-      className="flex gap-2 items-center border border-gray-500  text-sm py-1 p-3"
+      className="flex gap-2 items-center border border-gray-500  text-sm py-1 p-3 hover:bg-gray-50 transition-colors duration-300 ease-in-out active:bg-gray-200"
     >
       <span>{children}</span>
       {icon}

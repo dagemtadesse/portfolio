@@ -20,24 +20,25 @@ export const SkillsSection = ({ id }: { id: number }) => {
         <Heading>Skills and Proficiency</Heading>
       </div>
       <ul className="py-8 gap-8 flex flex-col">
-        <Skill name="JavaScript" level="expert" />
-        <Skill name="TypeScript" level="expert" />
+        <Skill name="JavaScript & TypeScript" level="expert" />
         <Skill name="Node.js" level="advanced" />
-        <Skill name="Next.js" level="advanced" />
-        <Skill name="Angular" level="competent" />
+        <Skill name="React & Next.js" level="advanced" />
+        <Skill name="TailwindCSS" level="expert" />
+        <Skill name="MUI" level="advanced" />
+        <Skill name="Angular" level="advanced" />
+        <Skill name=".NET" level="competent" />
       </ul>
     </motion.div>
   );
 };
 
-type SkillLevel = { [m: string]: number };
-const SkillLevels: SkillLevel = {
+const SkillLevels = {
   expert: 99,
   advanced: 80,
   competent: 65,
-};
+} as const;
 
-const Skill = ({ name, level }: { name: string; level: keyof SkillLevel }) => {
+const Skill = ({ name, level }: { name: string; level: keyof typeof SkillLevels }) => {
   return (
     <li>
       <div className="flex justify-between text-customBlack target">

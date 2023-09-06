@@ -24,7 +24,7 @@ export const Works = ({ maxItems }: { maxItems?: number }) => {
       {maxItems && (
         <div className="flex justify-center mt-8">
           <Link href="/works">
-            <button className="border border-darkerGrey hover:border-customBlack px-4 py-2">
+            <button className="border border-darkerGrey hover:border-customBlack px-4 py-2 hover:bg-gray-50 transition-colors duration-300 ease-in-out active:bg-gray-200">
               View Poject Archieve
             </button>
           </Link>

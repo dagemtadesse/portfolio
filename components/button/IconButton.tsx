@@ -1,16 +1,22 @@
+import React from "react";
+import { ReactNode } from "react";
 import { Mail } from "react-feather";
 
-export const IconButton = () => {
+export const IconButton = ({
+  children,
+  link,
+}: {
+  children: ReactNode;
+  link?: string;
+}) => {
+  const Wrapper = !!link ? "a" : React.Fragment;
+  const wrapperProps = !!link ? { target: "_blank", href: link } : {};
+
   return (
-    <>
-      <a
-        href="mailto:dagem.seyfu@gmail.com"
-        className="rounded-full before:aspect-square p-1 block bg-transparent"
-      >
-        <div className="relative">
-          <Mail />
-        </div>
-      </a>
-    </>
+    <Wrapper {...wrapperProps}>
+      <button className="rounded-full aspect-square p-3 block bg-transparent hover:bg-gray-100 transition-colors duration-300 ease-in-out active:bg-gray-200">
+        {children}
+      </button>
+    </Wrapper>
   );
 };
