@@ -29,9 +29,11 @@ export const HeroSection = () => {
           <Button variant="outlined" startIcon={<MessageSquare size={18} />}>
             Chat with me
           </Button>
-          <Button variant="filled" startIcon={<Download size={18} />}>
-            Download Resume
-          </Button>
+          <a href="/fiels/Resume 2.0.pdf" download={"Dagem-Tadesse-Resume"}>
+            <Button variant="filled" startIcon={<Download size={18} />}>
+              Download Resume
+            </Button>
+          </a>
         </div>
       </div>
       <div className="hidden lg:block">
