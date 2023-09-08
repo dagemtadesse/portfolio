@@ -52,7 +52,7 @@ export const HeroSection = () => {
 
       <AnimatePresence>
         {showContact && (
-          <Modal onClose={() => setShowContact(false)}>
+          <Modal>
             <ContactForm onClose={() => setShowContact(false)} />
           </Modal>
         )}
