@@ -1,13 +1,13 @@
 "use client";
 
 import { ReactNode } from "react";
-import { Twitter, GitHub, Mail, Linkedin } from "react-feather";
 
 import { Socials } from "../components/Socials";
 import { Container } from "../components/Container";
 
 import "../styles/index.css";
 import { Header } from "../components/Header";
+import { SnackBarProvider } from "../components/modals/SnackBar";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -28,7 +28,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="font-ibmplex text-customBlack">
         <Header />
         <div className="flex flex-col min-h-screen">
-          <main className="grow mt-[64px]">{children}</main>
+          <main className="grow mt-[64px]">
+            <SnackBarProvider>{children}</SnackBarProvider>
+          </main>
 
           <footer className="border-t border-gray-200">
             <Container className="flex justify-between items-center py-2">
