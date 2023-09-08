@@ -99,6 +99,7 @@ export const CaseStudyCarousel = () => {
           selector={setCurrentItem}
           id={index}
           caseStudy={item}
+          key={"carosouel"+index}
         />
       ))}
     </div>

@@ -101,7 +101,7 @@ export const WORKS: {
 export const EXPERIENCES = [
   {
     title: "Full-stack engineer at Super consult PLC",
-    duration: "July 2022 to Present",
+    duration: "December 2023 to Present",
     techs: [
       "Angular",
       ".Net",

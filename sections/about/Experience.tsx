@@ -21,8 +21,8 @@ export const ExperienceSection = ({ id }: { id: number }) => {
         <Heading>Work History</Heading>
       </div>
       <ul>
-        {EXPERIENCES.map((exp) => (
-          <ExperienceTimeLine {...exp} />
+        {EXPERIENCES.map((exp, index) => (
+          <ExperienceTimeLine {...exp} key={"exp"+index} />
         ))}
       </ul>
     </motion.div>

@@ -46,4 +46,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
 export const metadata: Metadata = {
   title: "Dagem Tadesse",
+  description:
+    "Meet Me - Dagem Tadesse: Software Engineer and UI/UX Enthusiast. Discover my dynamic portfolio showcasing the intersection of code and design expertise.",
 };
