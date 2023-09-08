@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Analytics } from '@vercel/analytics/react';
 
 import { Socials } from "../components/Socials";
 import { Container } from "../components/Container";
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </footer>
         </div>
         <div id="modal-contianer" className=""></div>
+        <Analytics />
       </body>
     </html>
   );
