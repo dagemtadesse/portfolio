@@ -1,3 +1,5 @@
+"use client";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { X } from "react-feather";
@@ -20,7 +22,7 @@ export const SnackBar = ({
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.75, opacity: 0 }}
         transition={{ delay: 0.5 }}
-        className="bg-yellow  bg-darkBlue text-white  w-full md:max-w-md  flex"
+        className="bg-yellow bg-darkBlue text-white w-full md:max-w-md flex drop-shadow-xl"
       >
         <div className="grow py-3 px-5">{children}</div>
         <button

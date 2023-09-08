@@ -21,5 +21,5 @@ export default function Page() {
 }
 
 export const metadata: Metadata = {
-  title: "case studies | Dagem Tadesse",
+  title: "Case studies | Dagem Tadesse",
 };

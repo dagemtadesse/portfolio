@@ -1,5 +1,3 @@
-"use client";
-
 import { ReactNode } from "react";
 
 import { Socials } from "../components/Socials";
@@ -8,6 +6,7 @@ import { Container } from "../components/Container";
 import "../styles/index.css";
 import { Header } from "../components/Header";
 import { SnackBarProvider } from "../components/modals/SnackBar";
+import { Metadata } from "next";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -44,3 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Dagem Tadesse",
+};

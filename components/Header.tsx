@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -5,9 +7,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu } from "react-feather";
 import { Container } from "./Container";
 import { NavMenu } from "./NavMenu";
+import { CommingSoonBanner } from "./modals/CommingSoonBanner";
+import { usePathname, useRouter } from "next/navigation";
 
 export const Header = () => {
+  const path = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  const showBanner = path.startsWith("/case-study");
 
   const menuItems = (
     <>
@@ -24,17 +31,16 @@ export const Header = () => {
   );
 
   return (
-    <>
-      <nav className="py-[15px] border-b border-lighterGrey fixed w-full bg-white z-40">
+    <header className="fixed w-full z-40">
+      {showBanner && <CommingSoonBanner />}
+      <nav className="py-[15px] border-b border-lighterGrey bg-white">
         <Container className="flex justify-between items-center">
           <Link href="/" className="flex items-center text-lg gap-6">
             <Image src="/v3/logo.svg" width={34} height={34} alt="Logo" />
             <section className="font-medium">Dagem</section>
           </Link>
 
-          <ul className="gap-6 hidden lg:flex">
-            {menuItems}
-          </ul>
+          <ul className="gap-6 hidden lg:flex">{menuItems}</ul>
 
           <button onClick={() => setIsOpen(true)} className="lg:hidden">
             <Menu className="stroke-1 text-2xl" />
@@ -63,6 +69,6 @@ export const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </header>
   );
 };
