@@ -37,6 +37,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </Container>
           </footer>
         </div>
+        <div id="modal-contianer" className=""></div>
       </body>
     </html>
   );

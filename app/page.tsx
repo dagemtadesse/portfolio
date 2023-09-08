@@ -5,6 +5,7 @@ import { HeroSection } from "../sections/landing/Hero";
 import { Metadata } from "next";
 
 export default function Page() {
+
   return (
     <>
       <HeroSection />

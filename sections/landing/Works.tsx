@@ -17,7 +17,11 @@ export const Works = ({ maxItems }: { maxItems?: number }) => {
 
       <div className="grid grid-cols-4 lg:grid-cols-12 gap-4 mt-8">
         {WORKS.map((work, index) => (
-          <CardColumn title={work.group} items={work.items.slice(0, maxItems)} key={index}/>
+          <CardColumn
+            title={work.group}
+            items={work.items.slice(0, maxItems)}
+            key={"work_card" + index}
+          />
         ))}
       </div>
 
@@ -61,8 +65,8 @@ export const CardColumn = ({
         viewport={{ once: true }}
       >
         {items.map((item, index) => (
-          <motion.div variants={opacity}>
-            <WorkCard key={`${title}-index`} {...item} />
+          <motion.div variants={opacity} key={`${title}-${index}`}>
+            <WorkCard {...item} />
           </motion.div>
         ))}
       </motion.div>
