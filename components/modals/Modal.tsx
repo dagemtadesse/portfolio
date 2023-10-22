@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-export const Modal = ({ children }: { children?: ReactNode }) => {
+export const Modal = ({ children }: { children?: any }) => {
   const ref = useRef<HTMLDivElement | null>();
   const [mounted, setMounted] = useState(false);
 
