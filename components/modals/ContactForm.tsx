@@ -45,7 +45,7 @@ export const ContactForm = ({ onClose }: { onClose: () => void }) => {
   });
 
   const inputStyle = (error: boolean) =>
-    `outline-1 outline-white border bg-transparent ${
+    `outline-1 outline-white border bg-transparent rounded ${
       !error ? "border-white" : "border-red-500"
     } text-base py-2 px-3`;
 
@@ -61,7 +61,7 @@ export const ContactForm = ({ onClose }: { onClose: () => void }) => {
           exit={{ y: "100%" }}
           transition={{ ease: "linear", duration: 0.2 }}
           onClick={(e) => e.stopPropagation()}
-          className="absolute right-0 bottom-0 drop-shadow-xl flex flex-col gap-4 py-6 px-6 bg-background md:max-w-lg w-full border border-divider"
+          className="absolute right-0 bottom-0 drop-shadow-xl flex flex-col gap-4 py-6 px-6 bg-background md:max-w-lg w-full border border-divider rounded"
         >
           <h1 className="text-2xl mb-4 font-medium">Send me a message</h1>
 
@@ -115,7 +115,7 @@ export const ContactForm = ({ onClose }: { onClose: () => void }) => {
               size="sm"
               variant="filled"
               type="submit"
-              disable={!isValid || isSubmitting}
+              disable={isSubmitting}
             >
               {!isSubmitting ? "Send" : "Sending..."}
             </Button>

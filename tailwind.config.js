@@ -21,7 +21,7 @@ module.exports = {
         //
         divider: 'rgba(255, 255, 255, 0.25)',
         primary: '#7161ef',
-        background: '#000'
+        background: '#121212'
       },
       fontFamily: {
         Montserrat: "Montserrat", // not needed
