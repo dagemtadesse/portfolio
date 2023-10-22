@@ -51,7 +51,7 @@ export const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="bg-black bg-opacity-40 fixed top-0 bottom-0 left-0 right-0 z-50 pointer"
+            className="bg-black bg-opacity-40 absolute top-0 bottom-0 left-0 right-0 z-50 pointer"
             onClick={() => setIsOpen(false)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -68,7 +68,7 @@ export const CardColumn = ({
         viewport={{ once: true }}
       >
         {items.map((item, index) => (
-          <motion.div variants={opacity} key={`${title}-${index}`} className={`${vertical ? "col-span-12" : "col-span-4"}`}>
+          <motion.div variants={opacity} key={`${title}-${index}`} className={`${vertical ? "col-span-12" : "col-span-12 lg:col-span-4"}`}>
             <WorkCard {...item} />
           </motion.div>
         ))}
