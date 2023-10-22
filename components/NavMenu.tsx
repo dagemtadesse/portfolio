@@ -17,12 +17,12 @@ export const NavMenu = ({
 
   return (
     <li className="group">
-      <Link href={href} className="uppercase text-customBlack" onClick={handleClick}>
+      <Link href={href} className="uppercase text-customBlack dark:text-white" onClick={handleClick}>
         {children}
       </Link>
       <span
         className={classNames(
-          "group-hover:w-6 border-b border-customBlack h-[1px] block text-customBlack transition-all duration-300",
+          "group-hover:w-6 border-b border-white h-[1px] block  transition-all duration-300",
           { "w-0": !active, "w-6": active }
         )}
       ></span>

@@ -4,6 +4,8 @@ import { InfoCard } from "../../components/cards/InfoCards";
 import { Heading } from "../../components/Heading";
 import { motion } from "framer-motion";
 import { container } from "../../components/animations";
+import { Cap } from "../../components/icons/cap";
+import { Cert } from "../../components/icons/cert";
 
 export const BackgroundInfoSection = ({ id }: { id: number }) => {
   return (
@@ -34,14 +36,14 @@ export const BackgroundInfoSection = ({ id }: { id: number }) => {
           description={`Bachelorof Science in Software Engineering and Computing
                Technology Software Engineering Stream`}
           date="October 2019 - July 2024"
-          icon="/v3/icons/cap.svg"
+          icon={<Cap />}
         />
         <InfoCard
           title="Addis Ababa University"
           description={`Bachelorof Science in Software Engineering and Computing
                Technology Software Engineering Stream`}
           date="October 2019 - July 2024"
-          icon="/v3/icons/cert.svg"
+          icon={<Cert />}
         />
       </ul>
     </motion.div>

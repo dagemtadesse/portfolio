@@ -12,7 +12,7 @@ import { Heading } from "../../components/Heading";
 
 export const Works = ({ maxItems }: { maxItems?: number }) => {
   return (
-    <Container className="">
+    <>
       <Heading>My Works</Heading>
 
       <div className="grid grid-cols-4 lg:grid-cols-12 gap-4 mt-8">
@@ -28,13 +28,13 @@ export const Works = ({ maxItems }: { maxItems?: number }) => {
       {maxItems && (
         <div className="flex justify-center mt-8">
           <Link href="/works">
-            <button className="border border-darkerGrey hover:border-customBlack px-4 py-2 hover:bg-gray-50 transition-colors duration-300 ease-in-out active:bg-gray-200">
+            <button className="border border-divider hover:bg-white px-4 py-2 hover:bg-opacity-20 rounded transition-colors duration-300 ease-in-out active:bg-opacity-30">
               View Poject Archieve
             </button>
           </Link>
         </div>
       )}
-    </Container>
+    </>
   );
 };
 

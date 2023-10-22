@@ -7,7 +7,7 @@ export const FAB = () => {
   return (
     <button
       className={classNames(
-        "border border-customBlack rounded-full p-2 mx-auto block animate-bounce hover:bg-black hover:bg-opacity-5",
+        "border border-divider rounded-full p-2 mx-auto block animate-bounce hover:bg-black hover:bg-opacity-5",
         { "animate-pulse-animation": isActive }
       )}
       onAnimationEnd={(e) =>

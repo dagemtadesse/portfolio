@@ -41,12 +41,12 @@ const ExperienceTimeLine = ({
   return (
     <motion.li className="flex gap-4" variants={fadeIn}>
       <div className="relative  w-4">
-        <div className="bg-customBlack w-4 h-4 mt-4"></div>
-        <div className="w-1 h-full bg-customBlack absolute left-1/2 -translate-x-1/2 top-0"></div>
+        <div className="bg-white w-4 h-4 mt-4"></div>
+        <div className="w-1 h-full bg-white absolute left-1/2 -translate-x-1/2 top-0"></div>
       </div>
       <div className="pt-4 pb-6">
         <h4 className="uppercase text-sm">{duration}</h4>
-        <h3 className="text-customBlack font-medium mt-2">{title}</h3>
+        <h3 className="font-medium mt-2 text-white text-opacity-100">{title}</h3>
         <div className="mt-4 flex gap-4 flex-wrap">
           {techs.map((tech, index) => (
             <Tag key={`${title}${index}`}>{tech}</Tag>

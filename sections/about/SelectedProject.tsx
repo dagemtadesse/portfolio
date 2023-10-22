@@ -64,14 +64,14 @@ const Paginator = ({
         <li
           onClick={() => paginate(index)}
           className={classNames(
-            "border-2 border-customBlack transition-all duration-300",
+            "border-2 border-white transition-all duration-300",
             {
               "p-0": index != currentPage,
               "p-1": index == currentPage,
             }
           )}
         >
-          <div className=" bg-customBlack w-3 h-3 m-0"></div>
+          <div className=" bg-white w-3 h-3 m-0"></div>
         </li>
       ))}
     </ul>

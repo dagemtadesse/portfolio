@@ -11,7 +11,7 @@ import { Metadata } from "next";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html className="scroll-smooth">
+    <html className="scroll-smooth dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -25,14 +25,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <link rel="shortcut icon" href="/favicon.png"></link>
       </head>
-      <body className="font-ibmplex text-customBlack">
+      <body className="font-ibmplex text-white dark:bg-background">
         <Header />
         <div className="flex flex-col min-h-screen">
           <main className="grow mt-[64px]">
             <SnackBarProvider>{children}</SnackBarProvider>
           </main>
 
-          <footer className="border-t border-gray-200">
+          <footer className="border-t border-divider">
             <Container className="flex justify-between items-center py-2">
               <p className="font-light text-sm">Copyright © 2023 </p>
               <Socials variant="sm" />

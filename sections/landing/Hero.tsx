@@ -15,13 +15,13 @@ export const HeroSection = () => {
 
   return (
     <Container className="lg:pt-24 lg:pb-12 py-12  min-h-[calc(100vh-64px)] flex flex-col justify-center gap-8">
-      <div className="text-center md:text-start mb-4">
+      <div className="text-center md:text-start mb-4 text-white">
         <section className="font-medium uppercase text-xl lg:text-2xl">
           Hi, I’m Dagem Tadesse
         </section>
 
         <div className="flex items-center flex-col md:flex-row gap-8">
-          <h1 className="text-4xl lg:text-[56px] uppercase font-medium grow leading-normal text-darkerGrey">
+          <h1 className="text-4xl lg:text-[56px] uppercase font-medium grow leading-normal text-white text-opacity-75">
             your friendly neighborhood extraordinaire <AnimatedText /> <br />
             Engineer
           </h1>
@@ -77,7 +77,7 @@ const AnimatedText = () => {
     <div className="inline-block  overflow-hidden  align-bottom mb-[14px] lg:h-[56px]  relative">
       <AnimatePresence mode="wait">
         <motion.span
-          className="whitespace-nowrap block relative leading-none bg-white"
+          className="whitespace-nowrap block relative leading-none bg-background"
           key={`animated-${currentIndex}`}
           initial={{ y: "50%" }}
           animate={{ y: 0 }}

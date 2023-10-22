@@ -6,11 +6,14 @@ import { ExpertiesCard } from "../../components/cards/ExpertiesCard";
 import { Heading } from "../../components/Heading";
 
 import { container, slideUp } from "../../components/animations";
+import { UxDesign } from "../../components/icons/ux-design";
+import { WebDevelopment } from "../../components/icons/web-development";
+import { MobileDevelopment } from "../../components/icons/mobile-development";
 
 export const Experties = () => {
   return (
     <Container className="my-24">
-      <div className="grid place-items-center">
+      <div className="">
         <Heading>My Experties</Heading>
       </div>
 
@@ -23,21 +26,21 @@ export const Experties = () => {
       >
         <motion.div className="col-span-4" variants={slideUp}>
           <ExpertiesCard
-            image="/v3/icons/web-development.svg"
+            image={<WebDevelopment/>}
             description="I'm well-versed in modern front-end frameworks like React and Angular, and I love diving into full-stack development."
             title="Web App Development"
           />
         </motion.div>
         <motion.div className="col-span-4 " variants={slideUp}>
           <ExpertiesCard
-            image="/v3/icons/ux-design.svg"
+            image={<UxDesign/>}
             description="I have a natural eye for design and I'm really comfortable using tools like Figma and Adobe XD. "
             title="UI/UX design"
           />
         </motion.div>
         <motion.div className="col-span-4" variants={slideUp}>
           <ExpertiesCard
-            image="/v3/icons/mobile-development.svg"
+            image={<MobileDevelopment/>}
             description="I craft visually appealing mobile apps utilizing cross-platform frameworks such as Flutter and React Native."
             title="Mobile App Development"
           />

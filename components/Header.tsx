@@ -9,6 +9,7 @@ import { Container } from "./Container";
 import { NavMenu } from "./NavMenu";
 import { CommingSoonBanner } from "./modals/CommingSoonBanner";
 import { usePathname, useRouter } from "next/navigation";
+import { Logo } from "./logo";
 
 export const Header = () => {
   const path = usePathname();
@@ -33,11 +34,11 @@ export const Header = () => {
   return (
     <header className="fixed w-full z-40">
       {showBanner && <CommingSoonBanner />}
-      <nav className="py-[15px] border-b border-lighterGrey bg-white">
+      <nav className="py-[15px] border-b dark:border-divider  dark:bg-black bg-opacity-75">
         <Container className="flex justify-between items-center">
           <Link href="/" className="flex items-center text-lg gap-6">
-            <Image src="/v3/logo.svg" width={34} height={34} alt="Logo" />
-            <section className="font-medium">Dagem</section>
+            <Logo />
+            <section className="font-medium dark:text-white">Dagem</section>
           </Link>
 
           <ul className="gap-6 hidden lg:flex">{menuItems}</ul>

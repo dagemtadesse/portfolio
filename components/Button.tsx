@@ -25,11 +25,11 @@ export const Button = ({
   const [isActive, setIsActive] = useState(false);
 
   const style = classNames(
-    "uppercase font-medium before:absolute before:inset-0 relative border border-customBlack",
+    "uppercase font-medium before:absolute before:inset-0 relative rounded",
     {
-      "hover:before:bg-black hover:before:bg-opacity-5 active:before:bg-opacity-10":
+      "hover:before:bg-black hover:before:bg-opacity-5 active:before:bg-opacity-10 border border-divider":
         variant == "outlined",
-      "bg-customBlack text-white active:before:bg-black active:before:bg-opacity-20":
+      "bg-primary text-white active:before:bg-black active:before:bg-opacity-20":
         variant == "filled",
       "animate-pulse-animation": isActive,
       "before:bg-white before:bg-opacity-50": variant == "filled" && disable,

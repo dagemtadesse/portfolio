@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import classNames from "classnames";
@@ -71,18 +71,21 @@ const ContentMenuItem = ({
       <a href={`#${target}`} className="flex gap-4 items-center cursor-pointer">
         <div
           className={classNames(
-            "h-2  bg-customBlack transition-all duration-200 ease-in",
+            "h-2  bg-white transition-all duration-200 ease-in",
             {
-              "w-12": active,
-              "w-2": !active,
+              " w-12": active,
+              " w-2": !active,
             }
           )}
         ></div>
         <h3
-          className={classNames("transition-all duration-200 ease-in", {
-            " text-customBlack text-lg font-medium": active,
-            "text-darkerGrey": !active,
-          })}
+          className={classNames(
+            "transition-all duration-200 ease-in text-white",
+            {
+              "text-opacity-100 text-lg font-medium": active,
+              "text-opacity-75": !active,
+            }
+          )}
         >
           {children}
         </h3>

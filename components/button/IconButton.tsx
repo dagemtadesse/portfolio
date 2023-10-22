@@ -14,7 +14,7 @@ export const IconButton = ({
 
   return (
     <Wrapper {...wrapperProps}>
-      <button className="rounded-full aspect-square p-3 block bg-transparent hover:bg-gray-100 transition-colors duration-300 ease-in-out active:bg-gray-200">
+      <button className="rounded-full aspect-square p-3 block bg-transparent hover:bg-white hover:bg-opacity-30 transition-colors duration-300 ease-in-out active:bg-gray-200">
         {children}
       </button>
     </Wrapper>
