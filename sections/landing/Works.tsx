@@ -15,11 +15,12 @@ export const Works = ({ maxItems }: { maxItems?: number }) => {
     <>
       <Heading>My Works</Heading>
 
-      <div className="grid grid-cols-4 lg:grid-cols-12 gap-4 mt-8">
+      <div className="grid grid-cols-4 lg:grid-cols-12 gap-6 mt-8">
         {WORKS.map((work, index) => (
           <CardColumn
             title={work.group}
             items={work.items.slice(0, maxItems)}
+            vertical={Boolean(maxItems)}
             key={"work_card" + index}
           />
         ))}
@@ -40,7 +41,7 @@ export const Works = ({ maxItems }: { maxItems?: number }) => {
 
 export const RowHeader = ({ children }: { children: string }) => {
   return (
-    <div className="flex gap-4 items-center">
+    <div className="flex gap-4 items-center col-span-12">
       <h3 className="text-lg uppercase">{children}</h3>
       <ArrowDown size={16} className="stroke-1" />
     </div>
@@ -50,22 +51,24 @@ export const RowHeader = ({ children }: { children: string }) => {
 export const CardColumn = ({
   title,
   items,
+  vertical
 }: {
   title: string;
   items: WorkCardProps[];
+  vertical: boolean;
 }) => {
   return (
-    <div className="col-span-4">
+    <div className={`${vertical ? "col-span-4":"col-span-12"}`}>
       <RowHeader>{title}</RowHeader>
       <motion.div
-        className="flex flex-col gap-4 mt-4"
+        className="gap-4 mt-6 grid grid-cols-12"
         variants={container}
         initial={"hidden"}
         whileInView={"show"}
         viewport={{ once: true }}
       >
         {items.map((item, index) => (
-          <motion.div variants={opacity} key={`${title}-${index}`}>
+          <motion.div variants={opacity} key={`${title}-${index}`} className={`${vertical ? "col-span-12" : "col-span-4"}`}>
             <WorkCard {...item} />
           </motion.div>
         ))}

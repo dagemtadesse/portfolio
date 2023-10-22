@@ -8,6 +8,7 @@ import "../styles/index.css";
 import { Header } from "../components/Header";
 import { SnackBarProvider } from "../components/modals/SnackBar";
 import { Metadata } from "next";
+import { CommingSoonBanner } from "../components/modals/CommingSoonBanner";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -26,9 +27,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="shortcut icon" href="/favicon.png"></link>
       </head>
       <body className="font-ibmplex text-white dark:bg-background">
+      <CommingSoonBanner />
         <Header />
         <div className="flex flex-col min-h-screen">
-          <main className="grow mt-[64px]">
+          <main className="grow mt-[65px]">
             <SnackBarProvider>{children}</SnackBarProvider>
           </main>
 

@@ -23,7 +23,7 @@ export const WorkCard = ({
   caseStudyLink,
 }: WorkCardProps) => {
   return (
-    <div className="border border-divider rounded">
+    <div className="border border-divider rounded h-full">
       <div className="h-[320px] border-b border-divider relative overflow-hidden rounded">
         <Image
           src={thumbnail}

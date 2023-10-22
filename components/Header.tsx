@@ -33,12 +33,11 @@ export const Header = () => {
 
   return (
     <header className="fixed w-full z-40">
-      {showBanner && <CommingSoonBanner />}
       <nav className="py-[15px] border-b dark:border-divider  dark:bg-background bg-opacity-75">
         <Container className="flex justify-between items-center">
           <Link href="/" className="flex items-center text-lg gap-6">
             <Logo />
-            <section className="font-medium dark:text-white">Dagem</section>
+            <section className="font-medium dark:text-white">&lt;Dagem/&gt;</section>
           </Link>
 
           <ul className="gap-6 hidden lg:flex">{menuItems}</ul>
@@ -59,7 +58,7 @@ export const Header = () => {
             exit={{ opacity: 0 }}
           >
             <motion.ul
-              className="gap-8 py-8 px-4 bg-white flex flex-col"
+              className="gap-8 py-8 px-4 bg-background border-divider border flex flex-col"
               onClick={(e) => e.stopPropagation()}
               initial={{ y: -300 }}
               animate={{ y: 0 }}
