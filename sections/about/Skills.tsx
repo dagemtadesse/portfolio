@@ -45,10 +45,10 @@ const Skill = ({ name, level }: { name: string; level: keyof typeof SkillLevels 
         <h4 className="font-medium ">{name}</h4>
         <p className="uppercase font-light text-sm">{level}</p>
       </div>
-      <div className="border border-customBlack mt-1">
+      <div className="border border-divider mt-1">
         <motion.div variants={growHorizontal}>
           <div
-            className="bg-white h-2"
+            className="bg-primary h-2"
             style={{ width: `${SkillLevels[level]}%` }}
           ></div>
         </motion.div>

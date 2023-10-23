@@ -27,7 +27,7 @@ export const Button = ({
   const style = classNames(
     "uppercase font-medium before:absolute before:inset-0 relative rounded",
     {
-      "hover:before:bg-black hover:before:bg-opacity-5 active:before:bg-opacity-10 border border-divider":
+      "hover:before:bg-primary hover:before:bg-opacity-20 active:before:bg-opacity-30 active:before:bg-opacity-10 border border-primary text-primary":
         variant == "outlined",
       "bg-primary text-white active:before:bg-black active:before:bg-opacity-20":
         variant == "filled",
