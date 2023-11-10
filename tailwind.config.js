@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,9 +19,12 @@ module.exports = {
         darkerGrey: "#616161",
         customBlack: "#383838",
         //
-        divider: 'rgba(255, 255, 255, 0.1)',
-        primary: '#7161ef',
-        background: '#121212'
+        divider: "rgba(255, 255, 255, 0.1)",
+        primary: "#7161ef",
+        background: "#121212",
+      },
+      backgroundSize: {
+        "180%": "180% 180%"
       },
       fontFamily: {
         Montserrat: "Montserrat", // not needed
@@ -43,10 +46,22 @@ module.exports = {
           "0%": { "box-shadow": "0 0 0 0px rgba(0, 0, 0, 0.2)" },
           "100%": { "box-shadow": "0 0 0 16px rgba(0, 0, 0, 0)" },
         },
+        gradient: {
+          "0%": {
+            "background-position": "0% 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+          "100%": {
+            "background-position": "0% 50%;",
+          },
+        },
       },
       animation: {
         marquee: "marquee 20s linear infinite",
-        "pulse-animation": "pulse-animation 1s"
+        "pulse-animation": "pulse-animation 1s",
+        "gradient": "gradient 10s infinite",
       },
     },
   },

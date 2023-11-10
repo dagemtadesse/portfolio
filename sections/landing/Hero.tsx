@@ -21,7 +21,7 @@ export const HeroSection = () => {
         </section>
 
         <div className="flex items-center flex-col md:flex-row gap-8">
-          <h1 className="text-4xl lg:text-[56px] uppercase font-medium grow leading-normal text-white text-opacity-75">
+          <h1 className="text-4xl lg:text-[56px] uppercase font-bold grow leading-normal text-transparent bg-clip-text to-primary from-white bg-gradient-to-r animate-gradient bg-180%">
             your friendly neighborhood extraordinaire <AnimatedText /> <br />
             Engineer
           </h1>
@@ -77,7 +77,7 @@ const AnimatedText = () => {
     <div className="inline-block  overflow-hidden  align-bottom mb-[14px] lg:h-[56px]  relative">
       <AnimatePresence mode="wait">
         <motion.span
-          className="whitespace-nowrap block relative leading-none bg-background"
+          className="whitespace-nowrap block relative leading-none bg-background text-white"
           key={`animated-${currentIndex}`}
           initial={{ y: "50%" }}
           animate={{ y: 0 }}
