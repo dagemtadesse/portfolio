@@ -1,5 +1,5 @@
 import { Bio } from "../sections/landing/Bio";
-import { Experties } from "../sections/landing/Experties";
+import { Expertise } from "../sections/landing/Experties";
 import { Works } from "../sections/landing/Works";
 import { HeroSection } from "../sections/landing/Hero";
 import { Metadata } from "next";
@@ -11,7 +11,7 @@ export default function Page() {
     <>
       <HeroSection />
       <Bio />
-      <Experties />
+      <Expertise />
       <Container className="my-24">
         <Works maxItems={2} />
       </Container>

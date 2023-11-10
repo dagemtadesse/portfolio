@@ -19,7 +19,7 @@ module.exports = {
         darkerGrey: "#616161",
         customBlack: "#383838",
         //
-        divider: 'rgba(255, 255, 255, 0.25)',
+        divider: 'rgba(255, 255, 255, 0.1)',
         primary: '#7161ef',
         background: '#121212'
       },

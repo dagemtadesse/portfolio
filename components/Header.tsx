@@ -33,7 +33,7 @@ export const Header = () => {
 
   return (
     <header className="fixed w-full z-40">
-      <nav className="py-[15px] border-b dark:border-divider  dark:bg-background bg-opacity-75">
+      <nav className="py-[15px] border-b dark:border-divider  dark:bg-background dark:bg-opacity-90 backdrop-blur-sm">
         <Container className="flex justify-between items-center">
           <Link href="/" className="flex items-center text-lg gap-6">
             <Logo />

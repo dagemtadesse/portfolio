@@ -10,11 +10,11 @@ import { UxDesign } from "../../components/icons/ux-design";
 import { WebDevelopment } from "../../components/icons/web-development";
 import { MobileDevelopment } from "../../components/icons/mobile-development";
 
-export const Experties = () => {
+export const Expertise = () => {
   return (
     <Container className="my-24">
       <div className="">
-        <Heading>My Experties</Heading>
+        <Heading>My Expertise</Heading>
       </div>
 
       <motion.div
