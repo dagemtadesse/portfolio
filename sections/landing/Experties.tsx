@@ -1,51 +1,46 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Container } from "../../components/Container";
 import { ExpertiesCard } from "../../components/cards/ExpertiesCard";
 import { Heading } from "../../components/Heading";
 
-import { container, slideUp } from "../../components/animations";
 import { UxDesign } from "../../components/icons/ux-design";
 import { WebDevelopment } from "../../components/icons/web-development";
 import { MobileDevelopment } from "../../components/icons/mobile-development";
+import { Grid } from "@mui/material";
 
 export const Expertise = () => {
   return (
-    <Container className="my-24">
-      <div className="">
-        <Heading>My Expertise</Heading>
-      </div>
+    <>
+      <Heading>My Expertise</Heading>
 
-      <motion.div
+      <Grid
+        container
+        spacing={3}
+        mt={2}
         className="grid grid-cols-4 lg:grid-cols-12 mt-8 gap-4 items-stretch"
-        variants={container}
-        initial={"hidden"}
-        whileInView={"show"}
-        viewport={{ once: true }}
       >
-        <motion.div className="col-span-4" variants={slideUp}>
+        <Grid item xs={12} lg={4}>
           <ExpertiesCard
-            image={<WebDevelopment/>}
+            image={<WebDevelopment />}
             description="I'm well-versed in modern front-end frameworks like React and Angular, and I love diving into full-stack development."
             title="Web App Development"
           />
-        </motion.div>
-        <motion.div className="col-span-4 " variants={slideUp}>
+        </Grid>
+        <Grid item xs={12} lg={4}>
           <ExpertiesCard
-            image={<UxDesign/>}
+            image={<UxDesign />}
             description="I have a natural eye for design and I'm really comfortable using tools like Figma and Adobe XD. "
             title="UI/UX design"
           />
-        </motion.div>
-        <motion.div className="col-span-4" variants={slideUp}>
+        </Grid>
+        <Grid item xs={12} lg={4}>
           <ExpertiesCard
-            image={<MobileDevelopment/>}
+            image={<MobileDevelopment />}
             description="I craft visually appealing mobile apps utilizing cross-platform frameworks such as Flutter and React Native."
             title="Mobile App Development"
           />
-        </motion.div>
-      </motion.div>
-    </Container>
+        </Grid>
+      </Grid>
+    </>
   );
 };

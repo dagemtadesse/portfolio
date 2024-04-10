@@ -1,21 +1,19 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowDown } from "react-feather";
-import { motion } from "framer-motion";
 
-import { container, opacity } from "../../components/animations";
 import { WorkCard, WorkCardProps } from "../../components/cards/WorkCard";
-import { Container } from "../../components/Container";
 import { WORKS } from "../../components/data";
 import { Heading } from "../../components/Heading";
+import { Button, Grid, Stack, Typography } from "@mui/material";
+import Link from "next/link";
 
 export const Works = ({ maxItems }: { maxItems?: number }) => {
   return (
     <>
       <Heading>My Works</Heading>
 
-      <div className="grid grid-cols-4 lg:grid-cols-12 gap-6 mt-8">
+      <Grid container spacing={3}>
         {WORKS.map((work, index) => (
           <CardColumn
             title={work.group}
@@ -24,16 +22,20 @@ export const Works = ({ maxItems }: { maxItems?: number }) => {
             key={"work_card" + index}
           />
         ))}
-      </div>
+      </Grid>
 
       {maxItems && (
-        <div className="flex justify-center mt-8">
-          <Link href="/works">
-            <button className="border border-divider hover:bg-white px-4 py-2 hover:bg-opacity-20 rounded transition-colors duration-300 ease-in-out active:bg-opacity-30">
-              View Poject Archieve
-            </button>
-          </Link>
-        </div>
+        <Stack alignItems={"center"}>
+          <Button
+            component={Link}
+            variant="outlined"
+            color="secondary"
+            href="/works"
+            sx={{ mt: 1.5 }}
+          >
+            View Project Archive
+          </Button>
+        </Stack>
       )}
     </>
   );
@@ -41,38 +43,40 @@ export const Works = ({ maxItems }: { maxItems?: number }) => {
 
 export const RowHeader = ({ children }: { children: string }) => {
   return (
-    <div className="flex gap-4 items-center col-span-12">
-      <h3 className="text-lg uppercase">{children}</h3>
-      <ArrowDown size={16} className="stroke-1" />
-    </div>
+    <Stack direction="row" alignItems="center" gap={1}>
+      <Typography
+        variant="subtitle1"
+        textTransform={"uppercase"}
+        fontWeight={"medium"}
+      >
+        {children}
+      </Typography>
+      <ArrowDown size={16} strokeWidth={1} />
+    </Stack>
   );
 };
 
 export const CardColumn = ({
   title,
   items,
-  vertical
+  vertical,
 }: {
   title: string;
   items: WorkCardProps[];
   vertical: boolean;
 }) => {
   return (
-    <div className={`${vertical ? "col-span-4":"col-span-12"}`}>
-      <RowHeader>{title}</RowHeader>
-      <motion.div
-        className="gap-4 mt-6 grid grid-cols-12"
-        variants={container}
-        initial={"hidden"}
-        whileInView={"show"}
-        viewport={{ once: true }}
-      >
+    <Grid item xs={12} md={vertical ? 6 : 12} lg={vertical ? 4 : 12}>
+      <Grid container spacing={1.5}>
+        <Grid item xs={12}>
+          <RowHeader>{title}</RowHeader>
+        </Grid>
         {items.map((item, index) => (
-          <motion.div variants={opacity} key={`${title}-${index}`} className={`${vertical ? "col-span-12" : "col-span-12 lg:col-span-4"}`}>
-            <WorkCard {...item} />
-          </motion.div>
+          <Grid item xs={12} md={vertical ? 12 : 6} lg={vertical ? 12 : 4}>
+            <WorkCard {...item} key={`${title}-${index}`} />
+          </Grid>
         ))}
-      </motion.div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };

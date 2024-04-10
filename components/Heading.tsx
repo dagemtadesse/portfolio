@@ -1,9 +1,17 @@
+import { Box, Typography } from "@mui/material";
 import { ReactNode } from "react";
 
-export const Heading = ({ children, colorClass }: { children: ReactNode, colorClass?: string }) => {
+export const Heading = ({
+  children,
+  colorClass,
+}: {
+  children: ReactNode;
+  colorClass?: string;
+}) => {
   return (
-    <h1 className="text-xl lg:text-2xl uppercase font-semibold">
-      {children} <span className={`block w-10 h-0.5 ${colorClass || "bg-white"}`}></span>
-    </h1>
+    <Typography variant="h5" gutterBottom fontWeight="medium">
+      {children}{" "}
+      <Box component="span" sx={{ width: 20, height: 2, bgcolor: "#fff" }} />
+    </Typography>
   );
 };

@@ -1,7 +1,15 @@
 import { ReactNode } from "react";
-import Image from "next/image";
-import { Tag } from "../button/Tag";
 import { Globe, GitHub } from "react-feather";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Chip,
+  Stack,
+  Typography,
+} from "@mui/material";
 
 export type WorkCardProps = {
   title: string;
@@ -23,72 +31,67 @@ export const WorkCard = ({
   caseStudyLink,
 }: WorkCardProps) => {
   return (
-    <div className="border border-divider rounded h-full">
-      <div className="h-[320px] border-b border-divider relative overflow-hidden rounded">
-        <Image
-          src={thumbnail}
-          alt="picture"
-          fill
-          className="hover:scale-105 transition-all duration-300 object-cover object-top rounded"
-        />
-      </div>
-      <div className="px-4 pt-4 pb-6">
-        <h4 className="text-base font-medium text-white text-opacity-100">{title}</h4>
-        <p className="text-sm mt-4 text-white text-opacity-75">{description}</p>
-        <div className="flex gap-2 mt-4 flex-wrap">
-          {tags.map((tag, index) => (
-            <Tag key={`${title}-${index}`}>{tag}</Tag>
-          ))}
-        </div>
+    <Card variant="outlined" sx={{ position: "relative", height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <CardMedia
+        sx={{ position: "relative", height: 320 }}
+        component={"img"}
+        image={thumbnail}
+        alt="picture"
+      />
 
-        <div className="flex gap-6 mt-6">
+      <CardContent sx={{ position: "relative", flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+        <Typography gutterBottom variant="subtitle2" fontWeight={"medium"}>
+          {title}
+        </Typography>
+
+        <Typography variant="body2" color="text.secondary">
+          {description}
+        </Typography>
+
+        <Box sx={{flexGrow: 1}}/>
+
+        <Stack direction={"row"} flexWrap={"wrap"} gap={1} mt={2}>
+          {tags.map((tag, index) => (
+            <Chip variant="outlined" key={`${title}-${index}`} label={tag} />
+          ))}
+        </Stack>
+
+        <Stack direction={"row"} gap={1.5} mt={2}>
           {codeLink && (
-            <CardButton
+            <Button
+              variant="contained"
+              color="secondary"
+              size="small"
               href={codeLink}
-              icon={<GitHub className="stroke-1" size={20} />}
+              startIcon={<GitHub size={20} />}
             >
               View Code
-            </CardButton>
+            </Button>
           )}
           {demoLink && (
-            <CardButton
+            <Button
+              variant="contained"
+              color="secondary"
+              size="small"
               href={demoLink}
-              icon={<Globe className="stroke-1" size={20} />}
+              startIcon={<Globe size={20} />}
             >
               View Demo
-            </CardButton>
+            </Button>
           )}
           {caseStudyLink && (
-            <CardButton
+            <Button
+              variant="contained"
+              color="secondary"
+              size="small"
               href={caseStudyLink}
-              icon={<Globe className="stroke-1" size={20} />}
+              startIcon={<Globe size={20} />}
             >
               Case study
-            </CardButton>
+            </Button>
           )}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const CardButton = ({
-  children,
-  icon,
-  href,
-}: {
-  children: ReactNode;
-  icon: ReactNode;
-  href: string;
-}) => {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      className="flex gap-2 items-center border border-gray-500  text-sm py-1 p-3 hover:bg-white hover:bg-opacity-20 transition-colors duration-300 ease-in-out active:bg-opacity-30 rounded"
-    >
-      <span>{children}</span>
-      {icon}
-    </a>
+        </Stack>
+      </CardContent>
+    </Card>
   );
 };

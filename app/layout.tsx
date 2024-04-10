@@ -1,46 +1,55 @@
 import { ReactNode } from "react";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 import { Socials } from "../components/Socials";
-import { Container } from "../components/Container";
 
-import "../styles/index.css";
-import { Header } from "../components/Header";
+// import "../styles/index.css";
+import { Header } from "../components/common/Header";
 import { SnackBarProvider } from "../components/modals/SnackBar";
 import { Metadata } from "next";
 import { CommingSoonBanner } from "../components/modals/CommingSoonBanner";
+import { Theme } from "../components/Theme";
+import { Box, Container, Stack, Typography } from "@mui/material";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html className="scroll-smooth dark">
       <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <link rel="shortcut icon" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
           rel="stylesheet"
         />
-        <link rel="shortcut icon" href="/favicon.png"></link>
       </head>
-      <body className="font-ibmplex text-white dark:bg-background">
-      <CommingSoonBanner />
-        <Header />
-        <div className="flex flex-col min-h-screen">
-          <main className="grow mt-[65px]">
-            <SnackBarProvider>{children}</SnackBarProvider>
-          </main>
+      <body className=" ">
+        <Theme>
+          <Header />
+          <Stack component={"main"} sx={{ minHeight: "100vh" }}>
+            <Box component="main" sx={{ flexGrow: 1, mt: "65px" }}>
+              <SnackBarProvider>{children}</SnackBarProvider>
+            </Box>
 
-          <footer className="border-t border-divider">
-            <Container className="flex justify-between items-center py-2">
-              <p className="font-light text-sm">Copyright © 2023 </p>
-              <Socials variant="sm" />
-            </Container>
-          </footer>
-        </div>
+            <footer>
+              <Container>
+                <Stack
+                  direction={{ xs: "column", md: "row" }}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                  py={2}
+                  gap={2}
+                >
+                  <Typography variant="body2">Copyright © 2023 </Typography>
+                  <Stack direction={"row"}>
+                    <Socials direction="row" />
+                  </Stack>
+                </Stack>
+              </Container>
+            </footer>
+          </Stack>
+        </Theme>
         <div id="modal-contianer" className=""></div>
         <Analytics />
       </body>

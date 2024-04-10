@@ -3,19 +3,24 @@ import { Expertise } from "../sections/landing/Experties";
 import { Works } from "../sections/landing/Works";
 import { HeroSection } from "../sections/landing/Hero";
 import { Metadata } from "next";
-import { Container } from "../components/Container";
+import { Container, Stack } from "@mui/material";
 
 export default function Page() {
-
   return (
-    <>
-      <HeroSection />
-      <Bio />
-      <Expertise />
-      <Container className="my-24">
+    <Stack gap={8}>
+      <Container>
+        <HeroSection />
+      </Container>
+      <Container>
+        <Bio />
+      </Container>
+      <Container>
+        <Expertise />
+      </Container>
+      <Container>
         <Works maxItems={2} />
       </Container>
-    </>
+    </Stack>
   );
 }
 

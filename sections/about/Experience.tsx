@@ -1,31 +1,26 @@
 "use client";
-import { motion } from "framer-motion";
 
 import { Heading } from "../../components/Heading";
-import { Tag } from "../../components/button/Tag";
-import { fadeIn, container} from "../../components/animations";
 import { EXPERIENCES } from "../../components/data";
+import { Box, Card, CardContent, Chip, Stack, Typography } from "@mui/material";
 
 export const ExperienceSection = ({ id }: { id: number }) => {
   return (
-    <motion.div
+    <Box
       data-section-id={id}
       className="scroll-mt-24 scroll-target"
       id="experience"
-      variants={container}
-      initial={"hidden"}
-      whileInView={"show"}
-      viewport={{ once: true }}
+      sx={{ scrollMarginTop: 64 }}
     >
-      <div className="mb-4 lg:hidden">
+      <Box sx={{ mb: 3 }}>
         <Heading>Work History</Heading>
-      </div>
-      <ul>
+      </Box>
+      <Stack>
         {EXPERIENCES.map((exp, index) => (
-          <ExperienceTimeLine {...exp} key={"exp"+index} />
+          <ExperienceTimeLine {...exp} key={"exp" + index} />
         ))}
-      </ul>
-    </motion.div>
+      </Stack>
+    </Box>
   );
 };
 
@@ -39,20 +34,48 @@ const ExperienceTimeLine = ({
   techs: string[];
 }) => {
   return (
-    <motion.li className="flex gap-4" variants={fadeIn}>
-      <div className="relative  w-4">
-        <div className="bg-white w-4 h-4 mt-4"></div>
-        <div className="w-1 h-full bg-white absolute left-1/2 -translate-x-1/2 top-0"></div>
-      </div>
-      <div className="pt-4 pb-6">
-        <h4 className="uppercase text-sm">{duration}</h4>
-        <h3 className="font-medium mt-2 text-white text-opacity-100">{title}</h3>
-        <div className="mt-4 flex gap-4 flex-wrap">
+    <Card sx={{ display: "flex", position: "relative" }}>
+      <Box sx={{ width: 16, position: "relative" }}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: 7,
+            height: "100%",
+            width: "2px",
+            background: "#fff",
+          }}
+        />
+        <Box
+          sx={{
+            width: 16,
+            height: 16,
+            mt: 2,
+            bgcolor: "background.paper",
+            border: "2px solid #fff",
+            borderRadius: "50%",
+            position: "relative",
+          }}
+        />
+      </Box>
+      <CardContent>
+        <Typography
+          textTransform="uppercase"
+          variant="body2"
+          fontWeight={"medium"}
+          color="text.secondary"
+          gutterBottom
+        >
+          {duration}
+        </Typography>
+        <Typography fontWeight={"medium"}>{title}</Typography>
+        <Stack flexWrap={"wrap"} direction="row" mt={1} gap={1}>
           {techs.map((tech, index) => (
-            <Tag key={`${title}${index}`}>{tech}</Tag>
+            <Chip key={`${title}${index}`} label={tech} />
           ))}
-        </div>
-      </div>
-    </motion.li>
+        </Stack>
+      </CardContent>
+    </Card>
   );
 };

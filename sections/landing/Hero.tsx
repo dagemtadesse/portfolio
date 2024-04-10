@@ -2,62 +2,97 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { MessageSquare, Download } from "react-feather";
 
-import { Container } from "../../components/Container";
 import { Socials } from "../../components/Socials";
-import { Button } from "../../components/Button";
 import { FAB } from "../../components/FAB";
 import { useEffect, useState } from "react";
-import { Modal } from "../../components/modals/Modal";
 import { ContactForm } from "../../components/modals/ContactForm";
+import { Box, Button, Stack, Typography, alpha, useTheme } from "@mui/material";
 
 export const HeroSection = () => {
   const [showContact, setShowContact] = useState(false);
+  const theme = useTheme();
 
   return (
-    <Container className="lg:pt-24 lg:pb-12 py-12  min-h-[calc(100vh-64px)] flex flex-col justify-center gap-8">
-      <div className="text-center md:text-start mb-4 text-white">
-        <section className="font-medium uppercase text-xl lg:text-2xl">
-          Hi, I’m Dagem Tadesse
-        </section>
+    <Box
+      sx={{
+        minHeight: "calc(100vh-64px)",
+        py: 8,
+        overflow: "hidden",
+        position: "relative",
+      }}
+    >
+      <GlowEffect />
+      <Stack justifyContent={"center"} gap={1} position={"relative"}>
+        <Box sx={{ textAlign: { xs: "center", md: "start", mb: 1 } }}>
+          <Typography variant="h6" textTransform={"uppercase"} gutterBottom>
+            Hi, I’m Dagem Tadesse
+          </Typography>
 
-        <div className="flex items-center flex-col md:flex-row gap-8">
-          <h1 className="text-4xl lg:text-[56px] uppercase font-bold grow leading-normal text-transparent bg-clip-text to-primary from-white bg-gradient-to-r animate-gradient bg-180%">
-            your friendly neighborhood extraordinaire <AnimatedText /> <br />
-            Engineer
-          </h1>
-
-          <Socials variant="sm" layoutStyle="md:flex-col flex-row" />
-        </div>
-
-        <div className="lg:mt-6 flex gap-6 flex-col md:flex-row mt-16 justify-center md:justify-start">
-          <Button
-            variant="outlined"
-            startIcon={<MessageSquare size={18} />}
-            onClick={() => setShowContact(true)}
+          <Stack
+            alignItems="center"
+            gap={4}
+            flexDirection={{ xs: "column", md: "row" }}
           >
-            Chat with me
-          </Button>
-          <a href="/fiels/Resume 2.0.pdf" download={"Dagem-Tadesse-Resume"}>
-            <Button variant="filled" startIcon={<Download size={18} />} fullWidth>
+            <Typography
+              component="h1"
+              variant={"h2"}
+              fontWeight={500}
+              fontSize={{ xs: "10.5vw", sm: '7.5vw', md: "6vw", lg: "5vw" }}
+              textTransform={"uppercase"}
+            >
+              your friendly neighborhood extraordinaire software Engineer
+            </Typography>
+
+            <Stack
+              direction={{ xs: "row", md: "column" }}
+              alignItems={"center"}
+              gap={2}
+            >
+              <Socials direction="column" />
+            </Stack>
+          </Stack>
+
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            sx={{ mt: 3 }}
+            gap={1.5}
+          >
+            <Button
+              variant="outlined"
+              color="secondary"
+              startIcon={<MessageSquare size={18} />}
+              onClick={() => setShowContact(true)}
+              size="large"
+            >
+              Chat with me
+            </Button>
+
+            <Button
+              LinkComponent={"a"}
+              href="/fiels/Resume 2.0.pdf"
+              download={"Dagem-Tadesse-Resume"}
+              startIcon={<Download size={18} />}
+              size="large"
+              variant="contained"
+            >
               Download Resume
             </Button>
-          </a>
-        </div>
-      </div>
-      <div className="hidden lg:block">
-        <a href="#bio">
+          </Stack>
+        </Box>
+
+        <Box
+          sx={{ display: { xs: "hidden", lg: "block" }, mx: "auto", mt: 4 }}
+          component="a"
+          href="#bio"
+        >
           <FAB />
-        </a>
-      </div>
+        </Box>
+      </Stack>
 
       <AnimatePresence>
-        {showContact && (
-          <Modal>
-            <ContactForm onClose={() => setShowContact(false)} />
-          </Modal>
-        )}
+        {showContact && <ContactForm onClose={() => setShowContact(false)} />}
       </AnimatePresence>
-    </Container>
+    </Box>
   );
 };
 
@@ -88,5 +123,28 @@ const AnimatedText = () => {
         </motion.span>
       </AnimatePresence>
     </div>
+  );
+};
+
+const GlowEffect = () => {
+  const theme = useTheme();
+
+  return (
+    <Box
+      sx={{
+        position: "absolute",
+        inset: 0,
+        background: 'url("/blob.svg")',
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "55% 50%",
+        "&:after": {
+          position: "absolute",
+          inset: 0,
+          bgcolor: alpha(theme.palette.background.default, 0.6),
+          content: '""',
+          backdropFilter: "blur(115px)",
+        },
+      }}
+    ></Box>
   );
 };

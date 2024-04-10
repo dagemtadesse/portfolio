@@ -1,25 +1,19 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 import { Heading } from "../../components/Heading";
-import {  growHorizontal, container } from "../../components/animations";
+import { Box, LinearProgress, Stack, Typography } from "@mui/material";
 
 export const SkillsSection = ({ id }: { id: number }) => {
   return (
-    <motion.div
+    <Box
       data-section-id={id}
       className="scroll-mt-24 scroll-target"
       id="skills"
-      variants={container}
-      initial={"hidden"}
-      whileInView={"show"}
-      viewport={{ once: true, amount: 0.25 }}
+      sx={{ scrollMarginTop: 64 }}
     >
-      <div className="mb-4 lg:hidden">
-        <Heading>Skills and Proficiency</Heading>
-      </div>
-      <ul className="py-8 gap-8 flex flex-col">
+      <Heading>Skills and Proficiency</Heading>
+
+      <Stack gap={2} mt={3}>
         <Skill name="JavaScript & TypeScript" level="expert" />
         <Skill name="Node.js" level="advanced" />
         <Skill name="React & Next.js" level="advanced" />
@@ -27,8 +21,8 @@ export const SkillsSection = ({ id }: { id: number }) => {
         <Skill name="MUI" level="advanced" />
         <Skill name="Angular" level="advanced" />
         <Skill name=".NET" level="competent" />
-      </ul>
-    </motion.div>
+      </Stack>
+    </Box>
   );
 };
 
@@ -38,21 +32,26 @@ const SkillLevels = {
   competent: 65,
 } as const;
 
-const Skill = ({ name, level }: { name: string; level: keyof typeof SkillLevels }) => {
+const Skill = ({
+  name,
+  level,
+}: {
+  name: string;
+  level: keyof typeof SkillLevels;
+}) => {
   return (
-    <li>
-      <div className="flex justify-between text-white target">
-        <h4 className="font-medium ">{name}</h4>
-        <p className="uppercase font-light text-sm">{level}</p>
-      </div>
-      <div className="border border-divider mt-1">
-        <motion.div variants={growHorizontal}>
-          <div
-            className="bg-primary h-2"
-            style={{ width: `${SkillLevels[level]}%` }}
-          ></div>
-        </motion.div>
-      </div>
-    </li>
+    <Box>
+      <Stack direction="row" justifyContent={"space-between"} mb={1}>
+        <Typography fontWeight={"medium"}>{name}</Typography>
+        <Typography variant="body2" textTransform="uppercase">
+          {level}
+        </Typography>
+      </Stack>
+      <LinearProgress
+        value={SkillLevels[level]}
+        variant="determinate"
+        sx={{ height: 8 }}
+      />
+    </Box>
   );
 };

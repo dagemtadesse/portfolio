@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import classNames from "classnames";
+import { Box, List, ListItem, ListItemButton, Typography } from "@mui/material";
 
 export const ContentMenu = () => {
   const [visiblityRatio, setVisibilityRatio] = useState({});
@@ -38,22 +39,27 @@ export const ContentMenu = () => {
     .at(0) || ["0", 0];
 
   return (
-    <>
-      <ul className="hidden lg:flex flex-col gap-6 my-10">
-        <ContentMenuItem active={+activeMenu == 0} target={"background"}>
-          Education and Background
-        </ContentMenuItem>
-        <ContentMenuItem active={+activeMenu == 1} target={"skills"}>
-          Skills and Proficiency
-        </ContentMenuItem>
-        <ContentMenuItem active={+activeMenu == 2} target={"experience"}>
-          Work History
-        </ContentMenuItem>
-        <ContentMenuItem active={+activeMenu == 3} target={"projects"}>
-          Selected Projects
-        </ContentMenuItem>
-      </ul>
-    </>
+    <List
+      sx={{
+        gap: 3,
+        my: 3,
+        display: { xs: "none", lg: "flex" },
+        flexDirection: "column",
+      }}
+    >
+      <ContentMenuItem active={+activeMenu == 0} target={"background"}>
+        Education and Background
+      </ContentMenuItem>
+      <ContentMenuItem active={+activeMenu == 1} target={"skills"}>
+        Skills and Proficiency
+      </ContentMenuItem>
+      <ContentMenuItem active={+activeMenu == 2} target={"experience"}>
+        Work History
+      </ContentMenuItem>
+      <ContentMenuItem active={+activeMenu == 3} target={"projects"}>
+        Selected Projects
+      </ContentMenuItem>
+    </List>
   );
 };
 
@@ -67,29 +73,21 @@ const ContentMenuItem = ({
   target: string;
 }) => {
   return (
-    <li>
-      <a href={`#${target}`} className="flex gap-4 items-center cursor-pointer">
-        <div
-          className={classNames(
-            "h-2  bg-white transition-all duration-200 ease-in",
-            {
-              " w-12": active,
-              " w-2": !active,
-            }
-          )}
-        ></div>
-        <h3
-          className={classNames(
-            "transition-all duration-200 ease-in text-white",
-            {
-              "text-opacity-100 text-lg font-medium": active,
-              "text-opacity-75": !active,
-            }
-          )}
-        >
-          {children}
-        </h3>
-      </a>
-    </li>
+    <ListItem disablePadding>
+      <ListItemButton
+        href={`#${target}`}
+        sx={{ display: "flex", gap: 2, alignItems: "center" }}
+      >
+        <Box
+          sx={{
+            height: 8,
+            bgcolor: "#fff",
+            transition: "all 300 ease-in",
+            width: active ? 48 : 8,
+          }}
+        />
+        <Typography fontWeight={"medium"}>{children}</Typography>
+      </ListItemButton>
+    </ListItem>
   );
 };

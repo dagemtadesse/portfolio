@@ -1,24 +1,24 @@
-import { motion } from "framer-motion";
-import { Button } from "../Button";
 import { useFormik } from "formik";
 import { object, string } from "yup";
 import emailjs from "@emailjs/browser";
 import { useContext, useState } from "react";
 import { snackBarContext } from "./SnackBar";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 export const ContactForm = ({ onClose }: { onClose: () => void }) => {
   const [submitError, setSubmitError] = useState<string | undefined>();
   const snackBarCtx = useContext(snackBarContext);
 
-  const {
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    touched,
-    errors,
-    isSubmitting,
-    isValid,
-  } = useFormik({
+  const { handleChange, handleBlur, handleSubmit, isSubmitting } = useFormik({
     initialValues: { email: "", fullname: "", message: "", submit: "" },
     onSubmit: async (values, { setSubmitting }) => {
       try {
@@ -44,84 +44,70 @@ export const ContactForm = ({ onClose }: { onClose: () => void }) => {
     }),
   });
 
-  const inputStyle = (error: boolean) =>
-    `outline-1 outline-white border bg-transparent rounded ${
-      !error ? "border-white" : "border-red-500"
-    } text-base py-2 px-3`;
-
   return (
-    <div className="fixed inset-0 z-50 bg-transparent" onClick={onClose}>
-      <form
-        className="absolute inset-0 max-w-[1076px] mx-auto"
-        onSubmit={handleSubmit}
-      >
-        <motion.div
-          initial={{ y: "100%" }}
-          animate={{ y: "0%" }}
-          exit={{ y: "100%" }}
-          transition={{ ease: "linear", duration: 0.2 }}
-          onClick={(e) => e.stopPropagation()}
-          className="absolute right-0 bottom-0 drop-shadow-xl flex flex-col gap-4 py-6 px-6 bg-background md:max-w-lg w-full border border-divider rounded"
-        >
-          <h1 className="text-2xl mb-4 font-medium">Send me a message</h1>
+    <Dialog
+      open={true}
+      onClose={onClose}
+      fullWidth
+      PaperProps={{
+        component: "form",
+        onSubmit: handleSubmit,
+        elevation: 0,
+        variant: "outlined",
+      }}
+    >
+      <DialogTitle>Send me a message</DialogTitle>
+      <DialogContent>
+        <Stack gap={2}>
+          <TextField
+            size="small"
+            label="Full Name"
+            type="text"
+            name="fullname"
+            inputProps={{ maxLength: 60 }}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          <TextField
+            size="small"
+            label="Email"
+            type="email"
+            inputProps={{ maxLength: 60 }}
+            name="email"
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          <TextField
+            multiline
+            label="Message"
+            name="message"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            inputProps={{ maxLength: 5000 }}
+          />
 
-          <div className="flex flex-col gap-3">
-            <label htmlFor="fullname">Full Name</label>
-            <input
-              id="fullname"
-              type="text"
-              className={inputStyle(
-                Boolean(touched.fullname && errors.fullname)
-              )}
-              name="fullname"
-              maxLength={50}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-          </div>
-          <div className="flex flex-col gap-3">
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              type="email"
-              className={inputStyle(Boolean(touched.email && errors.email))}
-              name="email"
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-          </div>
-          <div className="flex flex-col gap-3">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              className={inputStyle(Boolean(touched.message && errors.message))}
-              name="message"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              maxLength={2000}
-            ></textarea>
-            <p className="text-sm text-red-500">{submitError}</p>
-          </div>
-          <div className="flex gap-4 items-center mt-6">
-            <Button
-              size="sm"
-              variant="outlined"
-              type="button"
-              onClick={onClose}
-            >
-              Cancel
-            </Button>
-            <Button
-              size="sm"
-              variant="filled"
-              type="submit"
-              disable={isSubmitting}
-            >
-              {!isSubmitting ? "Send" : "Sending..."}
-            </Button>
-          </div>
-        </motion.div>
-      </form>
-    </div>
+          {submitError && <Typography variant="body2" color="error">{submitError}</Typography>}
+        </Stack>
+      </DialogContent>
+      <DialogActions sx={{ px: 3, pb: 3 }}>
+        <Button
+          size="small"
+          variant="outlined"
+          type="button"
+          onClick={onClose}
+          color="secondary"
+        >
+          Cancel
+        </Button>
+        <Button
+          size="small"
+          variant="contained"
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {!isSubmitting ? "Send" : "Sending..."}
+        </Button>
+      </DialogActions>
+    </Dialog>
   );
 };

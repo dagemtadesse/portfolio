@@ -1,38 +1,43 @@
-import Image from "next/image";
-import { Container } from "../../components/Container";
+"use client";
+
+import {
+  Avatar,
+  Box,
+  Card,
+  CardContent,
+  Stack,
+  Typography,
+  alpha,
+  useTheme,
+} from "@mui/material";
 import { Heading } from "../../components/Heading";
 
 export const Bio = () => {
+  const theme = useTheme();
   return (
-    <Container>
-      <div
-        className="bg-primary bg-opacity-10 px-6 py-10 scroll-mt-16 flex flex-col lg:flex-row items-center gap-8 rounded-lg"
-        id="bio"
-      >
-        <div className="">
-          <div className="grid place-items-center lg:place-items-start">
-            <div className="flex gap-4 items-center">
-              <div className="w-12 h-12 relative shrink-0">
-                <Image
-                  src="/v3/dagem.png"
-                  fill
-                  alt="Dagem Tadesse's portrait"
-                  className="object-cover rounded-full"
-                />
-              </div>
-              <Heading>About me</Heading>
-            </div>
-          </div>
-          <p className="text-base  mt-8 text-center lg:text-start text-opacity-75">
-            I am a software engineer, driven by creativity and enthusiasm,
-            particularly when it comes to front-end development and the web in
-            general. I also dabble in mobile app development and find great joy
-            in exploring UI/UX design. I possess a genuine passion for exploring
-            new technologies, constantly seeking opportunities to expand my
-            horizons and embrace innovative approaches.
-          </p>
-        </div>
-      </div>
-    </Container>
+    <Card
+      id="bio"
+      sx={{
+        bgcolor: "rgba(255,255,255,0.05)",
+        border: '1px solid rgba(255,255,255,0.1)'
+      }}
+    >
+      <CardContent>
+        <Stack gap={2} direction={"row"}>
+          <Avatar src="/v3/dagem.png" alt="Dagem Tadesse's portrait" />
+          <Box>
+            <Heading>About me</Heading>
+            <Typography mt={2}>
+              I am a software engineer, driven by creativity and enthusiasm,
+              particularly when it comes to front-end development and the web in
+              general. I also dabble in mobile app development and find great
+              joy in exploring UI/UX design. I possess a genuine passion for
+              exploring new technologies, constantly seeking opportunities to
+              expand my horizons and embrace innovative approaches.
+            </Typography>
+          </Box>
+        </Stack>
+      </CardContent>
+    </Card>
   );
 };

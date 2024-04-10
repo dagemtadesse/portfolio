@@ -2,35 +2,30 @@
 
 import { InfoCard } from "../../components/cards/InfoCards";
 import { Heading } from "../../components/Heading";
-import { motion } from "framer-motion";
-import { container } from "../../components/animations";
 import { Cap } from "../../components/icons/cap";
 import { Cert } from "../../components/icons/cert";
+import { Box, Stack, Typography } from "@mui/material";
 
 export const BackgroundInfoSection = ({ id }: { id: number }) => {
   return (
-    <motion.div
+    <Box
       data-section-id={id}
       className="scroll-mt-24 scroll-target"
       id="background"
-      variants={container}
-      initial={"hidden"}
-      whileInView={"show"}
-      viewport={{ once: true }}
+      sx={{ scrollMarginTop: 64 }}
     >
-      <div className="mb-4 lg:hidden">
-        <Heading>Education and Background</Heading>
-      </div>
-      <p>
+      <Heading>Education and Background</Heading>
+
+      <Typography>
         As a software engineer, I am driven by creativity and enthusiasm,
         particularly when it comes to front-end development and the web in
         general. I also dabble with mobile app development and find great joy in
         exploring UI/UX design. I possess a genuine passion for exploring new
         technologies, constantly seeking opportunities to expand my horizons and
         embrace innovative approaches.
-      </p>
+      </Typography>
 
-      <ul className="mt-12 flex flex-col gap-4">
+      <Stack gap={2} mt={3}>
         <InfoCard
           title="Addis Ababa University"
           description={`Bachelorof Science in Software Engineering and Computing
@@ -45,7 +40,7 @@ export const BackgroundInfoSection = ({ id }: { id: number }) => {
           date="October 2019 - July 2024"
           icon={<Cert />}
         />
-      </ul>
-    </motion.div>
+      </Stack>
+    </Box>
   );
 };

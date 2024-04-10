@@ -1,53 +1,34 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-import classNames from "classnames";
 import { Twitter, GitHub, Mail, Linkedin } from "react-feather";
 
-import { container, fadeIn } from "./animations";
-import { IconButton } from "./button/IconButton";
+import { IconButton, Stack } from "@mui/material";
 
 export const Socials = ({
-  variant,
-  layoutStyle,
+  direction = "row",
 }: {
-  variant: "sm" | "lg";
-  layoutStyle?: string;
+  direction: "row" | "column";
 }) => {
-  const iconStyle = classNames({
-    "stroke-1 text-base": variant == "sm",
-  });
+  const iconStyles = {
+    strokeWidth: 1,
+  };
   return (
-    <motion.ul
-      className={classNames("flex items-center gap-4 text-lg ", {
-        [`${layoutStyle}`]: true,
-      })}
-      variants={container}
-      initial={"hidden"}
-      whileInView={"show"}
-      viewport={{ once: true }}
-    >
-      <motion.li variants={fadeIn}>
-        <IconButton link="mailto:dagem.seyfu@gmail.com">
-          <Mail className={iconStyle} />
-        </IconButton>
-      </motion.li>
-      <motion.li variants={fadeIn}>
-        <IconButton link="https://www.linkedin.com/in/dagem-tadesse-s/">
-          <Linkedin className={iconStyle} />
-        </IconButton>
-      </motion.li>
-      <motion.li variants={fadeIn}>
-        <IconButton link="https://twitter.com/dagemstadesse">
-          <Twitter className={iconStyle} />
-        </IconButton>
-      </motion.li>
-      <motion.li variants={fadeIn}>
-        <IconButton link="https://github.com/dagemtadesse">
-          <GitHub className={iconStyle} />
-        </IconButton>
-      </motion.li>
-    </motion.ul>
+    <>
+      <IconButton href="mailto:dagem.seyfu@gmail.com">
+        <Mail {...iconStyles} />
+      </IconButton>
+
+      <IconButton href="https://www.linkedin.com/in/dagem-tadesse-s/">
+        <Linkedin {...iconStyles} />
+      </IconButton>
+
+      <IconButton href="https://twitter.com/dagemstadesse">
+        <Twitter {...iconStyles} />
+      </IconButton>
+
+      <IconButton LinkComponent={"a"} href="https://github.com/dagemtadesse">
+        <GitHub {...iconStyles} />
+      </IconButton>
+    </>
   );
 };

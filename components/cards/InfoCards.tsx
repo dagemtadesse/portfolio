@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import { motion } from "framer-motion";
 import { fadeIn } from "../animations";
 import { ReactNode } from "react";
+import { Card, CardContent, Typography } from "@mui/material";
 
 export const InfoCard = ({
   title,
@@ -16,13 +16,29 @@ export const InfoCard = ({
   icon: ReactNode;
 }) => {
   return (
-    <motion.li className="flex border border-divider p-4 gap-4 items-start" variants={fadeIn}>
-      {icon}
-      <div>
-        <h2 className="font-medium leading-none text-white text-opacity-100">{title}</h2>
-        <p className="text-[15px] mt-4">{description}</p>
-        <p className="font-light text-sm mt-3">{date}</p>
-      </div>
-    </motion.li>
+    <Card variant="outlined">
+      <CardContent sx={{ display: "flex", gap: 4 }}>
+        {icon}
+        <div>
+          <Typography fontWeight="medium">{title}</Typography>
+          <Typography
+            gutterBottom
+            variant="body1"
+            color="text.secondary"
+            mt={2}
+            className="text-[15px] mt-4"
+          >
+            {description}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            className="font-light text-sm mt-3"
+          >
+            {date}
+          </Typography>
+        </div>
+      </CardContent>
+    </Card>
   );
 };

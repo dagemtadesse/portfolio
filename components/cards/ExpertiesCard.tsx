@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { ReactNode } from "react";
 
 type ExpertiesCardPops = {
@@ -13,14 +13,26 @@ export const ExpertiesCard = ({
   description,
 }: ExpertiesCardPops) => {
   return (
-    <div className="border border-divider h-full rounded">
-      <div className="py-12 border-b border-customBlack px-6 bg-[url('/v3/icons/circuit-boad.svg')]">
-        {image}
-      </div>
-      <div className="px-6 pt-6 pb-8">
-        <h2 className="font-medium text-xl">{title}</h2>
-        <p className="text-base text-white text-opacity-75 mt-6">{description}</p>
-      </div>
-    </div>
+    <Card variant="outlined" sx={{height: '100%', py: 3, px: 2}}>
+      <CardMedia sx={{ p: 2 }}>{image}</CardMedia>
+
+      <CardContent>
+        <Typography
+          component={"h2"}
+          className="font-medium text-xl"
+          variant="subtitle2"
+          mb={2}
+        >
+          {title}
+        </Typography>
+        <Typography
+          component={"p"}
+          className="text-base text-white text-opacity-75 mt-6"
+          variant="body2"
+        >
+          {description}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
